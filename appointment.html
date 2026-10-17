@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | AI Symptoms Checker</title>
+    <meta name="description" content="Book a doctor appointment through AI Symptoms Checker.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="service-page">
+    <header id="header" class="scrolled">
+        <nav class="container premium-nav clean-demo-nav">
+            <a href="index.html#hero" class="logo" aria-label="AI Symptoms Checker Home">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <ul class="nav-links premium-nav-links">
+                <li><a href="index.html#hero" class="active-link">Home</a></li>
+                <li><a href="index.html#checker">AI Checker</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Services <span>▾</span></button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-menu-label">Patient Services</div>
+                        <a href="appointment.html">Book Appointment</a>
+                        <a href="consultation.html">Video &amp; Chat Consultation</a>
+                        <a href="prescription.html">Prescription Flow</a>
+                        <a href="medicine-order.html?mode=direct">Order Medicine</a>
+                        <a href="lab-tests.html?mode=direct">Book Lab Test</a>
+                        <a href="order-tracking.html">Track Request</a>
+                    </div>
+                </li>
+                <li><a href="doctors.html">Doctors</a></li>
+
+<li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Register <span>▾</span></button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu-small">
+                        <div class="nav-menu-label">Professional Registration</div>
+                        <a href="doctor-registration.html">Doctor Registration</a>
+                        <a href="pharmacy-registration.html">Pharmacy Partner Registration</a>
+                        <a href="lab-registration.html">Lab Partner Registration</a>
+                    </div>
+                </li>
+
+<li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right premium-nav-right">
+                <a href="login.html" class="btn-nav nav-login">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container service-hero-grid">
+                <div>
+                    <span class="section-subtitle">Doctor Consultation</span>
+                    <h1>Book Appointment on a Separate Page</h1>
+                    <p>Select your doctor, consultation method, preferred language, and symptoms. After confirmation, the patient can generate a prescription and use it for medicine orders or lab tests.</p>
+                    <div class="service-badges">
+                        <span>Chat Consultation</span>
+                        <span>Video Call</span>
+                        <span>Clinic Visit</span>
+                        <span>20% Platform Commission</span>
+                    </div>
+                </div>
+                <div class="service-side-card glass-card">
+                    <img src="doctor-main.jpeg" alt="Doctor appointment">
+                    <h3>24/7 Website Access</h3>
+                    <p>Doctors are available in shifts. The appointment request is saved and sent to the clinic workflow.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section service-form-section">
+            <div class="container service-form-grid">
+                <form class="booking-form glass-card service-main-form" id="appointment-form">
+                    <h3>Appointment Request</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="patient-name">Patient Name</label>
+                            <input type="text" id="patient-name" placeholder="Enter patient name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="patient-email">Patient Email</label>
+                            <input type="email" id="patient-email" placeholder="patient@email.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="patient-phone">Phone Number</label>
+                            <input type="tel" id="patient-phone" placeholder="03XX XXXXXXX" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="selected-doctor">Selected Doctor</label>
+                            <input type="text" id="selected-doctor" placeholder="Doctor name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="selected-time">Doctor Timing</label>
+                            <input type="text" id="selected-time" placeholder="Doctor timing" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="selected-fee">Consultation Fee</label>
+                            <input type="text" id="selected-fee" placeholder="Doctor fee" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="consult-method">Consultation Method</label>
+                            <select id="consult-method" required>
+                                <option value="Video Call">Video Call</option>
+                                <option value="AI Chat + Doctor Review">AI Chat + Doctor Review</option>
+                                <option value="Clinic Visit">Clinic Visit</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="consult-language">Consultation Language</label>
+                            <select id="consult-language" required>
+                    <optgroup label="Pakistani / National Languages">
+                        <option value="en">🇵🇰 English</option>
+                        <option value="ur">🇵🇰 Urdu / اردو</option>
+                        <option value="pnb">🇵🇰 Punjabi / پنجابی</option>
+                        <option value="sd">🇵🇰 Sindhi / سنڌي</option>
+                        <option value="ps">🇵🇰 Pashto / پښتو</option>
+                        <option value="bal">🇵🇰 Balochi / بلوچی</option>
+                        <option value="skr">🇵🇰 Saraiki / سرائیکی</option>
+                        <option value="hno">🇵🇰 Hindko / ہندکو</option>
+                        <option value="ks">🇵🇰 Kashmiri / كشميري</option>
+                        <option value="brh">🇵🇰 Brahui / براہوی</option>
+                    </optgroup>
+                    <optgroup label="International Languages">
+                        <option value="ar">🇸🇦 Arabic / العربية</option>
+                        <option value="hi">🇮🇳 Hindi / हिन्दी</option>
+                        <option value="fa">🇮🇷 Persian / فارسی</option>
+                        <option value="tr">🇹🇷 Turkish / Türkçe</option>
+                        <option value="zh-CN">🇨🇳 Chinese Simplified / 中文简体</option>
+                        <option value="zh-TW">🇹🇼 Chinese Traditional / 繁體中文</option>
+                        <option value="es">🇪🇸 Spanish / Español</option>
+                        <option value="fr">🇫🇷 French / Français</option>
+                        <option value="de">🇩🇪 German / Deutsch</option>
+                        <option value="pt">🇵🇹 Portuguese / Português</option>
+                        <option value="ru">🇷🇺 Russian / Русский</option>
+                        <option value="ja">🇯🇵 Japanese / 日本語</option>
+                        <option value="ko">🇰🇷 Korean / 한국어</option>
+                        <option value="it">🇮🇹 Italian / Italiano</option>
+                        <option value="bn">🇧🇩 Bengali / বাংলা</option>
+                        <option value="ta">🇮🇳 Tamil / தமிழ்</option>
+                        <option value="te">🇮🇳 Telugu / తెలుగు</option>
+                        <option value="mr">🇮🇳 Marathi / मराठी</option>
+                        <option value="gu">🇮🇳 Gujarati / ગુજરાતી</option>
+                        <option value="ml">🇮🇳 Malayalam / മലയാളം</option>
+                        <option value="th">🇹🇭 Thai / ไทย</option>
+                        <option value="id">🇮🇩 Indonesian / Bahasa Indonesia</option>
+                        <option value="ms">🇲🇾 Malay / Bahasa Melayu</option>
+                        <option value="vi">🇻🇳 Vietnamese / Tiếng Việt</option>
+                        <option value="sw">🌍 Swahili / Kiswahili</option>
+                    </optgroup>
+                </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="appointment-reason">Symptoms / Reason</label>
+                        <textarea id="appointment-reason" rows="4" placeholder="Briefly describe symptoms or reason for consultation..." required></textarea>
+                    </div>
+                    <div class="input-group doctor-report-upload-group">
+                        <label for="doctor-report-files">Upload Reports for Doctor Review</label>
+                        <input type="file" id="doctor-report-files" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                        <small class="form-help">Upload reports here so the doctor can review them during consultation.</small>
+                        <div id="doctor-report-status" class="service-loaded-box" hidden></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Confirm Appointment</button>
+                    <div id="appointment-success" class="booking-success" hidden></div>
+                </form>
+
+                <div class="glass-card service-info-panel">
+                    <span class="commission-pill">20% Consultation Commission</span>
+                    <h3>After Appointment</h3>
+                    <div class="consult-steps compact-steps">
+                        <div><b>01</b><span>Patient books doctor consultation.</span></div>
+                        <div><b>02</b><span>Doctor reviews symptoms.</span></div>
+                        <div><b>03</b><span>Prescription is generated.</span></div>
+                        <div><b>04</b><span>Patient orders medicine or books lab tests.</span></div>
+                    </div>
+                    <a href="prescription.html" class="btn btn-secondary full-btn">Go to Prescription</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function getParam(name) {
+            return new URLSearchParams(window.location.search).get(name) || '';
+        }
+        const requestedLang = new URLSearchParams(window.location.search).get('lang') || '';
+        if (requestedLang && document.getElementById('consult-language')) document.getElementById('consult-language').value=requestedLang;
+        const storedDoctor = JSON.parse(localStorage.getItem('selectedDoctorForAppointment') || '{}');
+        const doctor = getParam('doctor') || storedDoctor.doctor || '';
+        const time = getParam('time') || storedDoctor.time || '';
+        const fee = getParam('fee') || storedDoctor.fee || 'PKR 1,500';
+        document.getElementById('selected-doctor').value = decodeURIComponent(doctor);
+        document.getElementById('selected-time').value = decodeURIComponent(time);
+        document.getElementById('selected-fee').value = decodeURIComponent(fee);
+        const loggedInPatient = JSON.parse(localStorage.getItem('loggedInPatient') || '{}');
+        if (loggedInPatient && loggedInPatient.email) {
+            document.getElementById('patient-name').value = loggedInPatient.name || '';
+            document.getElementById('patient-email').value = loggedInPatient.email || '';
+            document.getElementById('patient-phone').value = loggedInPatient.phone || '';
+        }
+
+        const doctorReportInput = document.getElementById('doctor-report-files');
+        const doctorReportStatus = document.getElementById('doctor-report-status');
+        doctorReportInput.addEventListener('change', function () {
+            const names = Array.from(this.files || []).map(file => file.name);
+            localStorage.setItem('doctorConsultationReports', JSON.stringify(names));
+            if (names.length) {
+                doctorReportStatus.hidden = false;
+                doctorReportStatus.innerHTML = `<strong>${names.length} report(s) selected:</strong> ${names.join(', ')}`;
+            } else {
+                doctorReportStatus.hidden = true;
+            }
+        });
+
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const existingList = JSON.parse(localStorage.getItem('appointmentRequests') || '[]');
+            const patientEmail = document.getElementById('patient-email').value.trim().toLowerCase();
+            const doctorName = document.getElementById('selected-doctor').value;
+            const activeForDoctor = existingList.filter(a => a.doctor === doctorName && !['Completed','Cancelled','Missed'].includes(a.status));
+            const queueNumber = activeForDoctor.length + 1;
+            const token = 'APT-' + Date.now().toString().slice(-6);
+            const data = {
+                patient: document.getElementById('patient-name').value,
+                patientEmail: patientEmail,
+                phone: document.getElementById('patient-phone').value,
+                doctor: doctorName,
+                time: document.getElementById('selected-time').value,
+                fee: document.getElementById('selected-fee').value,
+                method: document.getElementById('consult-method').value,
+                language: document.getElementById('consult-language').value,
+                reason: document.getElementById('appointment-reason').value,
+                reports: JSON.parse(localStorage.getItem('doctorConsultationReports') || '[]'),
+                date: new Date().toLocaleDateString(),
+                createdAt: new Date().toLocaleString(),
+                sortTime: Date.now(),
+                token: token,
+                appointmentToken: token,
+                queueNumber: queueNumber,
+                estimatedWaitMinutes: Math.max(0, (queueNumber - 1) * 15),
+                status: 'Waiting'
+            };
+            localStorage.setItem('aiSymptomsAppointment', JSON.stringify(data));
+            existingList.push(data);
+            localStorage.setItem('appointmentRequests', JSON.stringify(existingList));
+            localStorage.setItem('lastAppointmentToken', token);
+            localStorage.setItem('selectedDoctorForAppointment', JSON.stringify({ doctor: data.doctor, time: data.time, fee: data.fee }));
+            const success = document.getElementById('appointment-success');
+            success.hidden = false;
+            success.innerHTML = `Appointment request created for <strong>${data.patient}</strong> with <strong>${data.doctor}</strong>.<br>Appointment Token: <strong>${data.token}</strong> | Queue No: <strong>${data.queueNumber}</strong> | Estimated wait: <strong>${data.estimatedWaitMinutes} minutes</strong>.<div class="consultation-action-row appointment-next-actions"><a class="btn btn-primary" href="patient-dashboard.html?token=${encodeURIComponent(data.token)}">Check My Token Status</a><a class="btn btn-secondary" href="consultation.html?doctor=${encodeURIComponent(data.doctor)}&time=${encodeURIComponent(data.time)}&fee=${encodeURIComponent(data.fee)}">Open Video & Chat</a><a class="btn btn-secondary" href="prescription.html?doctor=${encodeURIComponent(data.doctor)}&time=${encodeURIComponent(data.time)}&fee=${encodeURIComponent(data.fee)}">Generate Prescription</a></div>`;
+        });
+    </script>
+    <script src="demo-activation.js"></script>
+<script src="feature-enhancements.js"></script>
+<script src="portal-system.js"></script>
+<script src="partner-system.js"></script>
+<script src="business-features.js"></script>
+<script src="role-routing.js"></script>
+    <script src="language-consistency-data.js"></script>
+<script src="language-consistency-only.js"></script>
+</body>
+</html>

@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Symptoms Checker | Ultimate Premium Healthcare Platform 2026</title>
+    <meta name="description" content="Analyze symptoms, consult doctors, upload reports, and receive intelligent healthcare guidance from a single AI-powered platform.">
+    <meta property="og:title" content="AI Symptoms Checker - Smart Healthcare Decisions">
+    <meta property="og:description" content="Next-generation AI-powered symptom analysis and telemedicine platform.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <img src="logo.png" alt="AI Symptoms Checker Logo" class="loader-logo">
+            <svg class="heartbeat-line" viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 20 H30 L35 5 L40 35 L45 10 L50 30 L55 20 H150" />
+            </svg>
+            <p data-i18n="preloader_text">Initializing AI Core...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="container premium-nav clean-demo-nav">
+            <a href="index.html#hero" class="logo" aria-label="AI Symptoms Checker Home">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <ul class="nav-links premium-nav-links">
+                <li><a href="index.html#hero" class="active-link">Home</a></li>
+                <li><a href="index.html#checker">AI Checker</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Services <span>▾</span></button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-menu-label">Patient Services</div>
+                        <a href="appointment.html">Book Appointment</a>
+                        <a href="consultation.html">Video &amp; Chat Consultation</a>
+                        <a href="prescription.html">Prescription Flow</a>
+                        <a href="medicine-order.html?mode=direct">Order Medicine</a>
+                        <a href="lab-tests.html?mode=direct">Book Lab Test</a>
+                        <a href="order-tracking.html">Track Request</a>
+                    </div>
+                </li>
+                <li><a href="doctors.html">Doctors</a></li>
+
+<li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Register <span>▾</span></button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu-small">
+                        <div class="nav-menu-label">Professional Registration</div>
+                        <a href="doctor-registration.html">Doctor Registration</a>
+                        <a href="pharmacy-registration.html">Pharmacy Partner Registration</a>
+                        <a href="lab-registration.html">Lab Partner Registration</a>
+                    </div>
+                </li>
+
+<li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right premium-nav-right">
+                <a href="login.html" class="btn-nav nav-login">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="hero-background.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay"></div>
+        <div class="floating-symbols" aria-hidden="true">
+            <div class="fs fs-1">🩺</div><div class="fs fs-2">💊</div><div class="fs fs-3">🧬</div><div class="fs fs-4">🫀</div><div class="fs fs-5">🧪</div>
+        </div>
+        <div class="hero-content container">
+            <div class="hero-text">
+                <div class="trust-badges animate-fade-down">
+                    <span class="badge">🔬 AI-Powered</span>
+                    <span class="badge">🏥 Doctor Guidance</span>
+                    <span class="badge">🔒 Privacy Focused</span>
+                </div>
+                <h1 class="animate-fade-up word-reveal">
+                    <span>Smart</span> <span>AI</span> <span>Symptom</span> <span>Checker</span> <span>for</span> <span>Everyday</span> <span>Healthcare</span>
+                </h1>
+                <p class="animate-fade-up delay-1">
+                    Enter your symptoms, understand possible causes, and get simple next-step guidance in one clean healthcare platform.
+                </p>
+                <div class="hero-buttons animate-fade-up delay-2">
+                    <a href="#checker" class="btn btn-primary pulse-btn">Check Symptoms</a>
+                    <a href="doctors.html" class="btn btn-secondary">Book Appointment</a>
+                </div>
+                <div class="hero-stats animate-fade-up delay-3">
+                    <div class="stat"><b>100K+</b><span>Analyses</span></div>
+                    <div class="stat"><b>95%</b><span>Accuracy</span></div>
+                    <div class="stat"><b>24/7</b><span>AI Support</span></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="hero-wave"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="var(--dark-blue)" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg></div>
+    </section>
+
+    <div class="container">
+        <div class="demo-mode-note"><strong>Demo Mode:</strong> This project uses browser localStorage to simulate patient, doctor, admin, pharmacy, and lab workflows for presentation purposes.</div>
+    </div>
+
+
+    <!-- About Section -->
+    <section id="about" class="section section-dark">
+        <div class="container about-grid">
+            <div class="neural-net-visual doctor-photo-panel scroll-reveal fade-left">
+                <img src="doctor-main.jpeg" alt="AI Symptoms Checker doctor image">
+                <div class="doctor-photo-badge">Smart Healthcare Assistant</div>
+            </div>
+            <div class="scroll-reveal fade-right">
+                <span class="section-subtitle">About MedAI Core</span>
+                <h2 class="section-title">Next-Gen <span>Healthcare Intelligence</span></h2>
+                <p style="color: var(--light-gray); margin-bottom: 20px;">Our platform leverages deep learning models trained on millions of anonymized medical records to deliver instantaneous, highly accurate preliminary diagnoses.</p>
+                <ul class="feature-list">
+                    <li><i>✓</i> HIPAA-Compliant Data Processing</li>
+                    <li><i>✓</i> Real-time Symptom Cross-Referencing</li>
+                    <li><i>✓</i> Multilingual AI Support (16+ Languages)</li>
+                    <li><i>✓</i> Seamless Telemedicine Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-subtitle">Platform Capabilities</span>
+                <h2 class="section-title">Comprehensive <span>AI Features</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="glass-card scroll-reveal fade-up delay-1"><div class="card-icon">🧠</div><h3>Symptom Analysis</h3><p>Input your symptoms and receive instant, AI-driven preliminary assessments with risk levels.</p></div>
+                <div class="glass-card scroll-reveal fade-up delay-2"><div class="card-icon">🩺</div><h3>Doctor Consultations</h3><p>Connect with certified physicians worldwide via real-time chat with AI translation.</p></div>
+                <div class="glass-card scroll-reveal fade-up delay-3"><div class="card-icon">📹</div><h3>Video Telemedicine</h3><p>Face-to-face secure video calls with specialists from the comfort of your home.</p></div>
+                <div class="glass-card scroll-reveal fade-up delay-1"><div class="card-icon">🔬</div><h3>Lab Report Uploads</h3><p>Upload your lab reports and let our AI extract and analyze key health indicators.</p></div>
+                <div class="glass-card scroll-reveal fade-up delay-2"><div class="card-icon">💊</div><h3>Medicine Ordering</h3><p>Get simple medicine order support through partner pharmacies.</p></div>
+                <div class="glass-card scroll-reveal fade-up delay-3"><div class="card-icon">🌍</div><h3>Multi-Language AI</h3><p>Speak in your native tongue; our AI translates consultations in real-time.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works / Timeline -->
+    <section id="how-it-works" class="section section-dark">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-subtitle">Process</span>
+                <h2 class="section-title">How It <span>Works</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item scroll-reveal fade-up"><div class="timeline-dot"></div><div class="timeline-content"><h3>1. Enter Symptoms</h3><p style="color: var(--text-muted);">Fill out our intuitive form with your current symptoms and severity levels.</p></div></div>
+                <div class="timeline-item scroll-reveal fade-up"><div class="timeline-dot"></div><div class="timeline-content"><h3>2. AI Processing</h3><p style="color: var(--text-muted);">Our neural network cross-references thousands of medical databases instantly.</p></div></div>
+                <div class="timeline-item scroll-reveal fade-up"><div class="timeline-dot"></div><div class="timeline-content"><h3>3. Receive Dashboard</h3><p style="color: var(--text-muted);">View your health score, risk level, and potential conditions with confidence metrics.</p></div></div>
+                <div class="timeline-item scroll-reveal fade-up"><div class="timeline-dot"></div><div class="timeline-content"><h3>4. Consult & Act</h3><p style="color: var(--text-muted);">Book a consultation, upload labs, or order recommended medications instantly.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symptom Checker Section -->
+    <section id="checker" class="section">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-subtitle">Diagnosis Engine</span>
+                <h2 class="section-title">Symptom <span>AI Checker</span></h2>
+            </div>
+            <div class="checker-grid">
+                <div class="glass-card scroll-reveal fade-left">
+                    <form id="symptom-form">
+                        <div class="input-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" placeholder="30" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="severity">Severity (1-10)</label>
+                                <input type="number" id="severity" min="1" max="10" value="5" required>
+                            </div>
+                        </div>
+                        <div class="input-row feature-timeline-row">
+                            <div class="input-group">
+                                <label for="symptom-duration">Symptom Timeline</label>
+                                <select id="symptom-duration">
+                                    <option value="Today / Few Hours">Today / Few Hours</option>
+                                    <option value="1 Day">1 Day</option>
+                                    <option value="2-3 Days">2-3 Days</option>
+                                    <option value="1 Week">1 Week</option>
+                                    <option value="More Than 2 Weeks">More Than 2 Weeks</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="patient-mode">Health Mode</label>
+                                <select id="patient-mode">
+                                    <option value="Adult">Adult / General</option>
+                                    <option value="Child">Child Health Mode</option>
+                                    <option value="Women">Women Health Mode</option>
+                                    <option value="Elderly">Elderly Care Mode</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-row vital-reading-row">
+                            <div class="input-group">
+                                <label for="bp-reading">BP Reading Optional</label>
+                                <input type="text" id="bp-reading" placeholder="e.g., 120/80">
+                            </div>
+                            <div class="input-group">
+                                <label for="sugar-reading">Sugar Level Optional mg/dL</label>
+                                <input type="number" id="sugar-reading" placeholder="e.g., 95">
+                            </div>
+                        </div>
+                        <!-- ADDED LANGUAGE SELECTOR IN FORM -->
+                        <div class="input-group">
+                            <label for="checker-lang">Preferred Language for Results</label>
+                            <select id="checker-lang" class="lang-selector" style="width: 100%; border-radius: 8px; padding: 12px 16px;">
+                    <optgroup label="Pakistani / National Languages">
+                        <option value="en">🇵🇰 English</option>
+                        <option value="ur">🇵🇰 Urdu / اردو</option>
+                        <option value="pnb">🇵🇰 Punjabi / پنجابی</option>
+                        <option value="sd">🇵🇰 Sindhi / سنڌي</option>
+                        <option value="ps">🇵🇰 Pashto / پښتو</option>
+                        <option value="bal">🇵🇰 Balochi / بلوچی</option>
+                        <option value="skr">🇵🇰 Saraiki / سرائیکی</option>
+                        <option value="hno">🇵🇰 Hindko / ہندکو</option>
+                        <option value="ks">🇵🇰 Kashmiri / كشميري</option>
+                        <option value="brh">🇵🇰 Brahui / براہوی</option>
+                    </optgroup>
+                    <optgroup label="International Languages">
+                        <option value="ar">🇸🇦 Arabic / العربية</option>
+                        <option value="hi">🇮🇳 Hindi / हिन्दी</option>
+                        <option value="fa">🇮🇷 Persian / فارسی</option>
+                        <option value="tr">🇹🇷 Turkish / Türkçe</option>
+                        <option value="zh-CN">🇨🇳 Chinese Simplified / 中文简体</option>
+                        <option value="zh-TW">🇹🇼 Chinese Traditional / 繁體中文</option>
+                        <option value="es">🇪🇸 Spanish / Español</option>
+                        <option value="fr">🇫🇷 French / Français</option>
+                        <option value="de">🇩🇪 German / Deutsch</option>
+                        <option value="pt">🇵🇹 Portuguese / Português</option>
+                        <option value="ru">🇷🇺 Russian / Русский</option>
+                        <option value="ja">🇯🇵 Japanese / 日本語</option>
+                        <option value="ko">🇰🇷 Korean / 한국어</option>
+                        <option value="it">🇮🇹 Italian / Italiano</option>
+                        <option value="bn">🇧🇩 Bengali / বাংলা</option>
+                        <option value="ta">🇮🇳 Tamil / தமிழ்</option>
+                        <option value="te">🇮🇳 Telugu / తెలుగు</option>
+                        <option value="mr">🇮🇳 Marathi / मराठी</option>
+                        <option value="gu">🇮🇳 Gujarati / ગુજરાતી</option>
+                        <option value="ml">🇮🇳 Malayalam / മലയാളം</option>
+                        <option value="th">🇹🇭 Thai / ไทย</option>
+                        <option value="id">🇮🇩 Indonesian / Bahasa Indonesia</option>
+                        <option value="ms">🇲🇾 Malay / Bahasa Melayu</option>
+                        <option value="vi">🇻🇳 Vietnamese / Tiếng Việt</option>
+                        <option value="sw">🌍 Swahili / Kiswahili</option>
+                    </optgroup>
+                </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="symptoms">Primary Symptoms</label>
+                            <textarea id="symptoms" rows="3" placeholder="e.g., persistent headache, mild fever, fatigue..." required></textarea>
+                        </div>
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-primary">Analyze Symptoms</button>
+                            <button type="reset" class="btn btn-secondary">Clear</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="glass-card checker-dashboard scroll-reveal fade-right" id="dashboard">
+                    <div class="dashboard-welcome">
+                        <div class="pulse-icon" aria-hidden="true">
+                            <svg class="heart-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heart icon">
+                                <defs>
+                                    <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#00d4ff"/>
+                                        <stop offset="55%" stop-color="#0055ff"/>
+                                        <stop offset="100%" stop-color="#00ff9d"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M60 101C31 77 16 62 16 39C16 25 27 15 40 15C49 15 56 20 60 27C64 20 71 15 80 15C93 15 104 25 104 39C104 62 89 77 60 101Z" fill="url(#heartGradient)"/>
+                                <path d="M26 58H45L51 43L61 75L69 55H94" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+                            </svg>
+                        </div>
+                        <h3>AI Awaiting Input</h3>
+                        <p style="color: var(--text-muted); margin-top:10px;">Enter your symptoms to generate a comprehensive health analysis dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Services Section -->
+    <section id="services" class="section section-dark clean-services-section">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-subtitle">Patient Services</span>
+                <h2 class="section-title">What You Can Do <span>After AI Check</span></h2>
+                <p class="section-note">A simple demo flow: check symptoms, book a doctor, order medicine, book lab tests, and track every request.</p>
+            </div>
+            <div class="home-service-clean-grid">
+                <div class="glass-card home-service-clean-card">
+                    <h3>Book Doctor</h3>
+                    <p>Choose an available doctor and generate an appointment token for consultation.</p>
+                    <a class="btn btn-primary" href="appointment.html">Book Appointment</a>
+                </div>
+                <div class="glass-card home-service-clean-card">
+                    <h3>Order Medicine</h3>
+                    <p>Submit medicine details, quantity, location, and send order to a partner pharmacy.</p>
+                    <a class="btn btn-secondary" href="medicine-order.html?mode=direct">Open Medicine Form</a>
+                </div>
+                <div class="glass-card home-service-clean-card">
+                    <h3>Book Lab Test</h3>
+                    <p>Select lab visit, home sample collection, or hospital diagnostic center.</p>
+                    <a class="btn btn-secondary" href="lab-tests.html?mode=direct">Open Lab Form</a>
+                </div>
+                <div class="glass-card home-service-clean-card">
+                    <h3>Track Request</h3>
+                    <p>Use MED, LAB, or APT tracking ID to check request, payment, report, and receipt status.</p>
+                    <a class="btn btn-secondary" href="order-tracking.html">Track Status</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Doctors Section moved to doctors.html -->
+
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section-dark">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-subtitle">Reviews</span>
+                <h2 class="section-title">Patient <span>Testimonials</span></h2>
+            </div>
+            <div class="test-grid">
+                <div class="glass-card test-card scroll-reveal fade-up delay-1"><div class="test-stars">★★★★★</div><p>"The AI symptom checker was incredibly accurate. It saved me a trip to the ER by identifying my symptoms as a minor allergic reaction."</p><div class="test-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Sarah"><div><h4>Sarah Jenkins</h4><span>Verified User</span></div></div></div>
+                <div class="glass-card test-card scroll-reveal fade-up delay-2"><div class="test-stars">★★★★★</div><p>"Consulting a doctor in my native language through the AI translator was a game-changer. The doctor understood me perfectly."</p><div class="test-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Ahmed"><div><h4>Ahmed Raza</h4><span>Verified User</span></div></div></div>
+                <div class="glass-card test-card scroll-reveal fade-up delay-3"><div class="test-stars">★★★★☆</div><p>"Uploading my blood work and having the AI highlight the critical markers made my follow-up consultation so much faster."</p><div class="test-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Emily"><div><h4>Emily Chen</h4><span>Verified User</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-subtitle">Support</span>
+                <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+            </div>
+            <div class="faq-container scroll-reveal fade-up">
+                <div class="glass-card faq-item"><button class="faq-q">Is the AI Symptom Checker a substitute for a real doctor? <span>+</span></button><div class="faq-a"><p>No, our AI provides preliminary guidance and risk assessment only. It is not a replacement for professional medical diagnosis. Always consult a certified healthcare provider for actual treatment.</p></div></div>
+                <div class="glass-card faq-item"><button class="faq-q">How secure is my medical data? <span>+</span></button><div class="faq-a"><p>We are fully HIPAA compliant. All data is encrypted end-to-end, and personally identifiable information is never stored on our servers after your session ends.</p></div></div>
+                <div class="glass-card faq-item"><button class="faq-q">How does the real-time translation work? <span>+</span></button><div class="faq-a"><p>Our proprietary NLP engine processes your chat messages, translates them into the doctor's preferred language in real-time, and vice versa, enabling seamless cross-lingual consultations.</p></div></div>
+                <div class="glass-card faq-item"><button class="faq-q">Can I order controlled substances through the medicine portal? <span>+</span></button><div class="faq-a"><p>No. Strict regulations prohibit the online sale of controlled substances. Partner pharmacies verify every medicine request before processing.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Account Access Section -->
+<!-- Account access cards removed: registration remains only in navbar -->
+<!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Contact <span>Us</span></h2>
+            </div>
+            <div class="contact-grid">
+                <form class="glass-card scroll-reveal fade-left" onsubmit="event.preventDefault(); alert('Message Sent Successfully!');">
+                    <div class="input-row">
+                        <div class="input-group"><label>Name</label><input type="text" placeholder="Your Name" required></div>
+                        <div class="input-group"><label>Email</label><input type="email" placeholder="you@example.com" required></div>
+                    </div>
+                    <div class="input-group"><label>Subject</label><input type="text" placeholder="How can we help?" required></div>
+                    <div class="input-group"><label>Message</label><textarea rows="4" placeholder="Type your message here..." required></textarea></div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info scroll-reveal fade-right">
+                    <div class="glass-card"><h3>📍 Headquarters</h3><p>Karachi, Sindh, Pakistan</p></div>
+                    <div class="glass-card"><h3>📧 Email</h3><p>support@aisymptomschecker.com</p></div>
+                    <div class="glass-card"><h3>📞 Phone</h3><p>+92 300 1234567</p></div>
+                    <div class="glass-card"><h3>⏰ Hours</h3><p>AI: 24/7 | Human Support: 9AM - 8PM PKT</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Disclaimer -->
+    <div class="disclaimer-bar">
+        <div class="container">
+            <p>⚠️ <strong>Medical Disclaimer:</strong> This platform provides AI-driven preliminary health information for educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    
+                    <a href="#hero" class="footer-brand-logo" aria-label="AI Symptoms Checker Home">
+                        <img src="logo.png" alt="AI Symptoms Checker Logo">
+                    </a>
+                    <p>Next-generation AI-powered symptom analysis and telemedicine platform for smarter, faster healthcare decisions.</p>
+                </div>
+                <div><h3>Quick Links</h3><ul><li><a href="#about">About Us</a></li><li><a href="#features">Features</a></li><li><a href="#checker">Symptom AI</a></li><li><a href="doctors.html">Doctors</a></li></ul></div>
+                <div><h3>Services</h3><ul><li><a href="appointment.html">Consultations</a></li><li><a href="consultation.html">Video Calls</a></li><li><a href="lab-tests.html?mode=direct">Lab Reports</a></li><li><a href="medicine-order.html?mode=direct">Pharmacy</a></li><li><a href="partner-registration.html">Partnerships</a></li></ul></div>
+                <div><h3>Legal</h3><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="hipaa.html">HIPAA Compliance</a></li><li><a href="#contact">Contact</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AI-SYMPTOMS-CHECKER. All rights reserved.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="GitHub">GH</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="voice-assistant.js"></script>
+    <script src="script.js"></script>
+    <script src="language-consistency-data.js"></script>
+<script src="demo-activation.js"></script>
+<script src="feature-enhancements.js"></script>
+<script src="partner-system.js"></script>
+<script src="business-features.js"></script>
+<script src="role-routing.js"></script>
+
+
+
+<script>
+(function(){
+  "use strict";
+
+  const PACKS = {
+    en:{dir:"ltr",speech:"en-US",labels:["Possible Issue","Risk","Reading / Level","If ignored","Doctor","What to do","What not to do","Emergency","Note","Low","Moderate","High"],note:"This is not a final diagnosis. Consult a qualified doctor for confirmation.",
+      gp:"General Physician", cardio:"Emergency Physician / Cardiologist", pulmo:"Pulmonologist / Emergency Physician", gastro:"General Physician / Gastroenterologist", derma:"Dermatologist", uro:"General Physician / Urologist", endo:"Endocrinologist / General Physician", neuro:"General Physician / Neurologist",
+      general:["General health concern","Symptoms are not clear enough for one condition.","No specific reading provided.","Wrong care may be delayed if symptoms are ignored.","Write symptoms clearly with duration and severity. Consult a doctor if symptoms continue or worsen.","Do not take random medicine or antibiotics.","Chest pain, breathing difficulty, fainting, severe pain, bleeding or confusion."],
+      fever:["Fever / Flu / Viral infection","Fever with cough, body pain, sore throat or runny nose may be flu or viral infection.","Temperature should be monitored. High fever for 2-3 days needs doctor review.","Ignoring fever may cause dehydration or delay diagnosis of dengue, malaria or infection.","Rest, drink fluids, monitor temperature, and consult doctor if fever lasts 2-3 days or worsens.","Do not take unnecessary antibiotics or mix fever medicines.","Breathing issue, chest pain, confusion, dehydration, very high fever, or fever in infant."],
+      dengue:["Possible Dengue / Malaria fever","High fever with severe body pain, rash, eye pain, mosquito exposure or platelet concern needs testing.","CBC and platelet count should be checked.","Ignoring it may lead to dehydration, bleeding risk, platelet drop or severe infection.","Drink fluids, avoid dehydration, and get CBC/platelet test if fever is high or persistent.","Avoid aspirin/ibuprofen unless doctor says safe.","Bleeding, severe abdominal pain, persistent vomiting, drowsiness, cold hands/feet or low platelets."],
+      chest:["Chest pain / possible heart warning","Chest pain, pressure, sweating, arm/jaw pain or breathlessness can be serious.","BP, pulse, oxygen and ECG may be needed.","Ignoring chest pain can delay treatment for heart attack or serious heart condition.","Stop activity, sit upright, and seek urgent medical care if pain is active or severe.","Do not drive yourself or take random heart medicines.","Chest pain with sweating, left arm/jaw pain, breathlessness, fainting or severe weakness."],
+      breathing:["Breathing problem","Shortness of breath, wheezing or oxygen issue may involve lungs, asthma or infection.","Oxygen saturation should be checked if available.","Ignoring breathing difficulty can cause oxygen drop and serious complications.","Sit upright, avoid smoke/dust, and seek urgent care if breathing is difficult.","Do not start antibiotics or steroids without doctor advice.","Blue lips, severe breathlessness, chest pain, confusion, low oxygen, or unable to speak full sentences."],
+      stomach:["Stomach infection / acidity / gastroenteritis","Vomiting, diarrhea, nausea or stomach pain can be infection, food poisoning, acidity or dehydration.","Hydration status should be checked.","Ignoring it may cause dehydration or missed abdominal emergency.","Take small sips of clean fluids/ORS, eat light food, and consult doctor if symptoms continue.","Do not take random antibiotics or strong painkillers.","Blood in stool/vomit, severe abdominal pain, persistent vomiting, fainting or dehydration."],
+      headache:["Headache / Migraine / BP-related headache","Headache may be from migraine, stress, dehydration, BP issue or infection.","BP and sugar may need checking.","Ignoring severe headache may delay stroke, infection or BP-related care.","Rest in a quiet place, drink fluids, check BP if possible, and consult doctor if severe or repeated.","Do not overuse painkillers.","Sudden worst headache, neck stiffness, weakness, confusion, fainting, seizure or vision loss."],
+      skin:["Skin / scalp allergy or irritation","Itching, rash, dandruff or irritation after product may be allergy or dermatitis.","No blood level needed; skin/scalp exam may be needed.","Ignoring allergy can worsen rash, infection or swelling.","Stop suspected product, wash gently, avoid scratching, and see dermatologist if it continues.","Do not apply strong creams, acids, lemon, garlic or harsh home remedies.","Face/lip swelling, breathing difficulty, widespread rash, pus, fever or severe burning."],
+      urine:["Urinary infection / UTI","Burning urine, frequent urination, lower abdominal pain or fever may suggest UTI.","Urine complete test and culture may be needed.","Ignoring UTI can spread to kidneys and cause serious infection.","Drink water if allowed, do urine test, and consult doctor for proper treatment.","Do not start antibiotics without urine test/doctor advice.","Fever with back pain, blood in urine, pregnancy with urinary symptoms, severe pain or unable to pass urine."],
+      sugar:["High / low blood sugar concern","Sugar symptoms or abnormal readings need measured interpretation.","Fasting 100-125 mg/dL suggests prediabetes range; fasting 126+ or random 200+ with symptoms needs doctor confirmation.","Ignoring abnormal sugar can cause dehydration, weakness, fainting, kidney/eye/nerve complications over time.","Check sugar reading, drink water if high, avoid sugary drinks, and consult doctor if repeatedly high/low.","Do not change insulin or diabetes medicines without doctor advice.","Confusion, unconsciousness, vomiting with high sugar, severe weakness or very low sugar symptoms."],
+      bp:["Blood pressure concern","High or low BP, palpitations, dizziness or headache may need BP review.","Normal BP is below 120/80. BP 180/120 or higher with symptoms is emergency.","Ignoring high BP can increase risk of stroke, heart attack, kidney or eye damage.","Rest 5 minutes, recheck BP, write systolic/diastolic and pulse, and consult doctor if repeated abnormal.","Do not start/stop BP medicine without doctor advice.","BP over 180/120 with chest pain, breathlessness, weakness, vision change or speaking difficulty."]
+    },
+
+    ur:{dir:"rtl",speech:"ur-PK",labels:["ممکنہ مسئلہ","خطرہ","ریڈنگ / لیول","نظر انداز کیا تو","ڈاکٹر","کیا کریں","کیا نہ کریں","ایمرجنسی","نوٹ","کم","درمیانہ","زیادہ"],note:"یہ حتمی تشخیص نہیں۔ تصدیق کے لیے مستند ڈاکٹر سے رجوع کریں۔",
+      gp:"جنرل فزیشن", cardio:"ایمرجنسی فزیشن / کارڈیالوجسٹ", pulmo:"پلمونولوجسٹ / ایمرجنسی فزیشن", gastro:"جنرل فزیشن / گیسٹروانٹرولوجسٹ", derma:"ڈرماٹولوجسٹ", uro:"جنرل فزیشن / یورولوجسٹ", endo:"اینڈوکرائنولوجسٹ / جنرل فزیشن", neuro:"جنرل فزیشن / نیورولوجسٹ",
+      general:["عام صحت کا مسئلہ","علامات ایک واضح condition کے لیے کافی clear نہیں۔","کوئی specific reading نہیں دی گئی۔","نظر انداز کرنے سے درست care delay ہو سکتی ہے۔","علامات duration اور severity کے ساتھ واضح لکھیں۔ symptoms continue/worse ہوں تو doctor سے ملیں۔","Random medicine یا antibiotics خود سے نہ لیں۔","سینے کا درد، سانس کی مشکل، بے ہوشی، شدید درد، خون یا confusion۔"],
+      fever:["بخار / فلو / وائرل انفیکشن","بخار کے ساتھ کھانسی، جسم درد، گلا درد یا نزلہ flu/viral infection ہو سکتا ہے۔","Temperature monitor کریں۔ 2-3 دن high fever رہے تو doctor review ضروری ہے۔","بخار ignore کرنے سے dehydration یا dengue/malaria/infection diagnosis delay ہو سکتی ہے۔","آرام کریں، fluids لیں، temperature monitor کریں، fever continue/worse ہو تو doctor سے ملیں۔","Unnecessary antibiotics یا fever medicines mix نہ کریں۔","سانس کی مشکل، سینے کا درد، confusion، dehydration، بہت تیز بخار یا infant fever۔"],
+      dengue:["ممکنہ ڈینگی / ملیریا بخار","تیز بخار، شدید جسم درد، rash، eye pain، mosquito exposure یا platelets concern testing چاہتا ہے۔","CBC اور platelet count check کریں۔","نظر انداز کرنے سے dehydration، bleeding risk، platelet drop یا severe infection ہو سکتا ہے۔","Fluids لیں، dehydration سے بچیں، high/persistent fever میں CBC/platelet test کروائیں۔","Doctor کے بغیر aspirin/ibuprofen نہ لیں۔","Bleeding، شدید پیٹ درد، مسلسل vomiting، drowsiness، cold hands/feet یا low platelets۔"],
+      chest:["سینے کا درد / دل کی warning","سینے کا درد، دباؤ، پسینہ، arm/jaw pain یا breathlessness serious ہو سکتی ہے۔","BP، pulse، oxygen اور ECG needed ہو سکتا ہے۔","Chest pain ignore کرنے سے heart attack/serious condition کا treatment delay ہو سکتا ہے۔","Activity روکیں، سیدھا بیٹھیں، active/severe pain ہو تو urgent medical care لیں۔","خود drive نہ کریں اور random heart medicines نہ لیں۔","Chest pain with sweating، left arm/jaw pain، breathlessness، fainting یا severe weakness۔"],
+      breathing:["سانس کا مسئلہ","سانس پھولنا، wheezing یا oxygen issue lungs/asthma/infection سے related ہو سکتا ہے۔","Oxygen saturation check کریں اگر available ہو۔","Breathing difficulty ignore کرنے سے oxygen drop اور serious complications ہو سکتے ہیں۔","سیدھا بیٹھیں، smoke/dust avoid کریں، breathing difficult ہو تو urgent care لیں۔","Doctor advice کے بغیر antibiotic/steroid نہ لیں۔","Blue lips، severe breathlessness، chest pain، confusion، low oxygen یا complete sentence نہ بول پانا۔"],
+      stomach:["پیٹ کا infection / acidity","Vomiting، diarrhea، nausea یا stomach pain infection/food poisoning/acidity/dehydration ہو سکتا ہے۔","Hydration status check کریں۔","نظر انداز کرنے سے dehydration یا abdominal emergency miss ہو سکتی ہے۔","ORS/clean fluids کے چھوٹے گھونٹ لیں، light food لیں، symptoms continue ہوں تو doctor سے ملیں۔","Random antibiotics یا strong painkillers نہ لیں۔","Stool/vomit میں blood، severe abdominal pain، persistent vomiting، fainting یا dehydration۔"],
+      headache:["سر درد / Migraine / BP-related headache","Headache migraine، stress، dehydration، BP issue یا infection سے ہو سکتا ہے۔","BP اور sugar check ہو سکتی ہے۔","Severe headache ignore کرنے سے stroke/infection/BP care delay ہو سکتی ہے۔","Quiet place میں rest کریں، fluids لیں، BP check کریں، severe/repeated ہو تو doctor سے ملیں۔","Painkillers overuse نہ کریں۔","Sudden worst headache، neck stiffness، weakness، confusion، fainting، seizure یا vision loss۔"],
+      skin:["Skin / scalp allergy یا irritation","Itching، rash، dandruff یا product کے بعد irritation allergy/dermatitis ہو سکتی ہے۔","Blood level کی ضرورت نہیں؛ skin/scalp exam needed ہو سکتا ہے۔","Allergy ignore کرنے سے rash، infection یا swelling worsen ہو سکتی ہے۔","مشکوک product بند کریں، gently wash کریں، scratching avoid کریں، continue ہو تو dermatologist سے ملیں۔","Strong creams، acids، lemon، garlic یا harsh home remedies نہ لگائیں۔","Face/lip swelling، breathing difficulty، widespread rash، pus، fever یا severe burning۔"],
+      urine:["Urinary infection / UTI","پیشاب میں جلن، بار بار پیشاب، lower abdominal pain یا fever UTI suggest کر سکتا ہے۔","Urine complete test اور culture needed ہو سکتا ہے۔","UTI ignore کرنے سے infection kidneys تک جا سکتا ہے۔","پانی پئیں اگر allowed ہو، urine test کروائیں، proper treatment کے لیے doctor سے ملیں۔","Urine test/doctor advice کے بغیر antibiotics نہ لیں۔","Fever with back pain، urine میں blood، pregnancy urinary symptoms، severe pain یا urine pass نہ ہونا۔"],
+      sugar:["High / low blood sugar concern","Sugar symptoms یا abnormal readings measured interpretation چاہتے ہیں۔","Fasting 100-125 mg/dL prediabetes range؛ fasting 126+ یا random 200+ with symptoms doctor confirmation چاہتا ہے۔","Abnormal sugar ignore کرنے سے dehydration، weakness، fainting، kidney/eye/nerve issues ہو سکتے ہیں۔","Sugar reading check کریں، high ہو تو water لیں، sugary drinks avoid کریں، repeatedly high/low ہو تو doctor سے ملیں۔","Doctor advice کے بغیر insulin/diabetes medicine dose change نہ کریں۔","Confusion، unconsciousness، high sugar with vomiting، severe weakness یا very low sugar symptoms۔"],
+      bp:["Blood pressure concern","High/low BP، palpitations، dizziness یا headache BP review چاہتا ہے۔","Normal BP 120/80 سے کم؛ BP 180/120 یا اوپر symptoms کے ساتھ emergency ہے۔","High BP ignore کرنے سے stroke، heart attack، kidney/eye damage risk بڑھ سکتا ہے۔","5 minutes rest کے بعد BP دوبارہ check کریں، systolic/diastolic اور pulse لکھیں، repeated abnormal ہو تو doctor سے ملیں۔","Doctor advice کے بغیر BP medicine start/stop نہ کریں۔","BP 180/120 سے اوپر with chest pain، breathlessness، weakness، vision change یا speaking difficulty۔"]
+    },
+
+    hi:{dir:"ltr",speech:"hi-IN",labels:["संभावित समस्या","जोखिम","रीडिंग / लेवल","नज़रअंदाज़ किया तो","डॉक्टर","क्या करें","क्या न करें","इमरजेंसी","नोट","कम","मध्यम","ज़्यादा"],note:"यह final diagnosis नहीं है। पुष्टि के लिए qualified doctor से सलाह लें।",
+      gp:"General Physician", cardio:"Emergency Physician / Cardiologist", pulmo:"Pulmonologist / Emergency Physician", gastro:"General Physician / Gastroenterologist", derma:"Dermatologist", uro:"General Physician / Urologist", endo:"Endocrinologist / General Physician", neuro:"General Physician / Neurologist",
+      general:["सामान्य स्वास्थ्य चिंता","लक्षण एक condition के लिए काफी clear नहीं हैं।","कोई specific reading नहीं दी गई।","Ignore करने से सही care delay हो सकती है।","Symptoms को duration और severity के साथ साफ लिखें। Continue/worse हो तो doctor से मिलें।","Random medicine या antibiotics खुद से न लें।","Chest pain, breathing difficulty, fainting, severe pain, bleeding या confusion."],
+      fever:["बुखार / फ्लू / वायरल infection","Fever with cough, body pain, sore throat या runny nose viral/flu हो सकता है।","Temperature monitor करें। 2-3 दिन high fever रहे तो doctor review ज़रूरी है।","Fever ignore करने से dehydration या dengue/malaria/infection diagnosis delay हो सकती है।","Rest करें, fluids लें, temperature monitor करें, fever continue/worse हो तो doctor से मिलें।","Unnecessary antibiotics या fever medicines mix न करें।","Breathing issue, chest pain, confusion, dehydration, very high fever या infant fever."],
+      dengue:["Possible Dengue / Malaria fever","High fever with body pain, rash, eye pain, mosquito exposure या platelets concern testing चाहता है।","CBC और platelet count check करें।","Ignore करने से dehydration, bleeding risk, platelet drop या severe infection हो सकता है।","Fluids लें, dehydration से बचें, high/persistent fever में CBC/platelet test करवाएं।","Doctor advice के बिना aspirin/ibuprofen न लें।","Bleeding, severe abdominal pain, persistent vomiting, drowsiness, cold hands/feet या low platelets."],
+      chest:["Chest pain / heart warning","Chest pain, pressure, sweating, arm/jaw pain या breathlessness serious हो सकता है।","BP, pulse, oxygen और ECG needed हो सकता है।","Chest pain ignore करने से heart attack/serious condition का treatment delay हो सकता है।","Activity रोकें, upright बैठें, active/severe pain में urgent medical care लें।","खुद drive न करें और random heart medicines न लें।","Chest pain with sweating, left arm/jaw pain, breathlessness, fainting या severe weakness."],
+      breathing:["Breathing problem","Shortness of breath, wheezing या oxygen issue lungs/asthma/infection से related हो सकता है।","Oxygen saturation check करें अगर available हो।","Breathing difficulty ignore करने से oxygen drop और serious complications हो सकते हैं।","Upright बैठें, smoke/dust avoid करें, breathing difficult हो तो urgent care लें।","Doctor advice के बिना antibiotic/steroid न लें।","Blue lips, severe breathlessness, chest pain, confusion, low oxygen या full sentence न बोल पाना."],
+      stomach:["Stomach infection / acidity","Vomiting, diarrhea, nausea या stomach pain infection/food poisoning/acidity/dehydration हो सकता है।","Hydration status check करें।","Ignore करने से dehydration या abdominal emergency miss हो सकती है।","ORS/clean fluids के छोटे घूंट लें, light food लें, symptoms continue हों तो doctor से मिलें।","Random antibiotics या strong painkillers न लें।","Blood in stool/vomit, severe abdominal pain, persistent vomiting, fainting या dehydration."],
+      headache:["Headache / Migraine / BP-related headache","Headache migraine, stress, dehydration, BP issue या infection से हो सकता है।","BP और sugar check हो सकती है।","Severe headache ignore करने से stroke/infection/BP care delay हो सकती है।","Quiet place में rest करें, fluids लें, BP check करें, severe/repeated हो तो doctor से मिलें।","Painkillers overuse न करें।","Sudden worst headache, neck stiffness, weakness, confusion, fainting, seizure या vision loss."],
+      skin:["Skin / scalp allergy or irritation","Itching, rash, dandruff या product के बाद irritation allergy/dermatitis हो सकती है।","Blood level की जरूरत नहीं; skin/scalp exam needed हो सकता है।","Allergy ignore करने से rash, infection या swelling worsen हो सकती है।","Suspected product बंद करें, gently wash करें, scratching avoid करें, continue हो तो dermatologist से मिलें।","Strong creams, acids, lemon, garlic या harsh home remedies न लगाएं।","Face/lip swelling, breathing difficulty, widespread rash, pus, fever या severe burning."],
+      urine:["Urinary infection / UTI","Burning urine, frequent urination, lower abdominal pain या fever UTI suggest कर सकता है।","Urine complete test और culture needed हो सकता है।","UTI ignore करने से infection kidneys तक जा सकता है।","Water लें अगर allowed हो, urine test करवाएं, proper treatment के लिए doctor से मिलें।","Urine test/doctor advice के बिना antibiotics न लें।","Fever with back pain, blood in urine, pregnancy urinary symptoms, severe pain या urine pass न होना."],
+      sugar:["High / low blood sugar concern","Sugar symptoms या abnormal readings measured interpretation चाहते हैं।","Fasting 100-125 mg/dL prediabetes range; fasting 126+ या random 200+ with symptoms doctor confirmation चाहता है।","Abnormal sugar ignore करने से dehydration, weakness, fainting, kidney/eye/nerve issues हो सकते हैं।","Sugar reading check करें, high हो तो water लें, sugary drinks avoid करें, repeatedly high/low हो तो doctor से मिलें।","Doctor advice के बिना insulin/diabetes medicine dose change न करें।","Confusion, unconsciousness, high sugar with vomiting, severe weakness या very low sugar symptoms."],
+      bp:["Blood pressure concern","High/low BP, palpitations, dizziness या headache BP review चाहता है।","Normal BP below 120/80; BP 180/120 या ऊपर symptoms के साथ emergency है।","High BP ignore करने से stroke, heart attack, kidney/eye damage risk बढ़ सकता है।","5 minutes rest के बाद BP recheck करें, systolic/diastolic और pulse लिखें, repeated abnormal हो तो doctor से मिलें।","Doctor advice के बिना BP medicine start/stop न करें।","BP 180/120 से ऊपर with chest pain, breathlessness, weakness, vision change या speaking difficulty."]
+    },
+
+    es:{dir:"ltr",speech:"es-ES",labels:["Posible problema","Riesgo","Lectura / nivel","Si se ignora","Médico","Qué hacer","Qué no hacer","Emergencia","Nota","Bajo","Moderado","Alto"],note:"Esto no es un diagnóstico final. Consulte a un médico calificado para confirmación.",
+      gp:"Médico general", cardio:"Médico de urgencias / Cardiólogo", pulmo:"Neumólogo / Médico de urgencias", gastro:"Médico general / Gastroenterólogo", derma:"Dermatólogo", uro:"Médico general / Urólogo", endo:"Endocrinólogo / Médico general", neuro:"Médico general / Neurólogo",
+      general:["Preocupación general de salud","Los síntomas no son suficientemente claros para una sola condición.","No se proporcionó una lectura específica.","Ignorarlo puede retrasar la atención correcta.","Escriba los síntomas con duración y gravedad. Consulte a un médico si continúan o empeoran.","No tome medicamentos o antibióticos al azar.","Dolor en el pecho, dificultad para respirar, desmayo, dolor intenso, sangrado o confusión."],
+      fever:["Fiebre / gripe / infección viral","Fiebre con tos, dolor corporal, dolor de garganta o moqueo puede ser gripe o infección viral.","Controle la temperatura. Fiebre alta por 2-3 días requiere revisión médica.","Ignorar la fiebre puede causar deshidratación o retrasar diagnóstico de dengue, malaria o infección.","Descanse, tome líquidos, controle la temperatura y consulte si dura 2-3 días o empeora.","No tome antibióticos innecesarios ni mezcle medicinas para fiebre.","Dificultad respiratoria, dolor de pecho, confusión, deshidratación, fiebre muy alta o fiebre en bebé."],
+      dengue:["Posible dengue / malaria","Fiebre alta con dolor corporal fuerte, sarpullido, dolor ocular, mosquitos o plaquetas requiere pruebas.","Puede requerir hemograma/CBC y plaquetas.","Ignorarlo puede causar deshidratación, sangrado, caída de plaquetas o infección severa.","Tome líquidos, evite deshidratación y haga CBC/plaquetas si la fiebre es alta o persistente.","Evite aspirina/ibuprofeno salvo indicación médica.","Sangrado, dolor abdominal intenso, vómitos persistentes, somnolencia, manos/pies fríos o plaquetas bajas."],
+      chest:["Dolor de pecho / advertencia cardíaca","Dolor, presión, sudoración, dolor en brazo/mandíbula o falta de aire puede ser serio.","Puede requerir presión arterial, pulso, oxígeno y ECG.","Ignorarlo puede retrasar tratamiento de infarto o condición cardíaca seria.","Detenga actividad, siéntese y busque atención urgente si el dolor está activo o severo.","No conduzca ni tome medicamentos cardíacos al azar.","Dolor de pecho con sudoración, brazo/mandíbula izquierda, falta de aire, desmayo o debilidad severa."],
+      breathing:["Problema respiratorio","Falta de aire, silbidos u oxígeno bajo puede involucrar pulmones, asma o infección.","Controle saturación de oxígeno si está disponible.","Ignorarlo puede causar baja de oxígeno y complicaciones serias.","Siéntese erguido, evite humo/polvo y busque urgencias si respirar es difícil.","No empiece antibióticos o esteroides sin médico.","Labios azules, falta de aire severa, dolor de pecho, confusión, oxígeno bajo o no poder hablar frases completas."],
+      stomach:["Infección estomacal / acidez / gastroenteritis","Vómitos, diarrea, náusea o dolor abdominal puede ser infección, intoxicación, acidez o deshidratación.","Revise hidratación.","Ignorarlo puede causar deshidratación o pasar por alto emergencia abdominal.","Tome sorbos de agua/ORS, comida ligera y consulte si continúa.","No tome antibióticos al azar ni analgésicos fuertes.","Sangre en heces/vómito, dolor abdominal severo, vómitos persistentes, desmayo o deshidratación."],
+      headache:["Dolor de cabeza / migraña / presión arterial","Puede ser migraña, estrés, deshidratación, presión arterial o infección.","Puede requerir revisar presión y azúcar.","Ignorar dolor severo puede retrasar atención por derrame, infección o presión alta.","Descanse en lugar tranquilo, tome líquidos, revise presión y consulte si es severo o repetido.","No use analgésicos en exceso.","Dolor súbito peor de la vida, rigidez de cuello, debilidad, confusión, desmayo, convulsión o pérdida visual."],
+      skin:["Alergia o irritación de piel/cuero cabelludo","Picazón, sarpullido, caspa o irritación tras producto puede ser alergia o dermatitis.","No suele necesitar nivel de sangre; puede requerir examen de piel/cuero cabelludo.","Ignorarlo puede empeorar sarpullido, infección o hinchazón.","Suspenda el producto sospechoso, lave suavemente, evite rascar y consulte dermatólogo si continúa.","No aplique cremas fuertes, ácidos, limón, ajo o remedios agresivos.","Hinchazón de cara/labios, dificultad respiratoria, sarpullido extendido, pus, fiebre o ardor severo."],
+      urine:["Infección urinaria / UTI","Ardor al orinar, orinar frecuente, dolor bajo abdominal o fiebre puede sugerir UTI.","Puede requerir examen de orina y cultivo.","Ignorarlo puede extender infección a riñones.","Tome agua si está permitido, haga prueba de orina y consulte para tratamiento correcto.","No empiece antibióticos sin prueba/doctor.","Fiebre con dolor de espalda, sangre en orina, embarazo con síntomas urinarios, dolor severo o no poder orinar."],
+      sugar:["Azúcar alta / baja","Síntomas o lecturas anormales de azúcar necesitan interpretación medida.","Ayuno 100-125 mg/dL sugiere prediabetes; 126+ en ayuno o 200+ aleatorio con síntomas requiere confirmación médica.","Ignorarlo puede causar deshidratación, debilidad, desmayo y problemas de riñón/ojos/nervios.","Revise azúcar, tome agua si está alta, evite bebidas azucaradas y consulte si se repite.","No cambie insulina o medicinas de diabetes sin médico.","Confusión, inconsciencia, vómitos con azúcar alta, debilidad severa o síntomas de azúcar muy baja."],
+      bp:["Problema de presión arterial","Presión alta/baja, palpitaciones, mareo o dolor de cabeza puede necesitar revisión.","Normal es menor de 120/80. 180/120 o más con síntomas es emergencia.","Ignorar presión alta aumenta riesgo de derrame, infarto, riñón u ojos.","Descanse 5 minutos, repita presión, anote valores y pulso; consulte si se repite anormal.","No empiece/deje medicina de presión sin médico.","BP sobre 180/120 con dolor de pecho, falta de aire, debilidad, cambio visual o dificultad para hablar."]
+    },
+
+    fr:{dir:"ltr",speech:"fr-FR",labels:["Problème possible","Risque","Lecture / niveau","Si ignoré","Médecin","Que faire","À éviter","Urgence","Remarque","Faible","Modéré","Élevé"],note:"Ce n’est pas un diagnostic final. Consultez un médecin qualifié pour confirmation.",
+      gp:"Médecin généraliste", cardio:"Urgentiste / Cardiologue", pulmo:"Pneumologue / Urgentiste", gastro:"Médecin généraliste / Gastro-entérologue", derma:"Dermatologue", uro:"Médecin généraliste / Urologue", endo:"Endocrinologue / Médecin généraliste", neuro:"Médecin généraliste / Neurologue",
+      general:["Préoccupation générale de santé","Les symptômes ne sont pas assez clairs pour une seule condition.","Aucune mesure spécifique fournie.","Ignorer cela peut retarder les soins appropriés.","Décrivez les symptômes avec durée et gravité. Consultez si cela continue ou s’aggrave.","Ne prenez pas de médicaments ou antibiotiques au hasard.","Douleur thoracique, difficulté respiratoire, évanouissement, douleur sévère, saignement ou confusion."],
+      fever:["Fièvre / grippe / infection virale","Fièvre avec toux, douleurs corporelles, mal de gorge ou nez qui coule peut être une infection virale.","Surveillez la température. Fièvre élevée 2-3 jours nécessite avis médical.","Ignorer la fièvre peut causer déshydratation ou retarder dengue, paludisme ou infection.","Repos, liquides, surveillance de température, consultez si cela dure 2-3 jours ou empire.","Ne prenez pas d’antibiotiques inutiles et ne mélangez pas les médicaments.","Difficulté respiratoire, douleur thoracique, confusion, déshydratation, fièvre très élevée ou fièvre chez nourrisson."],
+      dengue:["Dengue / paludisme possible","Fièvre élevée avec fortes douleurs, éruption, douleur des yeux, moustiques ou plaquettes nécessite tests.","CBC/numération et plaquettes peuvent être nécessaires.","Ignorer peut causer déshydratation, risque de saignement, baisse des plaquettes ou infection sévère.","Prenez des liquides, évitez déshydratation, faites CBC/plaquettes si fièvre élevée/persistante.","Évitez aspirine/ibuprofène sauf avis médical.","Saignement, douleur abdominale sévère, vomissements persistants, somnolence, mains/pieds froids ou plaquettes basses."],
+      chest:["Douleur thoracique / alerte cardiaque","Douleur, pression, sueur, douleur bras/mâchoire ou essoufflement peut être sérieux.","TA, pouls, oxygène et ECG peuvent être nécessaires.","Ignorer peut retarder le traitement d’un infarctus ou problème cardiaque sérieux.","Arrêtez l’activité, asseyez-vous et demandez une aide urgente si douleur active ou sévère.","Ne conduisez pas et ne prenez pas de médicaments cardiaques au hasard.","Douleur thoracique avec sueur, bras/mâchoire gauche, essoufflement, malaise ou grande faiblesse."],
+      breathing:["Problème respiratoire","Essoufflement, sifflement ou oxygène bas peut concerner poumons, asthme ou infection.","Surveillez la saturation en oxygène si possible.","Ignorer peut entraîner baisse d’oxygène et complications graves.","Asseyez-vous droit, évitez fumée/poussière et consultez en urgence si respirer est difficile.","Ne commencez pas antibiotiques/stéroïdes sans médecin.","Lèvres bleues, essoufflement sévère, douleur thoracique, confusion, oxygène bas ou incapacité à parler."],
+      stomach:["Infection gastrique / acidité / gastro-entérite","Vomissements, diarrhée, nausée ou douleur abdominale peut être infection, intoxication, acidité ou déshydratation.","Vérifiez l’hydratation.","Ignorer peut causer déshydratation ou manquer une urgence abdominale.","Petites gorgées d’eau/ORS, nourriture légère, consultez si cela continue.","Ne prenez pas d’antibiotiques au hasard ni antalgiques forts.","Sang dans selles/vomi, douleur abdominale sévère, vomissements persistants, malaise ou déshydratation."],
+      headache:["Mal de tête / migraine / tension artérielle","Peut venir de migraine, stress, déshydratation, TA ou infection.","TA et glycémie peuvent devoir être vérifiées.","Ignorer un mal de tête sévère peut retarder AVC, infection ou TA élevée.","Repos au calme, liquides, vérifiez TA si possible, consultez si sévère/répété.","N’abusez pas des antalgiques.","Pire mal de tête soudain, raideur nuque, faiblesse, confusion, malaise, convulsion ou perte de vision."],
+      skin:["Allergie/irritation peau ou cuir chevelu","Démangeaison, éruption, pellicules ou irritation après produit peut être allergie/dermatite.","Pas de niveau sanguin habituel; examen peau/cuir chevelu possible.","Ignorer peut aggraver éruption, infection ou gonflement.","Arrêtez le produit suspect, lavez doucement, évitez grattage, consultez dermatologue si cela continue.","N’appliquez pas crèmes fortes, acides, citron, ail ou remèdes agressifs.","Gonflement visage/lèvres, difficulté respiratoire, éruption étendue, pus, fièvre ou brûlure sévère."],
+      urine:["Infection urinaire / UTI","Brûlure urinaire, mictions fréquentes, douleur basse ou fièvre peut suggérer UTI.","Analyse d’urine et culture peuvent être nécessaires.","Ignorer peut propager l’infection aux reins.","Buvez de l’eau si permis, faites test d’urine, consultez pour traitement correct.","Ne commencez pas antibiotiques sans test/avis médical.","Fièvre avec douleur du dos, sang dans urine, grossesse avec symptômes urinaires, douleur sévère ou impossibilité d’uriner."],
+      sugar:["Glycémie haute / basse","Symptômes ou lectures anormales nécessitent interprétation mesurée.","À jeun 100-125 mg/dL suggère prédiabète; 126+ à jeun ou 200+ aléatoire avec symptômes demande confirmation médicale.","Ignorer peut causer déshydratation, faiblesse, malaise et problèmes reins/yeux/nerfs.","Vérifiez glycémie, buvez eau si élevée, évitez boissons sucrées, consultez si répété.","Ne changez pas insuline/médicaments diabète sans médecin.","Confusion, inconscience, vomissements avec glycémie haute, faiblesse sévère ou hypoglycémie."],
+      bp:["Problème de tension artérielle","TA haute/basse, palpitations, vertige ou mal de tête nécessite révision.","Normalement moins de 120/80. 180/120 ou plus avec symptômes est une urgence.","Ignorer augmente risque AVC, infarctus, reins ou yeux.","Repos 5 minutes, reprenez la TA, notez chiffres et pouls; consultez si répété anormal.","Ne commencez/arrêtez pas médicament TA sans médecin.","TA au-dessus de 180/120 avec douleur thoracique, essoufflement, faiblesse, trouble visuel ou parole difficile."]
+    },
+
+    de:{dir:"ltr",speech:"de-DE",labels:["Mögliches Problem","Risiko","Messwert / Level","Wenn ignoriert","Arzt","Was tun","Was vermeiden","Notfall","Hinweis","Niedrig","Mittel","Hoch"],note:"Dies ist keine endgültige Diagnose. Bitte lassen Sie es von einem qualifizierten Arzt bestätigen.",
+      gp:"Hausarzt / Allgemeinarzt", cardio:"Notarzt / Kardiologe", pulmo:"Pneumologe / Notarzt", gastro:"Hausarzt / Gastroenterologe", derma:"Dermatologe", uro:"Hausarzt / Urologe", endo:"Endokrinologe / Hausarzt", neuro:"Hausarzt / Neurologe",
+      general:["Allgemeines Gesundheitsproblem","Die Symptome sind nicht eindeutig genug für eine einzelne Erkrankung.","Kein spezifischer Messwert angegeben.","Wenn ignoriert, kann passende Behandlung verzögert werden.","Beschreiben Sie Symptome mit Dauer und Stärke. Suchen Sie ärztlichen Rat, wenn es anhält oder schlimmer wird.","Nehmen Sie keine zufälligen Medikamente oder Antibiotika.","Brustschmerz, Atemnot, Ohnmacht, starke Schmerzen, Blutung oder Verwirrtheit."],
+      fever:["Fieber / Grippe / Virusinfektion","Fieber mit Husten, Gliederschmerz, Halsschmerz oder laufender Nase kann viral sein.","Temperatur überwachen. Hohes Fieber für 2-3 Tage braucht ärztliche Kontrolle.","Ignorieren kann Dehydrierung verursachen oder Dengue, Malaria oder Infektion verzögern.","Ruhen, Flüssigkeit trinken, Temperatur messen und Arzt aufsuchen, wenn es 2-3 Tage dauert oder schlimmer wird.","Keine unnötigen Antibiotika oder gemischte Fiebermittel nehmen.","Atemnot, Brustschmerz, Verwirrtheit, Dehydrierung, sehr hohes Fieber oder Fieber bei Säugling."],
+      dengue:["Mögliches Dengue / Malaria","Hohes Fieber mit starken Gliederschmerzen, Ausschlag, Augenschmerz, Mückenexposition oder Blutplättchen-Sorge braucht Tests.","CBC/Blutbild und Thrombozyten können nötig sein.","Ignorieren kann Dehydrierung, Blutungsrisiko, Thrombozytenabfall oder schwere Infektion verursachen.","Flüssigkeit trinken, Dehydrierung vermeiden und CBC/Thrombozyten testen lassen, wenn Fieber hoch/anhaltend ist.","Aspirin/Ibuprofen vermeiden, außer Arzt erlaubt es.","Blutung, starke Bauchschmerzen, anhaltendes Erbrechen, Schläfrigkeit, kalte Hände/Füße oder niedrige Thrombozyten."],
+      chest:["Brustschmerz / Herz-Warnzeichen","Brustschmerz, Druck, Schwitzen, Arm/Kieferschmerz oder Atemnot kann ernst sein.","Blutdruck, Puls, Sauerstoff und EKG können nötig sein.","Ignorieren kann Behandlung von Herzinfarkt oder ernstem Herzproblem verzögern.","Aktivität stoppen, aufrecht sitzen und bei aktivem/starkem Schmerz dringend Hilfe suchen.","Nicht selbst fahren und keine zufälligen Herzmedikamente nehmen.","Brustschmerz mit Schwitzen, linkem Arm/Kiefer, Atemnot, Ohnmacht oder starker Schwäche."],
+      breathing:["Atemproblem","Kurzatmigkeit, Pfeifen oder Sauerstoffproblem kann Lunge, Asthma oder Infektion betreffen.","Sauerstoffsättigung prüfen, falls verfügbar.","Ignorieren kann Sauerstoffabfall und ernste Komplikationen verursachen.","Aufrecht sitzen, Rauch/Staub vermeiden und dringend Hilfe suchen, wenn Atmen schwer ist.","Keine Antibiotika oder Steroide ohne Arzt beginnen.","Blaue Lippen, starke Atemnot, Brustschmerz, Verwirrtheit, niedriger Sauerstoff oder nicht sprechen können."],
+      stomach:["Mageninfektion / Säure / Gastroenteritis","Erbrechen, Durchfall, Übelkeit oder Bauchschmerz kann Infektion, Lebensmittelvergiftung, Säure oder Dehydrierung sein.","Hydratation prüfen.","Ignorieren kann Dehydrierung verursachen oder Bauch-Notfall übersehen.","Kleine Schlucke Wasser/ORS, leichte Kost, Arzt aufsuchen, wenn es anhält.","Keine zufälligen Antibiotika oder starken Schmerzmittel.","Blut im Stuhl/Erbrechen, starke Bauchschmerzen, anhaltendes Erbrechen, Ohnmacht oder Dehydrierung."],
+      headache:["Kopfschmerz / Migräne / Blutdruck","Kopfschmerz kann durch Migräne, Stress, Dehydrierung, Blutdruck oder Infektion entstehen.","Blutdruck und Zucker können geprüft werden müssen.","Starke Kopfschmerzen ignorieren kann Schlaganfall, Infektion oder Blutdruckbehandlung verzögern.","Ruhiger Ort, Flüssigkeit, Blutdruck prüfen, Arzt bei starken/wiederholten Schmerzen.","Schmerzmittel nicht übermäßig nehmen.","Plötzlich schlimmster Kopfschmerz, Nackensteife, Schwäche, Verwirrtheit, Ohnmacht, Krampf oder Sehverlust."],
+      skin:["Haut-/Kopfhautallergie oder Reizung","Juckreiz, Ausschlag, Schuppen oder Reizung nach Produkt kann Allergie/Dermatitis sein.","Kein Blutwert nötig; Haut/Kopfhaut-Untersuchung möglich.","Ignorieren kann Ausschlag, Infektion oder Schwellung verschlimmern.","Verdächtiges Produkt stoppen, sanft waschen, Kratzen vermeiden, Dermatologen aufsuchen, wenn es anhält.","Keine starken Cremes, Säuren, Zitrone, Knoblauch oder harte Hausmittel.","Gesichts-/Lippenschwellung, Atemnot, großflächiger Ausschlag, Eiter, Fieber oder starkes Brennen."],
+      urine:["Harnwegsinfektion / UTI","Brennen beim Wasserlassen, häufiges Wasserlassen, Unterbauchschmerz oder Fieber kann UTI sein.","Urinuntersuchung und Kultur können nötig sein.","Ignorieren kann Infektion zu den Nieren ausbreiten.","Wasser trinken, wenn erlaubt, Urintest machen und Arzt für Behandlung konsultieren.","Keine Antibiotika ohne Test/Arzt beginnen.","Fieber mit Rückenschmerz, Blut im Urin, Schwangerschaft mit Symptomen, starker Schmerz oder kein Urin."],
+      sugar:["Hoher / niedriger Blutzucker","Symptome oder abnorme Werte brauchen gemessene Interpretation.","Nüchtern 100-125 mg/dL kann Prädiabetes bedeuten; 126+ nüchtern oder 200+ zufällig mit Symptomen braucht ärztliche Bestätigung.","Ignorieren kann Dehydrierung, Schwäche, Ohnmacht und Nieren/Augen/Nerven-Probleme verursachen.","Zucker messen, bei hohem Wert Wasser trinken, süße Getränke vermeiden, Arzt bei wiederholten Werten.","Insulin/Diabetesmedikamente nicht ohne Arzt ändern.","Verwirrtheit, Bewusstlosigkeit, Erbrechen mit hohem Zucker, starke Schwäche oder Unterzucker-Symptome."],
+      bp:["Blutdruckproblem","Hoher/niedriger Blutdruck, Herzklopfen, Schwindel oder Kopfschmerz braucht Kontrolle.","Normal ist unter 120/80. 180/120 oder höher mit Symptomen ist Notfall.","Ignorieren erhöht Risiko für Schlaganfall, Herzinfarkt, Nieren oder Augen.","5 Minuten ruhen, erneut messen, Werte und Puls notieren; Arzt bei wiederholt abnormal.","Blutdruckmedizin nicht ohne Arzt starten/stoppen.","BP über 180/120 mit Brustschmerz, Atemnot, Schwäche, Sehänderung oder Sprachproblem."]
+    },
+
+    pt:{dir:"ltr",speech:"pt-PT",labels:["Possível problema","Risco","Leitura / nível","Se ignorado","Médico","O que fazer","O que não fazer","Emergência","Nota","Baixo","Moderado","Alto"],note:"Isto não é diagnóstico final. Consulte um médico qualificado para confirmação.",
+      gp:"Clínico geral", cardio:"Médico de emergência / Cardiologista", pulmo:"Pneumologista / Emergência", gastro:"Clínico geral / Gastroenterologista", derma:"Dermatologista", uro:"Clínico geral / Urologista", endo:"Endocrinologista / Clínico geral", neuro:"Clínico geral / Neurologista",
+      general:["Preocupação geral de saúde","Os sintomas não são claros o suficiente para uma condição específica.","Nenhuma leitura específica fornecida.","Ignorar pode atrasar o cuidado correto.","Escreva sintomas com duração e gravidade. Consulte se continuar ou piorar.","Não tome medicamentos ou antibióticos aleatórios.","Dor no peito, dificuldade respiratória, desmaio, dor severa, sangramento ou confusão."],
+      fever:["Febre / gripe / infecção viral","Febre com tosse, dores no corpo, dor de garganta ou coriza pode ser viral.","Monitore a temperatura. Febre alta por 2-3 dias precisa de revisão médica.","Ignorar febre pode causar desidratação ou atrasar dengue, malária ou infecção.","Descanse, beba líquidos, monitore temperatura e consulte se durar 2-3 dias ou piorar.","Não tome antibióticos desnecessários nem misture remédios de febre.","Dificuldade respiratória, dor no peito, confusão, desidratação, febre muito alta ou febre em bebê."],
+      dengue:["Possível dengue / malária","Febre alta com dores fortes, erupção, dor nos olhos, mosquitos ou plaquetas precisa de testes.","Hemograma/CBC e plaquetas podem ser necessários.","Ignorar pode causar desidratação, risco de sangramento, queda de plaquetas ou infecção severa.","Beba líquidos, evite desidratação e faça CBC/plaquetas se febre alta/persistente.","Evite aspirina/ibuprofeno salvo orientação médica.","Sangramento, dor abdominal forte, vômitos persistentes, sonolência, mãos/pés frios ou plaquetas baixas."],
+      chest:["Dor no peito / alerta cardíaco","Dor, pressão, suor, dor no braço/mandíbula ou falta de ar pode ser grave.","PA, pulso, oxigênio e ECG podem ser necessários.","Ignorar pode atrasar tratamento de infarto ou problema cardíaco sério.","Pare atividade, sente-se ereto e procure urgência se dor ativa/severa.","Não dirija nem tome remédios cardíacos aleatórios.","Dor no peito com suor, braço/mandíbula esquerda, falta de ar, desmaio ou fraqueza severa."],
+      breathing:["Problema respiratório","Falta de ar, chiado ou oxigênio baixo pode envolver pulmões, asma ou infecção.","Verifique saturação de oxigênio se disponível.","Ignorar pode causar queda de oxigênio e complicações sérias.","Sente-se ereto, evite fumaça/poeira e procure urgência se respirar for difícil.","Não comece antibióticos ou esteroides sem médico.","Lábios azuis, falta de ar severa, dor no peito, confusão, oxigênio baixo ou incapaz de falar frases."],
+      stomach:["Infecção estomacal / acidez / gastroenterite","Vômito, diarreia, náusea ou dor abdominal pode ser infecção, intoxicação, acidez ou desidratação.","Hidratação deve ser verificada.","Ignorar pode causar desidratação ou perder emergência abdominal.","Tome pequenos goles de água/ORS, comida leve e consulte se continuar.","Não tome antibióticos aleatórios ou analgésicos fortes.","Sangue nas fezes/vômito, dor abdominal severa, vômitos persistentes, desmaio ou desidratação."],
+      headache:["Dor de cabeça / enxaqueca / pressão","Pode ser enxaqueca, estresse, desidratação, pressão arterial ou infecção.","PA e açúcar podem precisar de verificação.","Ignorar dor severa pode atrasar AVC, infecção ou tratamento de PA.","Descanse em local calmo, beba líquidos, verifique PA e consulte se severa/repetida.","Não abuse de analgésicos.","Pior dor súbita, rigidez no pescoço, fraqueza, confusão, desmaio, convulsão ou perda visual."],
+      skin:["Alergia/irritação de pele ou couro cabeludo","Coceira, erupção, caspa ou irritação após produto pode ser alergia/dermatite.","Geralmente não precisa nível de sangue; exame de pele/couro cabeludo pode ser necessário.","Ignorar pode piorar erupção, infecção ou inchaço.","Pare produto suspeito, lave suavemente, evite coçar e consulte dermatologista se continuar.","Não aplique cremes fortes, ácidos, limão, alho ou remédios agressivos.","Inchaço de rosto/lábios, dificuldade respiratória, erupção extensa, pus, febre ou ardor severo."],
+      urine:["Infecção urinária / UTI","Ardor ao urinar, urina frequente, dor abdominal baixa ou febre pode sugerir UTI.","Exame de urina e cultura podem ser necessários.","Ignorar pode espalhar infecção para rins.","Beba água se permitido, faça teste de urina e consulte para tratamento correto.","Não comece antibiótico sem teste/médico.","Febre com dor nas costas, sangue na urina, gravidez com sintomas, dor severa ou não conseguir urinar."],
+      sugar:["Açúcar alto / baixo","Sintomas ou leituras anormais de açúcar precisam interpretação medida.","Jejum 100-125 mg/dL sugere pré-diabetes; 126+ em jejum ou 200+ aleatório com sintomas precisa confirmação médica.","Ignorar pode causar desidratação, fraqueza, desmaio e problemas renais/olhos/nervos.","Verifique açúcar, beba água se alto, evite bebidas açucaradas e consulte se repetir.","Não mude insulina/remédios de diabetes sem médico.","Confusão, inconsciência, vômitos com açúcar alto, fraqueza severa ou sintomas de açúcar muito baixo."],
+      bp:["Problema de pressão arterial","PA alta/baixa, palpitações, tontura ou dor de cabeça precisa revisão.","Normal é abaixo de 120/80. 180/120 ou mais com sintomas é emergência.","Ignorar PA alta aumenta risco de AVC, infarto, rim ou olhos.","Descanse 5 minutos, repita PA, anote valores e pulso; consulte se repetir anormal.","Não inicie/pare remédio de PA sem médico.","BP acima de 180/120 com dor no peito, falta de ar, fraqueza, alteração visual ou fala difícil."]
+    },
+
+    ru:{dir:"ltr",speech:"ru-RU",labels:["Возможная проблема","Риск","Показатель / уровень","Если игнорировать","Врач","Что делать","Чего не делать","Экстренно","Примечание","Низкий","Средний","Высокий"],note:"Это не окончательный диагноз. Обратитесь к квалифицированному врачу для подтверждения.",
+      gp:"Терапевт", cardio:"Врач скорой помощи / Кардиолог", pulmo:"Пульмонолог / Врач скорой помощи", gastro:"Терапевт / Гастроэнтеролог", derma:"Дерматолог", uro:"Терапевт / Уролог", endo:"Эндокринолог / Терапевт", neuro:"Терапевт / Невролог",
+      general:["Общая проблема со здоровьем","Симптомы недостаточно ясны для одной причины.","Конкретный показатель не указан.","Игнорирование может задержать правильную помощь.","Опишите симптомы, длительность и тяжесть. Обратитесь к врачу, если продолжается или ухудшается.","Не принимайте случайные лекарства или антибиотики.","Боль в груди, затрудненное дыхание, обморок, сильная боль, кровотечение или спутанность."],
+      fever:["Температура / грипп / вирусная инфекция","Температура с кашлем, ломотой, болью в горле или насморком может быть вирусной.","Следите за температурой. Высокая температура 2-3 дня требует врача.","Игнорирование может вызвать обезвоживание или задержать диагностику денге, малярии или инфекции.","Отдыхайте, пейте жидкости, следите за температурой и обратитесь к врачу, если 2-3 дня или хуже.","Не принимайте ненужные антибиотики и не смешивайте жаропонижающие.","Одышка, боль в груди, спутанность, обезвоживание, очень высокая температура или температура у младенца."],
+      dengue:["Возможная денге / малярия","Высокая температура с сильной ломотой, сыпью, болью в глазах, комарами или тромбоцитами требует анализов.","Может понадобиться CBC/общий анализ крови и тромбоциты.","Игнорирование может привести к обезвоживанию, кровотечению, падению тромбоцитов или тяжелой инфекции.","Пейте жидкости, избегайте обезвоживания, сдайте CBC/тромбоциты при высокой/стойкой температуре.","Избегайте аспирина/ибупрофена без врача.","Кровотечение, сильная боль в животе, постоянная рвота, сонливость, холодные руки/ноги или низкие тромбоциты."],
+      chest:["Боль в груди / сердечное предупреждение","Боль, давление, пот, боль в руке/челюсти или одышка могут быть серьезными.","Может понадобиться давление, пульс, кислород и ЭКГ.","Игнорирование может задержать лечение инфаркта или серьезной болезни сердца.","Остановите активность, сядьте прямо и срочно обратитесь за помощью при активной/сильной боли.","Не садитесь за руль и не принимайте случайные сердечные лекарства.","Боль в груди с потливостью, болью в левой руке/челюсти, одышкой, обмороком или сильной слабостью."],
+      breathing:["Проблема дыхания","Одышка, свистящее дыхание или низкий кислород могут быть связаны с легкими, астмой или инфекцией.","Проверьте сатурацию кислорода, если возможно.","Игнорирование может вызвать падение кислорода и серьезные осложнения.","Сядьте прямо, избегайте дыма/пыли и срочно обратитесь, если трудно дышать.","Не начинайте антибиотики или стероиды без врача.","Синие губы, сильная одышка, боль в груди, спутанность, низкий кислород или невозможность говорить фразами."],
+      stomach:["Желудочная инфекция / кислотность / гастроэнтерит","Рвота, диарея, тошнота или боль в животе могут быть инфекцией, отравлением, кислотностью или обезвоживанием.","Проверьте гидратацию.","Игнорирование может вызвать обезвоживание или пропуск абдоминальной неотложности.","Пейте маленькими глотками воду/ORS, легкую пищу, обратитесь, если продолжается.","Не принимайте случайные антибиотики или сильные обезболивающие.","Кровь в стуле/рвоте, сильная боль в животе, постоянная рвота, обморок или обезвоживание."],
+      headache:["Головная боль / мигрень / давление","Может быть мигрень, стресс, обезвоживание, давление или инфекция.","Может потребоваться проверить давление и сахар.","Игнорирование сильной боли может задержать помощь при инсульте, инфекции или давлении.","Отдохните в тихом месте, пейте жидкости, проверьте давление, обратитесь при сильной/повторной боли.","Не злоупотребляйте обезболивающими.","Внезапная сильнейшая боль, ригидность шеи, слабость, спутанность, обморок, судороги или потеря зрения."],
+      skin:["Аллергия/раздражение кожи или кожи головы","Зуд, сыпь, перхоть или раздражение после продукта может быть аллергией/дерматитом.","Обычно анализ крови не нужен; может понадобиться осмотр кожи/головы.","Игнорирование может усилить сыпь, инфекцию или отек.","Остановите подозрительный продукт, мягко промойте, не чешите, обратитесь к дерматологу, если продолжается.","Не наносите сильные кремы, кислоты, лимон, чеснок или жесткие домашние средства.","Отек лица/губ, одышка, распространенная сыпь, гной, температура или сильное жжение."],
+      urine:["Мочевая инфекция / UTI","Жжение при мочеиспускании, частое мочеиспускание, боль внизу живота или температура может быть UTI.","Может понадобиться анализ мочи и посев.","Игнорирование может распространить инфекцию на почки.","Пейте воду, если можно, сделайте анализ мочи и обратитесь за лечением.","Не начинайте антибиотики без анализа/врача.","Температура с болью в спине, кровь в моче, беременность с симптомами, сильная боль или невозможность мочиться."],
+      sugar:["Высокий / низкий сахар","Симптомы или неправильные показатели сахара требуют оценки.","Натощак 100-125 mg/dL может быть предиабет; 126+ натощак или 200+ случайно с симптомами требует подтверждения врача.","Игнорирование может вызвать обезвоживание, слабость, обморок и проблемы почек/глаз/нервов.","Проверьте сахар, пейте воду при высоком, избегайте сладких напитков, обратитесь при повторении.","Не меняйте инсулин или лекарства диабета без врача.","Спутанность, потеря сознания, рвота при высоком сахаре, сильная слабость или низкий сахар."],
+      bp:["Проблема давления","Высокое/низкое давление, сердцебиение, головокружение или боль требует проверки.","Норма ниже 120/80. 180/120 или выше с симптомами — экстренно.","Игнорирование высокого давления повышает риск инсульта, инфаркта, почек или глаз.","Отдохните 5 минут, повторите давление, запишите значения и пульс; обратитесь при повторном отклонении.","Не начинайте/не прекращайте лекарства давления без врача.","BP выше 180/120 с болью в груди, одышкой, слабостью, изменением зрения или речью."]
+    },
+
+    zh:{dir:"ltr",speech:"zh-CN",labels:["可能问题","风险","读数 / 水平","如果忽视","建议医生","应该做什么","不要做什么","急诊情况","提示","低","中等","高"],note:"这不是最终诊断。请咨询合格医生确认。",
+      gp:"全科医生", cardio:"急诊医生 / 心脏科医生", pulmo:"呼吸科医生 / 急诊医生", gastro:"全科医生 / 消化科医生", derma:"皮肤科医生", uro:"全科医生 / 泌尿科医生", endo:"内分泌科医生 / 全科医生", neuro:"全科医生 / 神经科医生",
+      general:["一般健康问题","症状不够明确，无法判断为单一问题。","未提供具体读数。","忽视可能会延误正确护理。","请清楚写出症状、持续时间和严重程度；如果持续或加重，请就医。","不要随意服药或使用抗生素。","胸痛、呼吸困难、昏厥、剧烈疼痛、出血或意识混乱。"],
+      fever:["发烧 / 流感 / 病毒感染","发烧伴咳嗽、身体疼痛、喉咙痛或流鼻涕可能是流感或病毒感染。","应监测体温。高烧持续2-3天需要医生评估。","忽视发烧可能导致脱水，或延误登革热、疟疾或感染的诊断。","休息，多喝水，监测体温；若持续2-3天或加重，请咨询医生。","不要随意使用抗生素或混合退烧药。","呼吸困难、胸痛、意识混乱、脱水、极高烧或婴儿发烧。"],
+      dengue:["可能登革热 / 疟疾","高烧伴严重身体痛、皮疹、眼痛、蚊虫暴露或血小板问题需要检查。","可能需要血常规/CBC和血小板计数。","忽视可能导致脱水、出血风险、血小板下降或严重感染。","多喝水，避免脱水；高烧或持续发烧时做CBC/血小板检查。","除非医生允许，避免阿司匹林/布洛芬。","出血、严重腹痛、持续呕吐、嗜睡、手脚发冷或血小板低。"],
+      chest:["胸痛 / 心脏警告","胸痛、压迫感、出汗、手臂/下巴痛或气短可能很严重。","可能需要血压、脉搏、氧饱和度和心电图。","忽视胸痛可能延误心梗或严重心脏问题的治疗。","停止活动，坐直；若疼痛明显或严重，请立即就医。","不要自己开车或随意服用心脏药。","胸痛伴出汗、左臂/下巴痛、呼吸困难、昏厥或严重虚弱。"],
+      breathing:["呼吸问题","气短、喘鸣或低氧可能与肺、哮喘或感染有关。","如可用，应检查氧饱和度。","忽视呼吸困难可能导致缺氧和严重并发症。","坐直，避免烟尘；如果呼吸困难，请紧急就医。","不要在没有医生建议下开始抗生素或激素。","嘴唇发蓝、严重气短、胸痛、意识混乱、低氧或无法完整说话。"],
+      stomach:["胃肠感染 / 胃酸 / 胃肠炎","呕吐、腹泻、恶心或腹痛可能是感染、食物中毒、胃酸或脱水。","应检查水分状态。","忽视可能导致脱水或遗漏腹部急症。","小口喝清洁液体/ORS，吃清淡食物；若持续请就医。","不要随意使用抗生素或强止痛药。","便血/呕血、严重腹痛、持续呕吐、昏厥或脱水。"],
+      headache:["头痛 / 偏头痛 / 血压相关","头痛可能来自偏头痛、压力、脱水、血压问题或感染。","可能需要检查血压和血糖。","忽视严重头痛可能延误中风、感染或血压治疗。","在安静处休息，喝水，可能的话测血压；严重或反复请就医。","不要过度使用止痛药。","突然最严重头痛、颈部僵硬、无力、意识混乱、昏厥、抽搐或视力丧失。"],
+      skin:["皮肤/头皮过敏或刺激","使用产品后瘙痒、皮疹、头皮屑或刺激可能是过敏或皮炎。","通常不需要血液指标；可能需要皮肤/头皮检查。","忽视可能使皮疹、感染或肿胀加重。","停止可疑产品，温和清洗，避免抓挠；若持续请看皮肤科。","不要使用强效药膏、酸、柠檬、大蒜或刺激性偏方。","脸/嘴唇肿胀、呼吸困难、广泛皮疹、脓液、发烧或严重灼痛。"],
+      urine:["尿路感染 / UTI","尿痛、尿频、下腹痛或发烧可能提示尿路感染。","可能需要尿常规和尿培养。","忽视UTI可能使感染扩散到肾脏。","如允许，多喝水，做尿检，并咨询医生进行正确治疗。","不要在没有尿检/医生建议下使用抗生素。","发烧伴背痛、尿血、孕期尿症状、严重疼痛或无法排尿。"],
+      sugar:["高/低血糖问题","血糖症状或异常读数需要正确解释。","空腹100-125 mg/dL提示糖尿病前期；空腹126+或随机200+伴症状需要医生确认。","忽视异常血糖可能导致脱水、虚弱、昏厥以及肾/眼/神经问题。","检查血糖；高时喝水，避免含糖饮料；反复异常请就医。","不要在没有医生建议下改变胰岛素或糖尿病药物。","意识混乱、昏迷、高血糖伴呕吐、严重虚弱或低血糖症状。"],
+      bp:["血压问题","高/低血压、心悸、头晕或头痛可能需要评估。","正常血压低于120/80。180/120或更高并伴症状属于急诊。","忽视高血压会增加中风、心梗、肾脏或眼部损害风险。","休息5分钟后复测血压，记录收缩压/舒张压和脉搏；反复异常请就医。","不要在没有医生建议下开始或停止血压药。","BP超过180/120并伴胸痛、气短、无力、视力变化或说话困难。"]
+    }
+  };
+
+
+
+  PACKS.ar = {
+    dir:"rtl", speech:"ar-SA",
+    labels:["المشكلة المحتملة","درجة الخطورة","القراءة / المستوى","إذا تم تجاهلها","الطبيب المناسب","ماذا تفعل الآن","ما يجب تجنبه","علامات الطوارئ","ملاحظة","منخفض","متوسط","مرتفع"],
+    note:"هذه أداة فرز أولي وليست تشخيصًا نهائيًا. راجع طبيبًا مؤهلًا للتأكيد.",
+    gp:"طبيب عام", cardio:"طبيب طوارئ / طبيب قلب", pulmo:"طبيب صدرية / طوارئ", gastro:"طبيب عام / جهاز هضمي",
+    derma:"طبيب جلدية", uro:"طبيب عام / مسالك بولية", endo:"طبيب غدد / طبيب عام", neuro:"طبيب أعصاب / طبيب عام",
+    consult:"حجز استشارة طبية",
+    voiceReady:"اختر اللغة ثم تحدث عن الأعراض.", voiceListening:"يتم الاستماع باللغة المختارة...", voiceDone:"تمت إضافة الكلام إلى خانة الأعراض.", voiceNoSupport:"الإدخال الصوتي غير مدعوم في هذا المتصفح.",
+    general:["مشكلة صحية عامة","الأعراض غير كافية لتحديد احتمال واحد.","لا توجد قراءة محددة.","تجاهل الأعراض قد يؤخر الرعاية المناسبة.","اكتب الأعراض والمدة والشدة بوضوح، واستشر طبيبًا إذا استمرت أو ساءت.","لا تتناول أدوية أو مضادات حيوية عشوائيًا.","ألم الصدر، صعوبة التنفس، الإغماء، الألم الشديد، النزيف أو الارتباك."],
+    fever:["حمى / إنفلونزا / عدوى فيروسية","الحمى مع السعال أو آلام الجسم أو التهاب الحلق قد تكون عدوى فيروسية.","راقب الحرارة، والحمى المرتفعة المستمرة تحتاج مراجعة طبية.","قد تسبب الجفاف أو تؤخر تشخيص عدوى أخرى.","استرح واشرب السوائل وراقب الحرارة واستشر الطبيب إذا استمرت أو ساءت.","لا تستخدم مضادات حيوية دون وصفة.","صعوبة التنفس، ألم الصدر، الارتباك، الجفاف أو حرارة شديدة."],
+    dengue:["احتمال حمى الضنك / الملاريا","الحمى العالية مع آلام شديدة أو طفح أو ألم خلف العين تحتاج فحوصات.","قد يلزم فحص CBC والصفائح.","قد يحدث جفاف أو نزيف أو انخفاض صفائح.","اشرب السوائل واطلب فحصًا طبيًا عند استمرار الحمى.","تجنب الأسبرين أو الإيبوبروفين دون توجيه طبي.","نزيف، ألم بطن شديد، قيء مستمر، نعاس شديد أو برودة الأطراف."],
+    chest:["ألم صدر / تحذير قلبي","ألم أو ضغط الصدر مع تعرق أو ألم الذراع أو ضيق النفس قد يكون خطيرًا.","قد يلزم ضغط الدم والنبض والأكسجين وتخطيط القلب.","قد يؤخر علاج مشكلة قلبية طارئة.","أوقف النشاط واجلس واطلب رعاية عاجلة إذا كان الألم شديدًا أو مستمرًا.","لا تقُد السيارة بنفسك ولا تتناول أدوية قلب عشوائية.","ألم الصدر مع تعرق أو ضيق نفس أو إغماء أو ضعف شديد."],
+    breathing:["مشكلة في التنفس","ضيق النفس أو الصفير قد يرتبط بالرئة أو الربو أو العدوى.","افحص تشبع الأكسجين إن أمكن.","قد يسبب انخفاض الأكسجين ومضاعفات خطيرة.","اجلس مستقيمًا وابتعد عن الدخان واطلب رعاية عاجلة إذا كان التنفس صعبًا.","لا تبدأ مضادًا حيويًا أو ستيرويدًا دون طبيب.","ازرقاق الشفاه، ضيق نفس شديد، ألم الصدر، ارتباك أو انخفاض الأكسجين."],
+    stomach:["التهاب معدة / حموضة / التهاب أمعاء","القيء أو الإسهال أو ألم البطن قد يكون عدوى أو تسممًا أو جفافًا.","قيّم الترطيب.","قد يسبب الجفاف أو يخفي حالة بطن طارئة.","خذ رشفات سوائل أو محلول إماهة وطعامًا خفيفًا واستشر الطبيب إذا استمرت الأعراض.","لا تستخدم مضادات حيوية أو مسكنات قوية عشوائيًا.","دم في القيء أو البراز، ألم شديد، قيء مستمر، إغماء أو جفاف."],
+    headache:["صداع / شقيقة / مشكلة ضغط","قد ينتج الصداع عن الشقيقة أو التوتر أو الجفاف أو الضغط أو العدوى.","قد يلزم قياس الضغط والسكر.","قد يؤخر علاج السكتة أو العدوى أو ارتفاع الضغط.","استرح في مكان هادئ واشرب السوائل وافحص الضغط واستشر الطبيب إذا كان شديدًا أو متكررًا.","لا تفرط في المسكنات.","صداع مفاجئ شديد، تيبس الرقبة، ضعف، ارتباك، إغماء، تشنج أو فقدان الرؤية."],
+    skin:["حساسية أو تهيج الجلد / فروة الرأس","الحكة أو الطفح أو التهيج بعد منتج قد يكون حساسية أو التهاب جلد.","قد يلزم فحص الجلد أو فروة الرأس.","قد يزداد الطفح أو العدوى أو التورم.","أوقف المنتج المشتبه واغسل بلطف وتجنب الحك واستشر طبيب جلدية إذا استمرت.","لا تستخدم كريمات قوية أو مواد حارقة أو وصفات منزلية قاسية.","تورم الوجه أو الشفاه، صعوبة التنفس، طفح واسع، صديد أو حرارة."],
+    urine:["التهاب المسالك البولية","الحرقان أو كثرة التبول أو ألم أسفل البطن قد يشير إلى التهاب بولي.","قد يلزم تحليل بول ومزرعة.","قد تنتشر العدوى إلى الكلى.","اشرب الماء إذا كان مسموحًا وأجرِ تحليل بول واستشر الطبيب للعلاج الصحيح.","لا تبدأ مضادًا حيويًا دون تحليل أو طبيب.","حمى مع ألم الظهر، دم في البول، الحمل مع أعراض بولية أو عدم القدرة على التبول."],
+    sugar:["ارتفاع / انخفاض سكر الدم","الأعراض أو القراءات غير الطبيعية تحتاج تفسيرًا طبيًا.","السكر المنخفض أقل من 70 mg/dL يحتاج إجراء سريع، والارتفاع الشديد يحتاج مراجعة.","قد يسبب إغماء أو جفافًا أو مضاعفات خطيرة.","افحص السكر واتبع التعليمات الخاصة بالقراءة واستشر الطبيب عند التكرار.","لا تغير الإنسولين أو أدوية السكري دون طبيب.","ارتباك، فقدان الوعي، تشنج، قيء مع سكر مرتفع أو ضعف شديد."],
+    bp:["مشكلة ضغط الدم","الضغط المرتفع أو المنخفض مع دوخة أو صداع يحتاج تقييمًا.","القراءة فوق 180/120 مع أعراض خطيرة تعد طارئة.","قد يزيد خطر السكتة أو القلب أو الكلى.","استرح وأعد القياس وسجل القراءتين واستشر الطبيب إذا بقي غير طبيعي.","لا تبدأ أو توقف دواء الضغط دون طبيب.","ضغط شديد مع ألم صدر أو ضيق نفس أو ضعف أو تغير رؤية أو صعوبة كلام."],
+    women:["مشكلة صحة نسائية","يتم تقييم الدورة واحتمال الحمل وألم الحوض والإفرازات والنزيف.","قد يلزم اختبار حمل أو CBC أو أشعة حسب الأعراض.","قد يتأخر علاج الحمل أو العدوى أو فقر الدم.","سجل موعد الدورة والنزيف ومكان الألم واحتمال الحمل واستشر طبيبة نساء عند الاستمرار.","لا تستخدم هرمونات أو أدوية حمل أو مضادات حيوية دون طبيب.","نزيف شديد، حمل مع ألم أو نزيف شديد، إغماء، حرارة أو ألم حوض شديد."],
+    child:["مشكلة صحة طفل","الأطفال قد تتدهور لديهم الحمى والجفاف وصعوبة التنفس بسرعة أكبر.","راقب الحرارة والترطيب والبول والتنفس والنشاط.","قد يحدث جفاف أو تدهور سريع.","راقب الأكل والشرب والبول والنشاط والتنفس واستشر طبيب أطفال إذا استمرت الأعراض.","لا تعطِ الطفل دواء أو جرعة للبالغين.","حمى رضيع، صعوبة تنفس، جفاف، قيء متكرر، تشنج، ازرقاق الشفاه أو نعاس غير طبيعي."]
+  };
+
+  const RAW_SPEECH = {
+    en:"en-US", ur:"ur-PK", pnb:"pnb-PK", sd:"sd-PK", ps:"ps-PK", bal:"bal-PK", skr:"skr-PK", hno:"hno-PK", ks:"ks-PK", brh:"brh-PK",
+    ar:"ar-SA", hi:"hi-IN", fa:"fa-IR", tr:"tr-TR", "zh-CN":"zh-CN", "zh-TW":"zh-TW", es:"es-ES", fr:"fr-FR", de:"de-DE", pt:"pt-PT", ru:"ru-RU",
+    ja:"ja-JP", ko:"ko-KR", it:"it-IT", bn:"bn-BD", ta:"ta-IN", te:"te-IN", mr:"mr-IN", gu:"gu-IN", ml:"ml-IN", th:"th-TH", id:"id-ID", ms:"ms-MY", vi:"vi-VN", sw:"sw-KE"
+  };
+
+  const MODE_TEXT = {
+    en:{
+      consult:"Book Doctor Consultation", voiceReady:"Select language, then speak symptoms.", voiceListening:"Listening in selected language...", voiceDone:"Voice added to symptoms.", voiceNoSupport:"Voice input is not supported in this browser.",
+      women:["Women health concern","Women health mode checks periods, pregnancy possibility, pelvic pain, discharge, weakness and bleeding risk.","Pregnancy test, CBC or ultrasound may be needed depending on symptoms.","Ignoring women health symptoms may delay treatment for pregnancy complications, infection or anemia.","Track cycle date, bleeding, pain location and pregnancy possibility. Consult gynecologist if pain, bleeding or discharge continues.","Do not take hormonal, pregnancy or antibiotic medicine without doctor advice.","Heavy bleeding, pregnancy with severe pain/bleeding, fainting, fever or severe pelvic pain."],
+      child:["Child health concern","Child mode is safer because fever, vomiting, dehydration and breathing issues can worsen faster in children.","Temperature, hydration, urine output and breathing should be checked.","Ignoring child symptoms can lead to dehydration or rapid worsening.","Monitor fever, feeding, urine, activity and breathing. Consult pediatrician if symptoms continue or child looks weak.","Do not give adult medicines or adult doses to children.","Infant fever, breathing difficulty, dehydration, repeated vomiting, seizure, blue lips or unusual drowsiness."]
+    },
+    ur:{
+      consult:"ڈاکٹر کنسلٹیشن بک کریں", voiceReady:"Language select کریں، پھر symptoms بولیں۔", voiceListening:"Selected language میں سن رہا ہے...", voiceDone:"Voice symptoms میں add ہو گئی۔", voiceNoSupport:"اس browser میں voice input supported نہیں۔",
+      women:["Women health concern","Women mode periods، pregnancy possibility، pelvic pain، discharge، weakness اور bleeding risk check کرتا ہے۔","Pregnancy test، CBC یا ultrasound symptoms کے حساب سے needed ہو سکتا ہے۔","Women health symptoms ignore کرنے سے pregnancy complication، infection یا anemia کا treatment delay ہو سکتا ہے۔","Cycle date، bleeding، pain location اور pregnancy possibility track کریں۔ pain/bleeding/discharge continue ہو تو gynecologist سے ملیں۔","Doctor advice کے بغیر hormonal، pregnancy یا antibiotic medicine نہ لیں۔","Heavy bleeding، pregnancy with severe pain/bleeding، fainting، fever یا severe pelvic pain۔"],
+      child:["Child health concern","Child mode safer ہے کیونکہ بچوں میں fever، vomiting، dehydration اور breathing issues جلد worsen ہو سکتے ہیں۔","Temperature، hydration، urine output اور breathing check کریں۔","Child symptoms ignore کرنے سے dehydration یا rapid worsening ہو سکتی ہے۔","Fever، feeding، urine، activity اور breathing monitor کریں۔ symptoms continue ہوں یا بچہ weak لگے تو pediatrician سے ملیں۔","Children کو adult medicines یا adult doses نہ دیں۔","Infant fever، breathing difficulty، dehydration، repeated vomiting، seizure، blue lips یا unusual drowsiness۔"]
+    },
+    hi:{
+      consult:"Doctor consultation book करें", voiceReady:"Language select करें, फिर symptoms बोलें।", voiceListening:"Selected language में सुन रहा है...", voiceDone:"Voice symptoms में add हो गई।", voiceNoSupport:"इस browser में voice input supported नहीं है।",
+      women:["Women health concern","Women mode periods, pregnancy possibility, pelvic pain, discharge, weakness और bleeding risk check करता है।","Pregnancy test, CBC या ultrasound symptoms के अनुसार needed हो सकता है।","Women health symptoms ignore करने से pregnancy complication, infection या anemia treatment delay हो सकता है।","Cycle date, bleeding, pain location और pregnancy possibility track करें। pain/bleeding/discharge continue हो तो gynecologist से मिलें।","Doctor advice के बिना hormonal, pregnancy या antibiotic medicine न लें।","Heavy bleeding, pregnancy with severe pain/bleeding, fainting, fever या severe pelvic pain."],
+      child:["Child health concern","Child mode safer है क्योंकि बच्चों में fever, vomiting, dehydration और breathing issues जल्दी worsen हो सकते हैं।","Temperature, hydration, urine output और breathing check करें।","Child symptoms ignore करने से dehydration या rapid worsening हो सकती है।","Fever, feeding, urine, activity और breathing monitor करें। symptoms continue हों या child weak लगे तो pediatrician से मिलें।","Children को adult medicines या adult doses न दें।","Infant fever, breathing difficulty, dehydration, repeated vomiting, seizure, blue lips या unusual drowsiness."]
+    },
+    es:{
+      consult:"Reservar consulta médica", voiceReady:"Seleccione idioma y luego diga los síntomas.", voiceListening:"Escuchando en el idioma seleccionado...", voiceDone:"La voz se añadió a los síntomas.", voiceNoSupport:"La entrada de voz no está soportada en este navegador.",
+      women:["Salud femenina","El modo femenino revisa menstruación, posible embarazo, dolor pélvico, flujo, debilidad y riesgo de sangrado.","Puede requerir prueba de embarazo, CBC o ultrasonido según síntomas.","Ignorarlo puede retrasar tratamiento de embarazo, infección o anemia.","Registre ciclo, sangrado, dolor y posibilidad de embarazo. Consulte ginecólogo si continúa.","No tome hormonas, medicinas de embarazo o antibióticos sin médico.","Sangrado abundante, embarazo con dolor/sangrado severo, desmayo, fiebre o dolor pélvico severo."],
+      child:["Salud infantil","El modo infantil es más seguro porque fiebre, vómitos, deshidratación y respiración pueden empeorar rápido.","Revise temperatura, hidratación, orina y respiración.","Ignorarlo puede causar deshidratación o empeoramiento rápido.","Monitoree fiebre, alimentación, orina, actividad y respiración. Consulte pediatra si continúa.","No dé medicamentos ni dosis de adultos a niños.","Fiebre en bebé, dificultad respiratoria, deshidratación, vómitos repetidos, convulsión, labios azules o somnolencia anormal."]
+    },
+    fr:{
+      consult:"Réserver une consultation médicale", voiceReady:"Choisissez la langue puis dites les symptômes.", voiceListening:"Écoute dans la langue sélectionnée...", voiceDone:"La voix a été ajoutée aux symptômes.", voiceNoSupport:"La saisie vocale n’est pas prise en charge par ce navigateur.",
+      women:["Santé féminine","Le mode féminin vérifie règles, grossesse possible, douleur pelvienne, pertes, faiblesse et risque de saignement.","Test de grossesse, CBC ou échographie peut être nécessaire selon les symptômes.","Ignorer peut retarder traitement de grossesse, infection ou anémie.","Notez cycle, saignement, douleur et possibilité de grossesse. Consultez gynécologue si cela continue.","Ne prenez pas hormones, médicaments de grossesse ou antibiotiques sans médecin.","Saignement abondant, grossesse avec douleur/saignement sévère, malaise, fièvre ou douleur pelvienne sévère."],
+      child:["Santé de l’enfant","Le mode enfant est plus prudent car fièvre, vomissements, déshydratation et respiration peuvent vite empirer.","Vérifiez température, hydratation, urine et respiration.","Ignorer peut causer déshydratation ou aggravation rapide.","Surveillez fièvre, alimentation, urine, activité et respiration. Consultez pédiatre si cela continue.","Ne donnez pas de médicaments ou doses adultes aux enfants.","Fièvre nourrisson, difficulté respiratoire, déshydratation, vomissements répétés, convulsion, lèvres bleues ou somnolence inhabituelle."]
+    },
+    de:{
+      consult:"Arzttermin buchen", voiceReady:"Sprache wählen, dann Symptome sprechen.", voiceListening:"Hört in der gewählten Sprache...", voiceDone:"Sprache wurde zu den Symptomen hinzugefügt.", voiceNoSupport:"Spracheingabe wird in diesem Browser nicht unterstützt.",
+      women:["Frauengesundheit","Frauenmodus prüft Periode, mögliche Schwangerschaft, Beckenschmerz, Ausfluss, Schwäche und Blutungsrisiko.","Schwangerschaftstest, Blutbild oder Ultraschall können nötig sein.","Ignorieren kann Behandlung von Schwangerschaftskomplikation, Infektion oder Anämie verzögern.","Zyklus, Blutung, Schmerzort und Schwangerschaftsmöglichkeit notieren. Bei Fortsetzung Gynäkologen konsultieren.","Keine Hormon-, Schwangerschafts- oder Antibiotikamedizin ohne Arzt.","Starke Blutung, Schwangerschaft mit starkem Schmerz/Blutung, Ohnmacht, Fieber oder starke Beckenschmerzen."],
+      child:["Kindergesundheit","Kindermodus ist vorsichtiger, weil Fieber, Erbrechen, Dehydrierung und Atmung schnell schlechter werden können.","Temperatur, Hydrierung, Urin und Atmung prüfen.","Ignorieren kann Dehydrierung oder schnelle Verschlechterung verursachen.","Fieber, Trinken/Essen, Urin, Aktivität und Atmung überwachen. Bei Fortsetzung Kinderarzt konsultieren.","Keine Erwachsenenmedikamente oder Erwachsenendosen geben.","Fieber bei Säugling, Atemnot, Dehydrierung, wiederholtes Erbrechen, Krampf, blaue Lippen oder ungewöhnliche Schläfrigkeit."]
+    },
+    pt:{
+      consult:"Marcar consulta médica", voiceReady:"Selecione o idioma e fale os sintomas.", voiceListening:"Ouvindo no idioma selecionado...", voiceDone:"A voz foi adicionada aos sintomas.", voiceNoSupport:"Entrada de voz não suportada neste navegador.",
+      women:["Saúde feminina","O modo feminino verifica período, possível gravidez, dor pélvica, corrimento, fraqueza e risco de sangramento.","Teste de gravidez, CBC ou ultrassom pode ser necessário conforme sintomas.","Ignorar pode atrasar tratamento de complicação da gravidez, infecção ou anemia.","Registre ciclo, sangramento, dor e possibilidade de gravidez. Consulte ginecologista se continuar.","Não tome hormônios, medicamentos de gravidez ou antibióticos sem médico.","Sangramento intenso, gravidez com dor/sangramento severo, desmaio, febre ou dor pélvica severa."],
+      child:["Saúde infantil","O modo infantil é mais cuidadoso porque febre, vômitos, desidratação e respiração podem piorar rápido.","Verifique temperatura, hidratação, urina e respiração.","Ignorar sintomas infantis pode causar desidratação ou piora rápida.","Monitore febre, alimentação, urina, atividade e respiração. Consulte pediatra se continuar.","Não dê medicamentos ou doses de adultos a crianças.","Febre em bebê, dificuldade respiratória, desidratação, vômitos repetidos, convulsão, lábios azuis ou sonolência incomum."]
+    },
+    ru:{
+      consult:"Записаться к врачу", voiceReady:"Выберите язык, затем произнесите симптомы.", voiceListening:"Слушаю на выбранном языке...", voiceDone:"Голос добавлен в симптомы.", voiceNoSupport:"Голосовой ввод не поддерживается в этом браузере.",
+      women:["Женское здоровье","Женский режим проверяет цикл, возможную беременность, боль в тазу, выделения, слабость и риск кровотечения.","Может понадобиться тест на беременность, CBC или УЗИ по симптомам.","Игнорирование может задержать лечение осложнений беременности, инфекции или анемии.","Отмечайте цикл, кровотечение, место боли и возможность беременности. Обратитесь к гинекологу, если продолжается.","Не принимайте гормональные, беременные препараты или антибиотики без врача.","Сильное кровотечение, беременность с сильной болью/кровотечением, обморок, температура или сильная тазовая боль."],
+      child:["Детское здоровье","Детский режим осторожнее, потому что температура, рвота, обезвоживание и дыхание могут быстро ухудшаться.","Проверьте температуру, гидратацию, мочу и дыхание.","Игнорирование может вызвать обезвоживание или быстрое ухудшение.","Следите за температурой, питанием, мочой, активностью и дыханием. Обратитесь к педиатру, если продолжается.","Не давайте детям взрослые лекарства или дозы.","Температура у младенца, трудное дыхание, обезвоживание, повторная рвота, судороги, синие губы или необычная сонливость."]
+    },
+    zh:{
+      consult:"预约医生咨询", voiceReady:"选择语言，然后说出症状。", voiceListening:"正在用所选语言聆听...", voiceDone:"语音已加入症状栏。", voiceNoSupport:"此浏览器不支持语音输入。",
+      women:["女性健康问题","女性模式会检查月经、怀孕可能、盆腔痛、分泌物、虚弱和出血风险。","可能需要妊娠测试、血常规或超声，取决于症状。","忽视可能延误妊娠并发症、感染或贫血的治疗。","记录周期、出血、疼痛位置和怀孕可能；持续则咨询妇科医生。","不要在没有医生建议下服用激素、孕期药物或抗生素。","大量出血、孕期严重疼痛/出血、昏厥、发烧或严重盆腔痛。"],
+      child:["儿童健康问题","儿童模式更谨慎，因为发烧、呕吐、脱水和呼吸问题可更快恶化。","应检查体温、水分、尿量和呼吸。","忽视可能导致脱水或快速恶化。","监测发烧、进食/饮水、尿量、活动和呼吸；持续或虚弱请看儿科。","不要给儿童成人药或成人剂量。","婴儿发烧、呼吸困难、脱水、反复呕吐、抽搐、嘴唇发蓝或异常嗜睡。"]
+    }
+  };
+
+  Object.keys(PACKS).forEach(function(k){
+    const m = MODE_TEXT[k] || MODE_TEXT.en;
+    PACKS[k].women = PACKS[k].women || m.women;
+    PACKS[k].child = PACKS[k].child || m.child;
+    PACKS[k].consult = PACKS[k].consult || m.consult || MODE_TEXT.en.consult;
+    PACKS[k].voiceReady = PACKS[k].voiceReady || m.voiceReady || MODE_TEXT.en.voiceReady;
+    PACKS[k].voiceListening = PACKS[k].voiceListening || m.voiceListening || MODE_TEXT.en.voiceListening;
+    PACKS[k].voiceDone = PACKS[k].voiceDone || m.voiceDone || MODE_TEXT.en.voiceDone;
+    PACKS[k].voiceNoSupport = PACKS[k].voiceNoSupport || m.voiceNoSupport || MODE_TEXT.en.voiceNoSupport;
+  });
+
+  function rawCode(){ return val("checker-lang") || val("global-lang-selector") || "en"; }
+  function speechFor(raw){ return RAW_SPEECH[raw] || RAW_SPEECH[normalizeLang(raw)] || "en-US"; }
+
+  function activeAnswerCodeFromVoice(text){
+    const selected = rawCode();
+    // Important: selected language wins. This prevents Urdu/Hindi/etc from becoming English
+    // just because browser recognition returned English-style text.
+    if(selected && selected !== "en") return selected;
+    return detectLanguageFromText(text, selected || "en");
+  }
+
+
+  function detectLanguageFromText(text, preferred){
+    const t = String(text || "").trim();
+    if(!t) return preferred || rawCode();
+
+    // Script-based detection first
+    if(/[\u0600-\u06FF]/.test(t)){
+      // Arabic / Urdu / Persian share script, so use common words and letters.
+      if(/[ٹڈڑںےہ]/.test(t) || /\b(mera|mujhe|bukhar|khansi|dard|pait|sar|peshab|saans|hai|hain|mein|kia|kya)\b/i.test(t)) return "ur";
+      if(/\b(من|في|على|هذا|هذه|ألم|حمى|صداع|سعال|تنفس|معدة)\b/.test(t)) return "ar";
+      if(/\b(من|درد|تب|سرفه|نفس|معده)\b/.test(t)) return "fa";
+      return preferred && ["ur","pnb","sd","ps","bal","skr","hno","ks","brh","fa","ar"].includes(preferred) ? preferred : "ur";
+    }
+    if(/[\u0900-\u097F]/.test(t)) return preferred && ["hi","mr"].includes(preferred) ? preferred : "hi";
+    if(/[\u0A00-\u0A7F]/.test(t)) return "pnb";
+    if(/[\u0A80-\u0AFF]/.test(t)) return "gu";
+    if(/[\u0980-\u09FF]/.test(t)) return "bn";
+    if(/[\u0B80-\u0BFF]/.test(t)) return "ta";
+    if(/[\u0C00-\u0C7F]/.test(t)) return "te";
+    if(/[\u0D00-\u0D7F]/.test(t)) return "ml";
+    if(/[\u0E00-\u0E7F]/.test(t)) return "th";
+    if(/[\u3040-\u30FF]/.test(t)) return "ja";
+    if(/[\uAC00-\uD7AF]/.test(t)) return "ko";
+    if(/[\u4E00-\u9FFF]/.test(t)) return "zh-CN";
+    if(/[\u0400-\u04FF]/.test(t)) return "ru";
+
+    // Latin-language keyword detection
+    const s = t.toLowerCase();
+
+    if(/\b(hola|dolor|fiebre|tos|cabeza|garganta|pecho|respirar|azucar|presion|mareo|vomito|diarrea)\b/.test(s)) return "es";
+    if(/\b(bonjour|douleur|fièvre|fievre|toux|tête|tete|gorge|poitrine|respirer|sucre|tension|vertige|vomissement|diarrhée|diarrhee)\b/.test(s)) return "fr";
+    if(/\b(hallo|schmerz|fieber|husten|kopf|hals|brust|atmen|zucker|blutdruck|schwindel|erbrechen|durchfall)\b/.test(s)) return "de";
+    if(/\b(olá|ola|dor|febre|tosse|cabeça|cabeca|garganta|peito|respirar|açúcar|acucar|pressão|pressao|tontura|vômito|vomito|diarreia)\b/.test(s)) return "pt";
+    if(/\b(merhaba|ağrı|agri|ateş|ates|öksürük|oksuruk|baş|bas|boğaz|bogaz|göğüs|gogus|nefes|şeker|seker|tansiyon|baş dönmesi|bas donmesi|kusma|ishal)\b/.test(s)) return "tr";
+    if(/\b(ciao|dolore|febbre|tosse|testa|gola|petto|respirare|zucchero|pressione|vertigini|vomito|diarrea)\b/.test(s)) return "it";
+    if(/\b(sakit|demam|batuk|kepala|tenggorokan|dada|napas|gula|tekanan|pusing|muntah|diare)\b/.test(s)) return "id";
+    if(/\b(sakit|demam|batuk|kepala|tekak|dada|nafas|gula|tekanan|pening|muntah|cirit)\b/.test(s)) return "ms";
+    if(/\b(đau|dau|sốt|sot|ho|đầu|dau|họng|hong|ngực|nguc|thở|tho|đường|duong|huyết áp|huyet ap|chóng mặt|chong mat|nôn|non|tiêu chảy|tieu chay)\b/.test(s)) return "vi";
+    if(/\b(maumivu|homa|kikohozi|kichwa|koo|kifua|kupumua|sukari|shinikizo|kizunguzungu|kutapika|kuhara)\b/.test(s)) return "sw";
+
+    // Roman Urdu / Pakistani speech written in English letters
+    if(/\b(mujhe|mera|mere|bukhar|khansi|dard|sar|pait|saans|peshab|ulti|dast|chakkar|kamzori|hai|hain|nahi|bohat|zyada|thora)\b/.test(s)) return preferred && ["pnb","sd","ps","bal","skr","hno","ks","brh"].includes(preferred) ? preferred : "ur";
+
+    return preferred || rawCode();
+  }
+
+  function setCheckerLanguage(codeValue){
+    const select = $("checker-lang");
+    if(!select || !codeValue) return;
+    const exists = Array.from(select.options || []).some(o => o.value === codeValue);
+    if(exists) {
+      select.value = codeValue;
+      select.dispatchEvent(new Event("change", { bubbles:true }));
+    } else {
+      const normalized = normalizeLang(codeValue);
+      const fallback = Array.from(select.options || []).some(o => o.value === normalized) ? normalized : "en";
+      select.value = fallback;
+      select.dispatchEvent(new Event("change", { bubbles:true }));
+    }
+  }
+
+
+  function normalizeLang(raw){
+    if(raw==="zh-CN" || raw==="zh-TW") return "zh";
+    if(["pnb","sd","ps","bal","skr","hno","ks","brh","fa"].includes(raw)) return "ur";
+    if(["ta","te","mr","gu","ml","bn"].includes(raw)) return "hi";
+    return PACKS[raw] ? raw : "en";
+  }
+  function $(id){ return document.getElementById(id); }
+  function val(id){ return ($(id) && $(id).value || "").trim(); }
+  function code(){ return normalizeLang(rawCode()); }
+  function P(){
+    const raw = rawCode();
+    const p = Object.assign({}, PACKS[code()] || PACKS.en);
+    p.speech = speechFor(raw);
+    return p;
+  }
+  function safe(x){ return String(x||"").replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+  function low(s){ return String(s||"").toLowerCase(); }
+  function has(s, words){ return words.some(w => s.includes(w)); }
+
+
+  const BRIEF_NATIVE = {
+    pnb:{dir:"rtl",speech:"pa-IN",analysis:"علامتاں دا ابتدائی تجزیہ",issue:"ممکنہ مسئلہ",risk:"خطرہ",symptoms:"تہاڈیاں دَسیاں علامتاں",action:"ہُن کی کرنا اے",doctor:"ڈاکٹر",emergency:"فوری مدد",note:"نوٹ",low:"گھٹ",moderate:"درمیانہ",high:"زیادہ",lowAction:"آرام کرو، پانی پیو تے علامتاں نوں مانیٹر کرو۔ جے حالت قائم رہے تاں ڈاکٹر نال رابطہ کرو۔",moderateAction:"جلد ڈاکٹر نال مشورہ کرو، خاص طور تے جے علامتاں ودھ رہیاں نیں۔",highAction:"فوری طبی مدد لو یا ایمرجنسی نوں جاؤ۔",doctorText:"قابل ڈاکٹر نال مشورہ کرو۔",emergencyText:"سانس دی شدید مشکل، سینے دا درد، بے ہوشی، خون یا شدید کمزوری ہووے تاں فوری مدد لو۔",noteText:"ایہہ ابتدائی screening اے، حتمی تشخیص نہیں۔",conditions:{general:"عام صحت دا مسئلہ",fever:"بخار / فلو / وائرل انفیکشن",dengue:"ممکنہ ڈینگی / ملیریا",chest:"سینے دا درد / دل دی warning",breathing:"سانس دا مسئلہ",stomach:"پیٹ دا مسئلہ",headache:"سر درد / مائیگرین",skin:"جلد یا سر دی allergy",urine:"پیشاب دی infection",sugar:"شوگر دا مسئلہ",bp:"بلڈ پریشر دا مسئلہ",women:"خواتین دی صحت",child:"بچے دی صحت"}},
+    sd:{dir:"rtl",speech:"sd-IN",analysis:"علامتن جو شروعاتي جائزو",issue:"ممڪن مسئلو",risk:"خطرو",symptoms:"توهان جون ٻڌايل علامتون",action:"هاڻي ڇا ڪجي",doctor:"ڊاڪٽر",emergency:"فوري مدد",note:"نوٽ",low:"گهٽ",moderate:"وچولو",high:"وڌيڪ",lowAction:"آرام ڪريو، پاڻي پيئو ۽ علامتن تي نظر رکو۔ جاري رهن ته ڊاڪٽر سان رابطو ڪريو۔",moderateAction:"جلد ڊاڪٽر سان صلاح ڪريو، خاص ڪري جيڪڏهن حالت خراب ٿي رهي آهي۔",highAction:"فوري طبي مدد وٺو يا ايمرجنسي ڏانهن وڃو۔",doctorText:"قابل ڊاڪٽر سان صلاح ڪريو۔",emergencyText:"ساهه ۾ سخت تڪليف، سينه جو سور، بيهوشي، رت اچڻ يا سخت ڪمزوري ۾ فوري مدد وٺو۔",noteText:"هي شروعاتي screening آهي، آخري تشخيص نه آهي۔",conditions:{general:"عام صحت جو مسئلو",fever:"بخار / فلو / وائرل انفيڪشن",dengue:"ممڪن ڊينگي / مليريا",chest:"سينه جو سور / دل جي خبرداري",breathing:"ساهه جو مسئلو",stomach:"پيٽ جو مسئلو",headache:"مٿي جو سور / مائيگرين",skin:"چمڙي يا مٿي جي الرجي",urine:"پيشاب جي انفيڪشن",sugar:"شوگر جو مسئلو",bp:"بلڊ پريشر جو مسئلو",women:"عورتن جي صحت",child:"ٻارن جي صحت"}},
+    ps:{dir:"rtl",speech:"ps-AF",analysis:"د نښو لومړنۍ ارزونه",issue:"احتمالي ستونزه",risk:"خطر",symptoms:"ستاسو ویل شوې نښې",action:"اوس څه وکړئ",doctor:"ډاکټر",emergency:"بیړنۍ مرسته",note:"یادونه",low:"ټیټ",moderate:"منځنی",high:"لوړ",lowAction:"استراحت وکړئ، اوبه وڅښئ او نښې وڅارئ۔ که دوام وکړي ډاکټر ته ورشئ۔",moderateAction:"ژر له ډاکټر سره مشوره وکړئ، په ځانګړي ډول که حالت خرابېږي۔",highAction:"سمدستي طبي مرسته واخلئ یا بیړنۍ څانګې ته لاړ شئ۔",doctorText:"له وړ ډاکټر سره مشوره وکړئ۔",emergencyText:"سخته ساه بندي، د سینې درد، بې هوشي، وینه یا شدیده کمزوري کې بیړنۍ مرسته واخلئ۔",noteText:"دا لومړنۍ screening ده، وروستۍ تشخیص نه دی۔",conditions:{general:"عمومي روغتیايي ستونزه",fever:"تبه / فلو / ویروسي انتان",dengue:"احتمالي ډینګي / ملاریا",chest:"د سینې درد / د زړه خبرداری",breathing:"د ساه ستونزه",stomach:"د معدې ستونزه",headache:"سر درد / مایګرین",skin:"د پوستکي یا سر حساسیت",urine:"د ادرار انتان",sugar:"د وینې شکر ستونزه",bp:"د وینې فشار ستونزه",women:"د ښځو روغتیا",child:"د ماشوم روغتیا"}},
+    bal:{dir:"rtl",speech:"bal-PK",analysis:"نشانیانی ابتدائی جائزو",issue:"ممکنیں مسئلہ",risk:"خطر",symptoms:"شما گُشگین نشانیاں",action:"نون چی کنیت",doctor:"ڈاکٹر",emergency:"فوری کمک",note:"نوٹ",low:"کم",moderate:"درمیانی",high:"زیاد",lowAction:"آرام کنیت، آب بنوشیت و نشانیاں چیک کنیت۔ اگر جاری بوتگ ڈاکٹر ءَ مشورہ کنیت۔",moderateAction:"زوت ڈاکٹر ءَ مشورہ کنیت، خاص کر اگر حالت خراب بنت۔",highAction:"فوری طبی کمک بگیریت یا ایمرجنسی ءَ بروت۔",doctorText:"قابل ڈاکٹر ءَ مشورہ کنیت۔",emergencyText:"سخت ساہ مشکل، سینہ درد، بے ہوشی، خون یا شدید کمزوری ءَ فوری کمک بگیریت۔",noteText:"اے ابتدائی screening انت، آخری تشخیص نہ انت۔",conditions:{general:"عمومی صحت مسئلہ",fever:"تب / فلو / وائرل انفیکشن",dengue:"ممکنیں ڈینگی / ملیریا",chest:"سینہ درد / دل warning",breathing:"ساہ مسئلہ",stomach:"معدہ مسئلہ",headache:"سر درد / مائیگرین",skin:"جلد یا سر allergy",urine:"پیشاب infection",sugar:"شوگر مسئلہ",bp:"بلڈ پریشر مسئلہ",women:"زنانی صحت",child:"بچے صحت"}},
+    skr:{dir:"rtl",speech:"skr-PK",analysis:"علامتاں دا ابتدائی جائزہ",issue:"ممکنہ مسئلہ",risk:"خطرہ",symptoms:"تہاڈیاں دَسیاں علامتاں",action:"ہُݨ کیا کرو",doctor:"ڈاکٹر",emergency:"فوری مدد",note:"نوٹ",low:"گھٹ",moderate:"درمیانہ",high:"وَدھ",lowAction:"آرام کرو، پانی پیوو تے علامتاں تے نظر رکھو۔ جاری رہن تاں ڈاکٹر نال مشورہ کرو۔",moderateAction:"جلدی ڈاکٹر نال مشورہ کرو، خاص طور تے حالت خراب تھیندی پئی ہووے۔",highAction:"فوری طبی مدد گھنو یا ایمرجنسی ونجو۔",doctorText:"قابل ڈاکٹر نال مشورہ کرو۔",emergencyText:"ساہ دی شدید تکلیف، سینے دا درد، بے ہوشی، خون یا شدید کمزوری تھیوے تاں فوری مدد گھنو۔",noteText:"ایہ ابتدائی screening اے، آخری تشخیص کائنی۔",conditions:{general:"عام صحت دا مسئلہ",fever:"بخار / فلو / وائرل انفیکشن",dengue:"ممکنہ ڈینگی / ملیریا",chest:"سینے دا درد / دل دی warning",breathing:"ساہ دا مسئلہ",stomach:"پیٹ دا مسئلہ",headache:"سر درد / مائیگرین",skin:"جلد یا سر دی allergy",urine:"پیشاب دی infection",sugar:"شوگر دا مسئلہ",bp:"بلڈ پریشر دا مسئلہ",women:"عورتاں دی صحت",child:"بچے دی صحت"}},
+    hno:{dir:"rtl",speech:"hno-PK",analysis:"علامتاں دا ابتدائی جائزہ",issue:"ممکنہ مسئلہ",risk:"خطرہ",symptoms:"تساں دَسیاں علامتاں",action:"ہُن کی کرنا اے",doctor:"ڈاکٹر",emergency:"فوری مدد",note:"نوٹ",low:"گھٹ",moderate:"درمیانہ",high:"زیادہ",lowAction:"آرام کرو، پانی پیو تے علامتاں تے نظر رکھو۔ جاری رہن تاں ڈاکٹر نال رابطہ کرو۔",moderateAction:"جلد ڈاکٹر نال مشورہ کرو، خاص کر جے حالت خراب ہو رہی اے۔",highAction:"فوری طبی مدد لو یا ایمرجنسی جاؤ۔",doctorText:"قابل ڈاکٹر نال مشورہ کرو۔",emergencyText:"سانس دی شدید مشکل، سینے دا درد، بے ہوشی، خون یا شدید کمزوری وچ فوری مدد لو۔",noteText:"ایہ ابتدائی screening اے، آخری تشخیص نہیں۔",conditions:{general:"عام صحت دا مسئلہ",fever:"بخار / فلو / وائرل انفیکشن",dengue:"ممکنہ ڈینگی / ملیریا",chest:"سینے دا درد / دل دی warning",breathing:"سانس دا مسئلہ",stomach:"پیٹ دا مسئلہ",headache:"سر درد / مائیگرین",skin:"جلد یا سر دی allergy",urine:"پیشاب دی infection",sugar:"شوگر دا مسئلہ",bp:"بلڈ پریشر دا مسئلہ",women:"خواتین دی صحت",child:"بچے دی صحت"}},
+    ks:{dir:"rtl",speech:"ks-IN",analysis:"علامتن ہُند ابتدائی جائزہ",issue:"ممکنہ مسئلہ",risk:"خطرہ",symptoms:"تُہندۍ بیان کرمتۍ علامتہ",action:"وَن کیا کرُن",doctor:"ڈاکٹر",emergency:"فوری مدد",note:"نوٹ",low:"کم",moderate:"درمیانہ",high:"زیاد",lowAction:"آرام کریو، آب پیو تے علامتن پٮ۪ٹھ نظر تھٲویو۔ جاری روزن تہ ڈاکٹر سٕتۍ رابطہ کریو۔",moderateAction:"جلد ڈاکٹر سٕتۍ مشورہ کریو، خاص کر اگر حالت خراب گژھان چھ۔",highAction:"فوری طبی مدد حاصِل کریو یا ایمرجنسی گژھیو۔",doctorText:"قابل ڈاکٹر سٕتۍ مشورہ کریو۔",emergencyText:"سخت سانس مشکل، سینہ درد، بے ہوشی، خون یا شدید کمزوری منز فوری مدد حاصِل کریو۔",noteText:"یہ ابتدائی screening چھ، آخری تشخیص نہ۔",conditions:{general:"عام صحت مسئلہ",fever:"بخار / فلو / وائرل انفیکشن",dengue:"ممکنہ ڈینگی / ملیریا",chest:"سینہ درد / دل warning",breathing:"سانس مسئلہ",stomach:"پیٹ مسئلہ",headache:"سر درد / مائیگرین",skin:"جلد یا سر allergy",urine:"پیشاب infection",sugar:"شوگر مسئلہ",bp:"بلڈ پریشر مسئلہ",women:"زنانہ صحت",child:"بچن ہُند صحت"}},
+    brh:{dir:"rtl",speech:"brh-PK",analysis:"علامات نا ابتدائی جائزہ",issue:"ممکنہ مسئلہ",risk:"خطرہ",symptoms:"نمے بیان کرک علامات",action:"نون کیا کننگ",doctor:"ڈاکٹر",emergency:"فوری مدد",note:"نوٹ",low:"کم",moderate:"درمیانہ",high:"زیادہ",lowAction:"آرام کننگ، پانی پیننگ او علامات چیک کننگ۔ جاری آسے ڈاکٹر نا مشورہ کننگ۔",moderateAction:"جلد ڈاکٹر نا مشورہ کننگ، خاص کر حالت خراب آسے۔",highAction:"فوری طبی مدد حاصل کننگ یا ایمرجنسی نا اڑنگ۔",doctorText:"قابل ڈاکٹر نا مشورہ کننگ۔",emergencyText:"سخت سانس مشکل، سینہ درد، بے ہوشی، خون یا شدید کمزوری آسے فوری مدد حاصل کننگ۔",noteText:"اے ابتدائی screening، آخری تشخیص نہ۔",conditions:{general:"عام صحت مسئلہ",fever:"بخار / فلو / وائرل انفیکشن",dengue:"ممکنہ ڈینگی / ملیریا",chest:"سینہ درد / دل warning",breathing:"سانس مسئلہ",stomach:"پیٹ مسئلہ",headache:"سر درد / مائیگرین",skin:"جلد یا سر allergy",urine:"پیشاب infection",sugar:"شوگر مسئلہ",bp:"بلڈ پریشر مسئلہ",women:"خواتین صحت",child:"بچہ صحت"}},
+    fa:{dir:"rtl",speech:"fa-IR",analysis:"ارزیابی اولیه علائم",issue:"مشکل احتمالی",risk:"خطر",symptoms:"علائمی که گفتید",action:"اکنون چه کار کنید",doctor:"پزشک",emergency:"کمک فوری",note:"توجه",low:"کم",moderate:"متوسط",high:"زیاد",lowAction:"استراحت کنید، مایعات بنوشید و علائم را پیگیری کنید. اگر ادامه داشت با پزشک تماس بگیرید.",moderateAction:"به‌زودی با پزشک مشورت کنید، به‌ویژه اگر علائم بدتر می‌شوند.",highAction:"فوراً کمک پزشکی بگیرید یا به اورژانس بروید.",doctorText:"با پزشک واجد صلاحیت مشورت کنید.",emergencyText:"در تنگی نفس شدید، درد قفسه سینه، غش، خونریزی یا ضعف شدید فوراً کمک بگیرید.",noteText:"این یک غربالگری اولیه است و تشخیص قطعی نیست.",conditions:{general:"نگرانی عمومی سلامت",fever:"تب / آنفلوآنزا / عفونت ویروسی",dengue:"احتمال دنگی / مالاریا",chest:"درد قفسه سینه / هشدار قلبی",breathing:"مشکل تنفسی",stomach:"مشکل معده",headache:"سردرد / میگرن",skin:"حساسیت پوست یا سر",urine:"عفونت ادراری",sugar:"مشکل قند خون",bp:"مشکل فشار خون",women:"سلامت زنان",child:"سلامت کودک"}},
+    tr:{dir:"ltr",speech:"tr-TR",analysis:"Belirtilerin ilk değerlendirmesi",issue:"Olası sorun",risk:"Risk",symptoms:"Söylediğiniz belirtiler",action:"Şimdi ne yapmalı",doctor:"Doktor",emergency:"Acil yardım",note:"Not",low:"Düşük",moderate:"Orta",high:"Yüksek",lowAction:"Dinlenin, sıvı alın ve belirtileri takip edin. Devam ederse doktora başvurun.",moderateAction:"Özellikle belirtiler kötüleşiyorsa kısa sürede doktora danışın.",highAction:"Hemen tıbbi yardım alın veya acile gidin.",doctorText:"Yetkili bir doktora danışın.",emergencyText:"Şiddetli nefes darlığı, göğüs ağrısı, bayılma, kanama veya ciddi güçsüzlükte acil yardım alın.",noteText:"Bu bir ilk taramadır, kesin tanı değildir.",conditions:{general:"Genel sağlık sorunu",fever:"Ateş / grip / viral enfeksiyon",dengue:"Olası dang / sıtma",chest:"Göğüs ağrısı / kalp uyarısı",breathing:"Solunum sorunu",stomach:"Mide sorunu",headache:"Baş ağrısı / migren",skin:"Cilt veya saç derisi alerjisi",urine:"İdrar yolu enfeksiyonu",sugar:"Kan şekeri sorunu",bp:"Tansiyon sorunu",women:"Kadın sağlığı",child:"Çocuk sağlığı"}},
+    "zh-TW":{dir:"ltr",speech:"zh-TW",analysis:"症狀初步分析",issue:"可能問題",risk:"風險",symptoms:"您描述的症狀",action:"現在應該做什麼",doctor:"醫生",emergency:"緊急協助",note:"提示",low:"低",moderate:"中等",high:"高",lowAction:"休息、補充水分並觀察症狀；若持續請諮詢醫生。",moderateAction:"請儘快諮詢醫生，尤其是症狀正在惡化時。",highAction:"請立即尋求醫療協助或前往急診。",doctorText:"請諮詢合格醫生。",emergencyText:"若出現嚴重呼吸困難、胸痛、昏厥、出血或嚴重虛弱，請立即就醫。",noteText:"這是初步篩查，不是最終診斷。",conditions:{general:"一般健康問題",fever:"發燒 / 流感 / 病毒感染",dengue:"可能登革熱 / 瘧疾",chest:"胸痛 / 心臟警訊",breathing:"呼吸問題",stomach:"胃腸問題",headache:"頭痛 / 偏頭痛",skin:"皮膚或頭皮過敏",urine:"尿路感染",sugar:"血糖問題",bp:"血壓問題",women:"女性健康",child:"兒童健康"}},
+    ja:{dir:"ltr",speech:"ja-JP",analysis:"症状の初期評価",issue:"考えられる問題",risk:"リスク",symptoms:"入力された症状",action:"今すべきこと",doctor:"医師",emergency:"緊急対応",note:"注意",low:"低",moderate:"中",high:"高",lowAction:"休息し、水分を取り、症状を観察してください。続く場合は医師に相談してください。",moderateAction:"特に悪化している場合は、早めに医師へ相談してください。",highAction:"直ちに医療機関または救急を受診してください。",doctorText:"資格のある医師に相談してください。",emergencyText:"強い呼吸困難、胸痛、失神、出血、重い脱力があれば直ちに受診してください。",noteText:"これは初期スクリーニングであり、確定診断ではありません。",conditions:{general:"一般的な健康問題",fever:"発熱 / インフルエンザ / ウイルス感染",dengue:"デング熱 / マラリアの可能性",chest:"胸痛 / 心臓の警告",breathing:"呼吸の問題",stomach:"胃腸の問題",headache:"頭痛 / 片頭痛",skin:"皮膚・頭皮のアレルギー",urine:"尿路感染",sugar:"血糖の問題",bp:"血圧の問題",women:"女性の健康",child:"子どもの健康"}},
+    ko:{dir:"ltr",speech:"ko-KR",analysis:"증상 초기 평가",issue:"가능한 문제",risk:"위험도",symptoms:"말한 증상",action:"지금 할 일",doctor:"의사",emergency:"응급 도움",note:"주의",low:"낮음",moderate:"중간",high:"높음",lowAction:"쉬고 수분을 섭취하며 증상을 관찰하세요. 계속되면 의사와 상담하세요.",moderateAction:"특히 증상이 악화되면 빠른 시일 내 의사와 상담하세요.",highAction:"즉시 의료 도움을 받거나 응급실로 가세요.",doctorText:"자격 있는 의사와 상담하세요.",emergencyText:"심한 호흡곤란, 흉통, 실신, 출혈 또는 심한 쇠약이 있으면 즉시 도움을 받으세요.",noteText:"이것은 초기 선별 결과이며 확정 진단이 아닙니다.",conditions:{general:"일반 건강 문제",fever:"발열 / 독감 / 바이러스 감염",dengue:"뎅기열 / 말라리아 가능성",chest:"흉통 / 심장 경고",breathing:"호흡 문제",stomach:"위장 문제",headache:"두통 / 편두통",skin:"피부 또는 두피 알레르기",urine:"요로 감염",sugar:"혈당 문제",bp:"혈압 문제",women:"여성 건강",child:"아동 건강"}},
+    it:{dir:"ltr",speech:"it-IT",analysis:"Valutazione iniziale dei sintomi",issue:"Possibile problema",risk:"Rischio",symptoms:"Sintomi descritti",action:"Cosa fare ora",doctor:"Medico",emergency:"Aiuto urgente",note:"Nota",low:"Basso",moderate:"Moderato",high:"Alto",lowAction:"Riposa, bevi liquidi e controlla i sintomi. Se continuano, consulta un medico.",moderateAction:"Consulta presto un medico, soprattutto se i sintomi peggiorano.",highAction:"Cerca subito assistenza medica o vai al pronto soccorso.",doctorText:"Consulta un medico qualificato.",emergencyText:"Con forte difficoltà respiratoria, dolore al petto, svenimento, sanguinamento o grave debolezza cerca subito aiuto.",noteText:"Questo è uno screening iniziale, non una diagnosi definitiva.",conditions:{general:"Problema generale di salute",fever:"Febbre / influenza / infezione virale",dengue:"Possibile dengue / malaria",chest:"Dolore al petto / avviso cardiaco",breathing:"Problema respiratorio",stomach:"Problema gastrointestinale",headache:"Mal di testa / emicrania",skin:"Allergia della pelle o del cuoio capelluto",urine:"Infezione urinaria",sugar:"Problema di glicemia",bp:"Problema di pressione",women:"Salute femminile",child:"Salute del bambino"}},
+    bn:{dir:"ltr",speech:"bn-BD",analysis:"উপসর্গের প্রাথমিক মূল্যায়ন",issue:"সম্ভাব্য সমস্যা",risk:"ঝুঁকি",symptoms:"আপনার বলা উপসর্গ",action:"এখন কী করবেন",doctor:"ডাক্তার",emergency:"জরুরি সহায়তা",note:"নোট",low:"কম",moderate:"মাঝারি",high:"উচ্চ",lowAction:"বিশ্রাম নিন, পানি পান করুন এবং উপসর্গ পর্যবেক্ষণ করুন। চলতে থাকলে ডাক্তার দেখান।",moderateAction:"বিশেষ করে উপসর্গ বাড়লে দ্রুত ডাক্তার দেখান।",highAction:"তাৎক্ষণিক চিকিৎসা নিন বা জরুরি বিভাগে যান।",doctorText:"যোগ্য ডাক্তারের পরামর্শ নিন।",emergencyText:"তীব্র শ্বাসকষ্ট, বুকে ব্যথা, অজ্ঞান, রক্তপাত বা গুরুতর দুর্বলতায় জরুরি সাহায্য নিন।",noteText:"এটি প্রাথমিক স্ক্রিনিং, চূড়ান্ত রোগনির্ণয় নয়।",conditions:{general:"সাধারণ স্বাস্থ্য সমস্যা",fever:"জ্বর / ফ্লু / ভাইরাল সংক্রমণ",dengue:"সম্ভাব্য ডেঙ্গু / ম্যালেরিয়া",chest:"বুকে ব্যথা / হৃদ্‌রোগ সতর্কতা",breathing:"শ্বাসের সমস্যা",stomach:"পেটের সমস্যা",headache:"মাথাব্যথা / মাইগ্রেন",skin:"ত্বক বা মাথার ত্বকের অ্যালার্জি",urine:"মূত্রনালির সংক্রমণ",sugar:"রক্তে শর্করার সমস্যা",bp:"রক্তচাপের সমস্যা",women:"নারী স্বাস্থ্য",child:"শিশু স্বাস্থ্য"}},
+    ta:{dir:"ltr",speech:"ta-IN",analysis:"அறிகுறிகளின் ஆரம்ப மதிப்பீடு",issue:"சாத்தியமான பிரச்சினை",risk:"ஆபத்து",symptoms:"நீங்கள் கூறிய அறிகுறிகள்",action:"இப்போது என்ன செய்ய வேண்டும்",doctor:"மருத்துவர்",emergency:"அவசர உதவி",note:"குறிப்பு",low:"குறைவு",moderate:"மிதமான",high:"அதிகம்",lowAction:"ஓய்வு எடுத்து, தண்ணீர் குடித்து, அறிகுறிகளை கவனியுங்கள். தொடர்ந்தால் மருத்துவரை அணுகுங்கள்.",moderateAction:"குறிப்பாக அறிகுறிகள் மோசமாயின் விரைவில் மருத்துவரை அணுகுங்கள்.",highAction:"உடனே மருத்துவ உதவி பெறுங்கள் அல்லது அவசர பிரிவுக்கு செல்லுங்கள்.",doctorText:"தகுதியான மருத்துவரை அணுகுங்கள்.",emergencyText:"கடுமையான மூச்சுத்திணறல், மார்பு வலி, மயக்கம், இரத்தப்போக்கு அல்லது கடுமையான பலவீனத்தில் உடனடி உதவி பெறுங்கள்.",noteText:"இது ஆரம்ப screening மட்டுமே; இறுதி நோயறிதல் அல்ல.",conditions:{general:"பொதுவான உடல்நல பிரச்சினை",fever:"காய்ச்சல் / ஃப்ளூ / வைரஸ் தொற்று",dengue:"டெங்கு / மலேரியா சாத்தியம்",chest:"மார்பு வலி / இதய எச்சரிக்கை",breathing:"மூச்சு பிரச்சினை",stomach:"வயிற்று பிரச்சினை",headache:"தலைவலி / மைக்ரேன்",skin:"தோல் அல்லது தலைச்சரும அலர்ஜி",urine:"சிறுநீர் தொற்று",sugar:"இரத்த சர்க்கரை பிரச்சினை",bp:"இரத்த அழுத்த பிரச்சினை",women:"பெண்கள் உடல்நலம்",child:"குழந்தை உடல்நலம்"}},
+    te:{dir:"ltr",speech:"te-IN",analysis:"లక్షణాల ప్రాథమిక అంచనా",issue:"సంభావ్య సమస్య",risk:"ప్రమాదం",symptoms:"మీరు చెప్పిన లక్షణాలు",action:"ఇప్పుడు ఏమి చేయాలి",doctor:"వైద్యుడు",emergency:"అత్యవసర సహాయం",note:"గమనిక",low:"తక్కువ",moderate:"మధ్యస్థ",high:"ఎక్కువ",lowAction:"విశ్రాంతి తీసుకోండి, నీరు తాగండి, లక్షణాలను గమనించండి. కొనసాగితే వైద్యుడిని సంప్రదించండి.",moderateAction:"ప్రత్యేకంగా లక్షణాలు తీవ్రమవుతుంటే త్వరగా వైద్యుడిని సంప్రదించండి.",highAction:"వెంటనే వైద్య సహాయం పొందండి లేదా అత్యవసర విభాగానికి వెళ్లండి.",doctorText:"అర్హత కలిగిన వైద్యుడిని సంప్రదించండి.",emergencyText:"తీవ్ర శ్వాస ఇబ్బంది, ఛాతి నొప్పి, మూర్ఛ, రక్తస్రావం లేదా తీవ్రమైన బలహీనతలో వెంటనే సహాయం పొందండి.",noteText:"ఇది ప్రాథమిక screening మాత్రమే; తుది నిర్ధారణ కాదు.",conditions:{general:"సాధారణ ఆరోగ్య సమస్య",fever:"జ్వరం / ఫ్లూ / వైరల్ ఇన్ఫెక్షన్",dengue:"డెంగ్యూ / మలేరియా అవకాశం",chest:"ఛాతి నొప్పి / గుండె హెచ్చరిక",breathing:"శ్వాస సమస్య",stomach:"కడుపు సమస్య",headache:"తలనొప్పి / మైగ్రేన్",skin:"చర్మం లేదా తల చర్మ అలర్జీ",urine:"మూత్ర ఇన్ఫెక్షన్",sugar:"రక్త చక్కెర సమస్య",bp:"రక్తపోటు సమస్య",women:"మహిళల ఆరోగ్యం",child:"పిల్లల ఆరోగ్యం"}},
+    mr:{dir:"ltr",speech:"mr-IN",analysis:"लक्षणांचे प्राथमिक मूल्यमापन",issue:"संभाव्य समस्या",risk:"धोका",symptoms:"तुम्ही सांगितलेली लक्षणे",action:"आता काय करावे",doctor:"डॉक्टर",emergency:"तातडीची मदत",note:"नोंद",low:"कमी",moderate:"मध्यम",high:"जास्त",lowAction:"विश्रांती घ्या, पाणी प्या आणि लक्षणांवर लक्ष ठेवा. सुरू राहिल्यास डॉक्टरांना भेटा.",moderateAction:"विशेषतः लक्षणे वाढत असल्यास लवकर डॉक्टरांचा सल्ला घ्या.",highAction:"ताबडतोब वैद्यकीय मदत घ्या किंवा आपत्कालीन विभागात जा.",doctorText:"पात्र डॉक्टरांचा सल्ला घ्या.",emergencyText:"तीव्र श्वासोच्छवासाचा त्रास, छातीत दुखणे, बेशुद्धी, रक्तस्राव किंवा गंभीर अशक्तपणा असल्यास तातडीची मदत घ्या.",noteText:"हे प्राथमिक screening आहे; अंतिम निदान नाही.",conditions:{general:"सामान्य आरोग्य समस्या",fever:"ताप / फ्लू / व्हायरल संसर्ग",dengue:"डेंग्यू / मलेरियाची शक्यता",chest:"छातीत दुखणे / हृदय इशारा",breathing:"श्वासाची समस्या",stomach:"पोटाची समस्या",headache:"डोकेदुखी / मायग्रेन",skin:"त्वचा किंवा टाळूची अॅलर्जी",urine:"मूत्रमार्ग संसर्ग",sugar:"रक्तातील साखरेची समस्या",bp:"रक्तदाबाची समस्या",women:"महिला आरोग्य",child:"बाल आरोग्य"}},
+    gu:{dir:"ltr",speech:"gu-IN",analysis:"લક્ષણોનું પ્રાથમિક મૂલ્યાંકન",issue:"સંભવિત સમસ્યા",risk:"જોખમ",symptoms:"તમે જણાવેલા લક્ષણો",action:"હવે શું કરવું",doctor:"ડોક્ટર",emergency:"તાત્કાલિક મદદ",note:"નોંધ",low:"ઓછું",moderate:"મધ્યમ",high:"ઉચ્ચ",lowAction:"આરામ કરો, પાણી પીવો અને લક્ષણો જુઓ. ચાલુ રહે તો ડોક્ટરને મળો.",moderateAction:"ખાસ કરીને લક્ષણો વધે તો જલદી ડોક્ટરની સલાહ લો.",highAction:"તાત્કાલિક તબીબી મદદ લો અથવા ઇમરજન્સીમાં જાઓ.",doctorText:"લાયક ડોક્ટરની સલાહ લો.",emergencyText:"તીવ્ર શ્વાસની તકલીફ, છાતીમાં દુખાવો, બેભાન થવું, રક્તસ્ત્રાવ અથવા ગંભીર નબળાઈ હોય તો તરત મદદ લો.",noteText:"આ પ્રાથમિક screening છે; અંતિમ નિદાન નથી.",conditions:{general:"સામાન્ય આરોગ્ય સમસ્યા",fever:"તાવ / ફ્લૂ / વાયરલ ચેપ",dengue:"ડેન્ગ્યુ / મલેરિયાની શક્યતા",chest:"છાતીનો દુખાવો / હૃદય ચેતવણી",breathing:"શ્વાસની સમસ્યા",stomach:"પેટની સમસ્યા",headache:"માથાનો દુખાવો / માઇગ્રેન",skin:"ચામડી અથવા માથાની ચામડીની એલર્જી",urine:"મૂત્ર ચેપ",sugar:"બ્લડ શુગર સમસ્યા",bp:"બ્લડ પ્રેશર સમસ્યા",women:"મહિલા આરોગ્ય",child:"બાળ આરોગ્ય"}},
+    ml:{dir:"ltr",speech:"ml-IN",analysis:"ലക്ഷണങ്ങളുടെ പ്രാഥമിക വിലയിരുത്തൽ",issue:"സാധ്യമായ പ്രശ്നം",risk:"അപകടനില",symptoms:"നിങ്ങൾ പറഞ്ഞ ലക്ഷണങ്ങൾ",action:"ഇപ്പോൾ ചെയ്യേണ്ടത്",doctor:"ഡോക്ടർ",emergency:"അടിയന്തര സഹായം",note:"കുറിപ്പ്",low:"കുറവ്",moderate:"മിതം",high:"ഉയരം",lowAction:"വിശ്രമിക്കുക, വെള്ളം കുടിക്കുക, ലക്ഷണങ്ങൾ നിരീക്ഷിക്കുക. തുടരുകയാണെങ്കിൽ ഡോക്ടറെ കാണുക.",moderateAction:"പ്രത്യേകിച്ച് ലക്ഷണങ്ങൾ മോശമാകുകയാണെങ്കിൽ ഉടൻ ഡോക്ടറെ സമീപിക്കുക.",highAction:"ഉടൻ മെഡിക്കൽ സഹായം തേടുക അല്ലെങ്കിൽ എമർജൻസിയിൽ പോകുക.",doctorText:"യോഗ്യനായ ഡോക്ടറെ സമീപിക്കുക.",emergencyText:"കഠിന ശ്വാസതടസം, നെഞ്ചുവേദന, ബോധക്ഷയം, രക്തസ്രാവം അല്ലെങ്കിൽ ഗുരുതര ദൗർബല്യം ഉണ്ടെങ്കിൽ ഉടൻ സഹായം തേടുക.",noteText:"ഇത് പ്രാഥമിക screening മാത്രമാണ്; അന്തിമ രോഗനിർണയം അല്ല.",conditions:{general:"പൊതുവായ ആരോഗ്യ പ്രശ്നം",fever:"പനി / ഫ്ലൂ / വൈറൽ ഇൻഫെക്ഷൻ",dengue:"ഡെങ്കിപ്പനി / മലേറിയ സാധ്യത",chest:"നെഞ്ചുവേദന / ഹൃദയ മുന്നറിയിപ്പ്",breathing:"ശ്വാസ പ്രശ്നം",stomach:"വയറ് പ്രശ്നം",headache:"തലവേദന / മൈഗ്രെയ്ൻ",skin:"ചർമ്മം അല്ലെങ്കിൽ തലച്ചർമ്മ അലർജി",urine:"മൂത്ര ഇൻഫെക്ഷൻ",sugar:"രക്തശർക്കര പ്രശ്നം",bp:"രക്തസമ്മർദ്ദ പ്രശ്നം",women:"സ്ത്രീാരോഗ്യം",child:"കുട്ടികളുടെ ആരോഗ്യം"}},
+    th:{dir:"ltr",speech:"th-TH",analysis:"การประเมินอาการเบื้องต้น",issue:"ปัญหาที่เป็นไปได้",risk:"ความเสี่ยง",symptoms:"อาการที่คุณบอก",action:"ควรทำอะไรตอนนี้",doctor:"แพทย์",emergency:"ความช่วยเหลือฉุกเฉิน",note:"หมายเหตุ",low:"ต่ำ",moderate:"ปานกลาง",high:"สูง",lowAction:"พักผ่อน ดื่มน้ำ และสังเกตอาการ หากยังไม่ดีขึ้นให้พบแพทย์",moderateAction:"ควรปรึกษาแพทย์เร็ว ๆ โดยเฉพาะหากอาการแย่ลง",highAction:"รับความช่วยเหลือทางการแพทย์ทันทีหรือไปห้องฉุกเฉิน",doctorText:"ปรึกษาแพทย์ที่มีคุณสมบัติ",emergencyText:"หากหายใจลำบากมาก เจ็บหน้าอก เป็นลม มีเลือดออก หรืออ่อนแรงรุนแรง ให้ขอความช่วยเหลือทันที",noteText:"นี่เป็นการคัดกรองเบื้องต้น ไม่ใช่การวินิจฉัยสุดท้าย",conditions:{general:"ปัญหาสุขภาพทั่วไป",fever:"ไข้ / ไข้หวัด / การติดเชื้อไวรัส",dengue:"อาจเป็นไข้เลือดออก / มาลาเรีย",chest:"เจ็บหน้าอก / สัญญาณหัวใจ",breathing:"ปัญหาการหายใจ",stomach:"ปัญหากระเพาะอาหาร",headache:"ปวดศีรษะ / ไมเกรน",skin:"ภูมิแพ้ผิวหนังหรือหนังศีรษะ",urine:"การติดเชื้อทางเดินปัสสาวะ",sugar:"ปัญหาน้ำตาลในเลือด",bp:"ปัญหาความดันโลหิต",women:"สุขภาพผู้หญิง",child:"สุขภาพเด็ก"}},
+    id:{dir:"ltr",speech:"id-ID",analysis:"Penilaian awal gejala",issue:"Kemungkinan masalah",risk:"Risiko",symptoms:"Gejala yang Anda sampaikan",action:"Yang harus dilakukan sekarang",doctor:"Dokter",emergency:"Bantuan darurat",note:"Catatan",low:"Rendah",moderate:"Sedang",high:"Tinggi",lowAction:"Istirahat, minum cairan, dan pantau gejala. Jika berlanjut, konsultasikan dengan dokter.",moderateAction:"Segera konsultasi dengan dokter, terutama jika gejala memburuk.",highAction:"Segera cari bantuan medis atau pergi ke unit gawat darurat.",doctorText:"Konsultasikan dengan dokter yang berkualifikasi.",emergencyText:"Cari bantuan segera bila sesak berat, nyeri dada, pingsan, perdarahan, atau kelemahan berat.",noteText:"Ini adalah skrining awal, bukan diagnosis akhir.",conditions:{general:"Masalah kesehatan umum",fever:"Demam / flu / infeksi virus",dengue:"Kemungkinan demam berdarah / malaria",chest:"Nyeri dada / peringatan jantung",breathing:"Masalah pernapasan",stomach:"Masalah lambung",headache:"Sakit kepala / migrain",skin:"Alergi kulit atau kulit kepala",urine:"Infeksi saluran kemih",sugar:"Masalah gula darah",bp:"Masalah tekanan darah",women:"Kesehatan wanita",child:"Kesehatan anak"}},
+    ms:{dir:"ltr",speech:"ms-MY",analysis:"Penilaian awal gejala",issue:"Masalah yang mungkin",risk:"Risiko",symptoms:"Gejala yang anda beritahu",action:"Apa perlu dibuat sekarang",doctor:"Doktor",emergency:"Bantuan kecemasan",note:"Nota",low:"Rendah",moderate:"Sederhana",high:"Tinggi",lowAction:"Berehat, minum air dan pantau gejala. Jika berterusan, jumpa doktor.",moderateAction:"Dapatkan nasihat doktor dengan segera, terutama jika gejala semakin teruk.",highAction:"Dapatkan bantuan perubatan segera atau pergi ke jabatan kecemasan.",doctorText:"Rujuk doktor yang berkelayakan.",emergencyText:"Dapatkan bantuan segera jika sesak nafas teruk, sakit dada, pengsan, pendarahan atau kelemahan teruk.",noteText:"Ini ialah saringan awal, bukan diagnosis akhir.",conditions:{general:"Masalah kesihatan umum",fever:"Demam / selesema / jangkitan virus",dengue:"Kemungkinan denggi / malaria",chest:"Sakit dada / amaran jantung",breathing:"Masalah pernafasan",stomach:"Masalah perut",headache:"Sakit kepala / migrain",skin:"Alahan kulit atau kulit kepala",urine:"Jangkitan saluran kencing",sugar:"Masalah gula darah",bp:"Masalah tekanan darah",women:"Kesihatan wanita",child:"Kesihatan kanak-kanak"}},
+    vi:{dir:"ltr",speech:"vi-VN",analysis:"Đánh giá triệu chứng ban đầu",issue:"Vấn đề có thể xảy ra",risk:"Mức nguy cơ",symptoms:"Triệu chứng bạn đã nói",action:"Nên làm gì bây giờ",doctor:"Bác sĩ",emergency:"Trợ giúp khẩn cấp",note:"Lưu ý",low:"Thấp",moderate:"Trung bình",high:"Cao",lowAction:"Nghỉ ngơi, uống nước và theo dõi triệu chứng. Nếu kéo dài, hãy gặp bác sĩ.",moderateAction:"Hãy sớm tham khảo bác sĩ, đặc biệt nếu triệu chứng nặng hơn.",highAction:"Hãy tìm trợ giúp y tế ngay hoặc đến khoa cấp cứu.",doctorText:"Hãy tham khảo bác sĩ có chuyên môn.",emergencyText:"Nếu khó thở nặng, đau ngực, ngất, chảy máu hoặc yếu nghiêm trọng, hãy tìm trợ giúp ngay.",noteText:"Đây là sàng lọc ban đầu, không phải chẩn đoán cuối cùng.",conditions:{general:"Vấn đề sức khỏe chung",fever:"Sốt / cúm / nhiễm virus",dengue:"Có thể sốt xuất huyết / sốt rét",chest:"Đau ngực / cảnh báo tim",breathing:"Vấn đề hô hấp",stomach:"Vấn đề dạ dày",headache:"Đau đầu / đau nửa đầu",skin:"Dị ứng da hoặc da đầu",urine:"Nhiễm trùng đường tiểu",sugar:"Vấn đề đường huyết",bp:"Vấn đề huyết áp",women:"Sức khỏe phụ nữ",child:"Sức khỏe trẻ em"}},
+    sw:{dir:"ltr",speech:"sw-KE",analysis:"Tathmini ya awali ya dalili",issue:"Tatizo linalowezekana",risk:"Hatari",symptoms:"Dalili ulizosema",action:"Ufanye nini sasa",doctor:"Daktari",emergency:"Msaada wa dharura",note:"Kumbuka",low:"Ndogo",moderate:"Wastani",high:"Kubwa",lowAction:"Pumzika, kunywa maji na fuatilia dalili. Zikiendelea, wasiliana na daktari.",moderateAction:"Wasiliana na daktari mapema, hasa kama dalili zinazidi.",highAction:"Tafuta msaada wa matibabu mara moja au nenda dharura.",doctorText:"Wasiliana na daktari mwenye sifa.",emergencyText:"Tafuta msaada mara moja ikiwa kuna shida kali ya kupumua, maumivu ya kifua, kuzimia, kutokwa damu au udhaifu mkubwa.",noteText:"Huu ni uchunguzi wa awali, si utambuzi wa mwisho.",conditions:{general:"Tatizo la afya kwa ujumla",fever:"Homa / mafua / maambukizi ya virusi",dengue:"Dengue / malaria inayowezekana",chest:"Maumivu ya kifua / onyo la moyo",breathing:"Tatizo la kupumua",stomach:"Tatizo la tumbo",headache:"Maumivu ya kichwa / kipandauso",skin:"Mzio wa ngozi au kichwa",urine:"Maambukizi ya mkojo",sugar:"Tatizo la sukari ya damu",bp:"Tatizo la shinikizo la damu",women:"Afya ya wanawake",child:"Afya ya mtoto"}}
+  };
+
+
+  ["en","ur","hi","ar","es","fr","de","pt","ru","zh-CN"].forEach(function(k){
+    const p = PACKS[k];
+    if(!p || BRIEF_NATIVE[k]) return;
+    const labels = p.labels || [];
+    BRIEF_NATIVE[k] = {
+      dir:p.dir||"ltr", speech:p.speech||RAW_SPEECH[k]||"en-US",
+      analysis: labels[0] || p.note, issue:labels[0]||"", risk:labels[1]||"",
+      symptoms: labels[2]||"", action:labels[5]||"", doctor:labels[4]||"",
+      medicine: labels[6]||"", emergency:labels[7]||"", note:labels[8]||"",
+      low:labels[9]||"", moderate:labels[10]||"", high:labels[11]||"",
+      lowAction:(p.general||[])[4]||"", moderateAction:(p.fever||p.general||[])[4]||"",
+      highAction:(p.chest||p.breathing||p.general||[])[4]||"",
+      doctorText:p.gp||"", medicineText:(p.general||[])[5]||"",
+      emergencyText:(p.general||[])[6]||"", noteText:p.note||"",
+      appointment:p.consult||"",
+      conditions:{
+        general:(p.general||[])[0]||"", fever:(p.fever||[])[0]||"", dengue:(p.dengue||[])[0]||"",
+        chest:(p.chest||[])[0]||"", breathing:(p.breathing||[])[0]||"",
+        stomach:(p.stomach||[])[0]||"", headache:(p.headache||[])[0]||"",
+        skin:(p.skin||[])[0]||"", urine:(p.urine||[])[0]||"", sugar:(p.sugar||[])[0]||"",
+        bp:(p.bp||[])[0]||"", women:(p.women||[])[0]||"", child:(p.child||[])[0]||""
+      }
+    };
+  });
+  Object.keys(BRIEF_NATIVE).forEach(function(k){
+    const c=BRIEF_NATIVE[k];
+    c.medicine=c.medicine||c.note;
+    c.medicineText=c.medicineText||c.noteText;
+    c.appointment=c.appointment||c.doctor;
+    c.lowAction=c.lowAction||c.doctorText;
+    c.moderateAction=c.moderateAction||c.doctorText;
+    c.highAction=c.highAction||c.emergencyText;
+  });
+
+
+  const CORE_NATIVE_FIX = {
+    en:{dir:"ltr",speech:"en-US",analysis:"AI symptom analysis",issue:"Possible issue",risk:"Risk level",symptoms:"Entered symptoms",action:"Recommended action",medicine:"Medicine safety",doctor:"Doctor consultation",emergency:"Emergency warning",note:"Important note",low:"Low",moderate:"Moderate",high:"High",lowAction:"The symptoms appear mild. Rest, drink fluids, and monitor them. An immediate doctor visit is usually not required unless they persist or worsen.",moderateAction:"Monitor closely and arrange a doctor consultation soon, especially if symptoms continue or worsen.",highAction:"Seek urgent medical care now.",medicineText:"Do not start prescription medicine, antibiotics, or change doses without a doctor or pharmacist.",doctorText:"Consult a qualified doctor when advised by the risk level.",emergencyText:"Get emergency help for severe breathing difficulty, chest pain, fainting, confusion, seizure, heavy bleeding, or rapid worsening.",noteText:"This is an initial screening, not a final diagnosis.",appointment:"Book doctor consultation",conditions:{general:"General health concern",fever:"Fever, flu, or viral infection",dengue:"Possible dengue or malaria",chest:"Chest pain or heart warning",breathing:"Breathing problem",stomach:"Stomach or digestive problem",headache:"Headache or migraine",skin:"Skin or scalp irritation",urine:"Urinary infection",sugar:"Blood sugar concern",bp:"Blood pressure concern",women:"Women's health concern",child:"Child health concern"}},
+    ur:{dir:"rtl",speech:"ur-PK",analysis:"علامات کا ابتدائی تجزیہ",issue:"ممکنہ مسئلہ",risk:"خطرے کی سطح",symptoms:"درج کی گئی علامات",action:"تجویز کردہ اقدام",medicine:"دوا سے متعلق احتیاط",doctor:"ڈاکٹر سے مشورہ",emergency:"ہنگامی انتباہ",note:"اہم نوٹ",low:"کم",moderate:"درمیانہ",high:"زیادہ",lowAction:"علامات ہلکی معلوم ہوتی ہیں۔ آرام کریں، پانی پئیں اور نگرانی کریں۔ فوری ڈاکٹر کی ضرورت عموماً نہیں، مگر علامات برقرار رہیں یا بڑھیں تو مشورہ کریں۔",moderateAction:"علامات پر قریب سے نظر رکھیں اور جلد ڈاکٹر سے مشورہ کریں، خاص طور پر اگر حالت خراب ہو۔",highAction:"فوری طبی مدد حاصل کریں۔",medicineText:"ڈاکٹر یا فارماسسٹ کے مشورے کے بغیر نسخے کی دوا، اینٹی بایوٹک یا خوراک میں تبدیلی نہ کریں۔",doctorText:"خطرے کی سطح کے مطابق مستند ڈاکٹر سے مشورہ کریں۔",emergencyText:"سانس میں شدید دشواری، سینے کا درد، بے ہوشی، الجھن، دورہ، زیادہ خون یا تیزی سے بگڑتی حالت میں فوری مدد لیں۔",noteText:"یہ ابتدائی جانچ ہے، حتمی تشخیص نہیں۔",appointment:"ڈاکٹر سے مشورہ بک کریں",conditions:{general:"عام صحت کا مسئلہ",fever:"بخار، فلو یا وائرل انفیکشن",dengue:"ممکنہ ڈینگی یا ملیریا",chest:"سینے کا درد یا دل کا انتباہ",breathing:"سانس کا مسئلہ",stomach:"معدے یا ہاضمے کا مسئلہ",headache:"سر درد یا آدھے سر کا درد",skin:"جلد یا سر کی خارش",urine:"پیشاب کی نالی کا انفیکشن",sugar:"خون میں شکر کا مسئلہ",bp:"بلڈ پریشر کا مسئلہ",women:"خواتین کی صحت کا مسئلہ",child:"بچے کی صحت کا مسئلہ"}},
+    hi:{dir:"ltr",speech:"hi-IN",analysis:"लक्षणों का प्रारंभिक विश्लेषण",issue:"संभावित समस्या",risk:"जोखिम स्तर",symptoms:"दर्ज लक्षण",action:"सुझाया गया कदम",medicine:"दवा संबंधी सावधानी",doctor:"डॉक्टर से परामर्श",emergency:"आपात चेतावनी",note:"महत्वपूर्ण नोट",low:"कम",moderate:"मध्यम",high:"उच्च",lowAction:"लक्षण हल्के लगते हैं। आराम करें, पानी पिएँ और निगरानी करें। तुरंत डॉक्टर की आवश्यकता सामान्यतः नहीं है, लेकिन लक्षण बने रहें या बढ़ें तो परामर्श लें।",moderateAction:"लक्षणों पर ध्यान रखें और जल्द डॉक्टर से परामर्श लें, विशेषकर यदि हालत बिगड़ रही हो।",highAction:"तुरंत चिकित्सा सहायता लें।",medicineText:"डॉक्टर या फार्मासिस्ट की सलाह के बिना पर्चे की दवा, एंटीबायोटिक या खुराक में बदलाव न करें।",doctorText:"जोखिम स्तर के अनुसार योग्य डॉक्टर से परामर्श लें।",emergencyText:"गंभीर साँस की तकलीफ, सीने में दर्द, बेहोशी, भ्रम, दौरा, अधिक रक्तस्राव या तेजी से बिगड़ने पर तुरंत सहायता लें।",noteText:"यह प्रारंभिक जाँच है, अंतिम निदान नहीं।",appointment:"डॉक्टर परामर्श बुक करें",conditions:{general:"सामान्य स्वास्थ्य समस्या",fever:"बुखार, फ्लू या वायरल संक्रमण",dengue:"संभावित डेंगू या मलेरिया",chest:"सीने में दर्द या हृदय चेतावनी",breathing:"साँस की समस्या",stomach:"पेट या पाचन की समस्या",headache:"सिरदर्द या माइग्रेन",skin:"त्वचा या सिर की त्वचा में जलन",urine:"मूत्र संक्रमण",sugar:"रक्त शर्करा की समस्या",bp:"रक्तचाप की समस्या",women:"महिला स्वास्थ्य समस्या",child:"बाल स्वास्थ्य समस्या"}},
+    ar:{dir:"rtl",speech:"ar-SA",analysis:"تحليل أولي للأعراض",issue:"المشكلة المحتملة",risk:"مستوى الخطورة",symptoms:"الأعراض المدخلة",action:"الإجراء المقترح",medicine:"سلامة الأدوية",doctor:"استشارة الطبيب",emergency:"تحذير طارئ",note:"ملاحظة مهمة",low:"منخفض",moderate:"متوسط",high:"مرتفع",lowAction:"تبدو الأعراض خفيفة. استرح واشرب السوائل وراقبها. لا تحتاج عادةً إلى زيارة فورية للطبيب إلا إذا استمرت أو ساءت.",moderateAction:"راقب الأعراض جيدًا واستشر طبيبًا قريبًا، خاصة إذا ساءت الحالة.",highAction:"اطلب رعاية طبية عاجلة الآن.",medicineText:"لا تبدأ دواءً موصوفًا أو مضادًا حيويًا ولا تغيّر الجرعة دون طبيب أو صيدلي.",doctorText:"استشر طبيبًا مؤهلًا بحسب مستوى الخطورة.",emergencyText:"اطلب الطوارئ عند صعوبة التنفس الشديدة أو ألم الصدر أو الإغماء أو الارتباك أو التشنج أو النزيف الشديد أو التدهور السريع.",noteText:"هذا فرز أولي وليس تشخيصًا نهائيًا.",appointment:"حجز استشارة طبية",conditions:{general:"مشكلة صحية عامة",fever:"حمى أو إنفلونزا أو عدوى فيروسية",dengue:"احتمال حمى الضنك أو الملاريا",chest:"ألم الصدر أو تحذير قلبي",breathing:"مشكلة في التنفس",stomach:"مشكلة في المعدة أو الهضم",headache:"صداع أو شقيقة",skin:"تهيج الجلد أو فروة الرأس",urine:"التهاب المسالك البولية",sugar:"مشكلة في سكر الدم",bp:"مشكلة في ضغط الدم",women:"مشكلة في صحة المرأة",child:"مشكلة في صحة الطفل"}},
+    es:{dir:"ltr",speech:"es-ES",analysis:"Análisis inicial de síntomas",issue:"Posible problema",risk:"Nivel de riesgo",symptoms:"Síntomas introducidos",action:"Acción recomendada",medicine:"Seguridad de medicamentos",doctor:"Consulta médica",emergency:"Advertencia de emergencia",note:"Nota importante",low:"Bajo",moderate:"Moderado",high:"Alto",lowAction:"Los síntomas parecen leves. Descanse, tome líquidos y vigílelos. Normalmente no se necesita una consulta inmediata, salvo que persistan o empeoren.",moderateAction:"Vigile los síntomas y consulte pronto a un médico, especialmente si empeoran.",highAction:"Busque atención médica urgente ahora.",medicineText:"No inicie medicamentos recetados, antibióticos ni cambie dosis sin médico o farmacéutico.",doctorText:"Consulte a un médico calificado según el nivel de riesgo.",emergencyText:"Busque emergencias ante dificultad respiratoria grave, dolor de pecho, desmayo, confusión, convulsión, sangrado intenso o empeoramiento rápido.",noteText:"Esta es una evaluación inicial, no un diagnóstico final.",appointment:"Reservar consulta médica",conditions:{general:"Problema general de salud",fever:"Fiebre, gripe o infección viral",dengue:"Posible dengue o malaria",chest:"Dolor de pecho o alerta cardíaca",breathing:"Problema respiratorio",stomach:"Problema estomacal o digestivo",headache:"Dolor de cabeza o migraña",skin:"Irritación de piel o cuero cabelludo",urine:"Infección urinaria",sugar:"Problema de glucosa",bp:"Problema de presión arterial",women:"Problema de salud femenina",child:"Problema de salud infantil"}},
+    fr:{dir:"ltr",speech:"fr-FR",analysis:"Analyse initiale des symptômes",issue:"Problème possible",risk:"Niveau de risque",symptoms:"Symptômes saisis",action:"Action recommandée",medicine:"Sécurité des médicaments",doctor:"Consultation médicale",emergency:"Alerte d’urgence",note:"Note importante",low:"Faible",moderate:"Modéré",high:"Élevé",lowAction:"Les symptômes semblent légers. Reposez-vous, buvez et surveillez-les. Une consultation immédiate n’est généralement pas nécessaire, sauf s’ils persistent ou s’aggravent.",moderateAction:"Surveillez attentivement les symptômes et consultez rapidement un médecin, surtout s’ils s’aggravent.",highAction:"Demandez maintenant des soins médicaux urgents.",medicineText:"Ne commencez pas de médicament sur ordonnance ou d’antibiotique et ne changez pas la dose sans médecin ou pharmacien.",doctorText:"Consultez un médecin qualifié selon le niveau de risque.",emergencyText:"Demandez les urgences en cas de difficulté respiratoire sévère, douleur thoracique, malaise, confusion, convulsion, saignement important ou aggravation rapide.",noteText:"Il s’agit d’un tri initial, pas d’un diagnostic final.",appointment:"Réserver une consultation",conditions:{general:"Problème général de santé",fever:"Fièvre, grippe ou infection virale",dengue:"Dengue ou paludisme possible",chest:"Douleur thoracique ou alerte cardiaque",breathing:"Problème respiratoire",stomach:"Problème gastrique ou digestif",headache:"Mal de tête ou migraine",skin:"Irritation de la peau ou du cuir chevelu",urine:"Infection urinaire",sugar:"Problème de glycémie",bp:"Problème de tension artérielle",women:"Problème de santé féminine",child:"Problème de santé infantile"}},
+    de:{dir:"ltr",speech:"de-DE",analysis:"Ersteinschätzung der Symptome",issue:"Mögliches Problem",risk:"Risikostufe",symptoms:"Eingegebene Symptome",action:"Empfohlene Maßnahme",medicine:"Arzneimittelsicherheit",doctor:"Ärztliche Beratung",emergency:"Notfallwarnung",note:"Wichtiger Hinweis",low:"Niedrig",moderate:"Mittel",high:"Hoch",lowAction:"Die Symptome wirken leicht. Ruhen Sie sich aus, trinken Sie ausreichend und beobachten Sie sie. Ein sofortiger Arztbesuch ist meist nicht nötig, außer sie halten an oder werden schlimmer.",moderateAction:"Beobachten Sie die Symptome genau und suchen Sie bald ärztlichen Rat, besonders bei Verschlechterung.",highAction:"Suchen Sie jetzt dringend medizinische Hilfe.",medicineText:"Beginnen Sie keine verschreibungspflichtigen Medikamente oder Antibiotika und ändern Sie keine Dosis ohne Arzt oder Apotheker.",doctorText:"Suchen Sie je nach Risikostufe qualifizierten ärztlichen Rat.",emergencyText:"Bei starker Atemnot, Brustschmerz, Ohnmacht, Verwirrtheit, Krampfanfall, starker Blutung oder schneller Verschlechterung sofort Hilfe suchen.",noteText:"Dies ist eine Ersteinschätzung, keine endgültige Diagnose.",appointment:"Arzttermin buchen",conditions:{general:"Allgemeines Gesundheitsproblem",fever:"Fieber, Grippe oder Virusinfektion",dengue:"Mögliches Dengue oder Malaria",chest:"Brustschmerz oder Herzwarnzeichen",breathing:"Atemproblem",stomach:"Magen- oder Verdauungsproblem",headache:"Kopfschmerz oder Migräne",skin:"Haut- oder Kopfhautreizung",urine:"Harnwegsinfektion",sugar:"Blutzuckerproblem",bp:"Blutdruckproblem",women:"Frauengesundheitsproblem",child:"Kindergesundheitsproblem"}},
+    pt:{dir:"ltr",speech:"pt-PT",analysis:"Análise inicial dos sintomas",issue:"Possível problema",risk:"Nível de risco",symptoms:"Sintomas inseridos",action:"Ação recomendada",medicine:"Segurança dos medicamentos",doctor:"Consulta médica",emergency:"Aviso de emergência",note:"Nota importante",low:"Baixo",moderate:"Moderado",high:"Alto",lowAction:"Os sintomas parecem leves. Descanse, beba líquidos e acompanhe-os. Normalmente não é necessária consulta imediata, salvo se persistirem ou piorarem.",moderateAction:"Acompanhe os sintomas e consulte um médico em breve, sobretudo se piorarem.",highAction:"Procure atendimento médico urgente agora.",medicineText:"Não inicie medicamentos prescritos ou antibióticos nem altere doses sem médico ou farmacêutico.",doctorText:"Consulte um médico qualificado conforme o nível de risco.",emergencyText:"Procure emergência em caso de falta de ar grave, dor no peito, desmaio, confusão, convulsão, sangramento intenso ou piora rápida.",noteText:"Esta é uma triagem inicial, não um diagnóstico final.",appointment:"Marcar consulta médica",conditions:{general:"Problema geral de saúde",fever:"Febre, gripe ou infecção viral",dengue:"Possível dengue ou malária",chest:"Dor no peito ou alerta cardíaco",breathing:"Problema respiratório",stomach:"Problema estomacal ou digestivo",headache:"Dor de cabeça ou enxaqueca",skin:"Irritação da pele ou couro cabeludo",urine:"Infecção urinária",sugar:"Problema de glicemia",bp:"Problema de pressão arterial",women:"Problema de saúde feminina",child:"Problema de saúde infantil"}},
+    ru:{dir:"ltr",speech:"ru-RU",analysis:"Первичная оценка симптомов",issue:"Возможная проблема",risk:"Уровень риска",symptoms:"Введенные симптомы",action:"Рекомендуемое действие",medicine:"Безопасность лекарств",doctor:"Консультация врача",emergency:"Экстренное предупреждение",note:"Важное примечание",low:"Низкий",moderate:"Средний",high:"Высокий",lowAction:"Симптомы выглядят легкими. Отдыхайте, пейте жидкости и наблюдайте. Немедленный визит к врачу обычно не нужен, если они не сохраняются и не ухудшаются.",moderateAction:"Внимательно наблюдайте и в ближайшее время обратитесь к врачу, особенно при ухудшении.",highAction:"Срочно обратитесь за медицинской помощью.",medicineText:"Не начинайте рецептурные лекарства или антибиотики и не меняйте дозу без врача или фармацевта.",doctorText:"Обратитесь к квалифицированному врачу в соответствии с уровнем риска.",emergencyText:"Срочно обращайтесь при тяжелой одышке, боли в груди, обмороке, спутанности, судорогах, сильном кровотечении или быстром ухудшении.",noteText:"Это первичная оценка, а не окончательный диагноз.",appointment:"Записаться к врачу",conditions:{general:"Общая проблема со здоровьем",fever:"Температура, грипп или вирусная инфекция",dengue:"Возможная денге или малярия",chest:"Боль в груди или сердечное предупреждение",breathing:"Проблема дыхания",stomach:"Проблема желудка или пищеварения",headache:"Головная боль или мигрень",skin:"Раздражение кожи или кожи головы",urine:"Мочевая инфекция",sugar:"Проблема сахара крови",bp:"Проблема давления",women:"Проблема женского здоровья",child:"Проблема здоровья ребенка"}},
+    "zh-CN":{dir:"ltr",speech:"zh-CN",analysis:"症状初步分析",issue:"可能问题",risk:"风险等级",symptoms:"输入的症状",action:"建议采取的措施",medicine:"用药安全",doctor:"医生咨询",emergency:"紧急警告",note:"重要提示",low:"低",moderate:"中等",high:"高",lowAction:"症状看起来较轻。请休息、补充水分并观察。通常不需要立即就医，除非症状持续或加重。",moderateAction:"请密切观察，并尽快咨询医生，尤其是症状加重时。",highAction:"请立即寻求紧急医疗帮助。",medicineText:"不要在没有医生或药师指导的情况下开始处方药、抗生素或改变剂量。",doctorText:"根据风险等级咨询合格医生。",emergencyText:"出现严重呼吸困难、胸痛、昏厥、意识混乱、抽搐、大量出血或迅速恶化时立即急诊。",noteText:"这是初步筛查，不是最终诊断。",appointment:"预约医生咨询",conditions:{general:"一般健康问题",fever:"发烧、流感或病毒感染",dengue:"可能登革热或疟疾",chest:"胸痛或心脏警告",breathing:"呼吸问题",stomach:"胃肠或消化问题",headache:"头痛或偏头痛",skin:"皮肤或头皮刺激",urine:"尿路感染",sugar:"血糖问题",bp:"血压问题",women:"女性健康问题",child:"儿童健康问题"}}
+  };
+  Object.keys(CORE_NATIVE_FIX).forEach(function(k){ BRIEF_NATIVE[k]=CORE_NATIVE_FIX[k]; });
+
+  // Remove Urdu/English fallback from Pakistani language output.
+  Object.assign(BRIEF_NATIVE.pnb,{speech:"pa-IN",medicine:"دوائی بارے احتیاط",medicineText:"ڈاکٹر یا دوا ساز دے مشورے توں بغیر نسخے والی دوائی، جراثیم کُش دوا یا خوراک نہ بدلو۔",appointment:"ڈاکٹر دا مشورہ بک کرو",noteText:"ایہ ابتدائی جانچ اے، پکی تشخیص نہیں۔"});
+  Object.assign(BRIEF_NATIVE.sd,{speech:"sd-IN",medicine:"دوا بابت احتياط",medicineText:"ڊاڪٽر يا دوا ساز جي صلاح کانسواءِ نسخي واري دوا، جراثيم ڪش دوا يا مقدار تبديل نه ڪريو۔",appointment:"ڊاڪٽر سان صلاح جو وقت وٺو",noteText:"هي شروعاتي جاچ آهي، آخري تشخيص نه آهي۔"});
+  Object.assign(BRIEF_NATIVE.ps,{speech:"ps-AF",medicine:"د درملو خوندیتوب",medicineText:"د ډاکټر یا درمل جوړونکي له سلا پرته نسخه لرونکي درمل، انتي بیوتیک یا اندازه مه بدلوئ۔",appointment:"د ډاکټر مشوره وټاکئ",noteText:"دا لومړنۍ ارزونه ده، وروستۍ تشخیص نه دی۔"});
+  Object.assign(BRIEF_NATIVE.bal,{speech:"bal-PK",medicine:"دوا ءِ احتیاط",medicineText:"ڈاکٹر یا دوا ساز ءِ مشورہ ءَ بغیر نسخہ ءِ دوا، جراثیم کُش دوا یا مقدار بدل مکنیت۔",appointment:"ڈاکٹر ءِ مشورہ بک کنیت",noteText:"اے ابتدائی جائزو انت، آخری تشخیص نہ انت۔"});
+  Object.assign(BRIEF_NATIVE.skr,{speech:"skr-PK",medicine:"دوائی دی احتیاط",medicineText:"ڈاکٹر یا دوا ساز دی صلاح دے بغیر نسخے دی دوائی، جراثیم کُش دوائی یا مقدار نہ بدلو۔",appointment:"ڈاکٹر نال مشورہ بک کرو",noteText:"ایہ ابتدائی جانچ اے، آخری تشخیص کائنی۔"});
+  Object.assign(BRIEF_NATIVE.hno,{speech:"hno-PK",medicine:"دوائی دی احتیاط",medicineText:"ڈاکٹر یا دوا ساز دی صلاح توں بغیر نسخے دی دوائی، جراثیم کُش دوائی یا مقدار نہ بدلو۔",appointment:"ڈاکٹر نال مشورہ بک کرو",noteText:"ایہ ابتدائی جانچ اے، آخری تشخیص نہیں۔"});
+  Object.assign(BRIEF_NATIVE.ks,{speech:"ks-IN",medicine:"دوایہ ہُند احتیاط",medicineText:"ڈاکٹر یا دوا ساز سٕند مشورہ بغیر نسخہ دوایہ، جراثیم کُش دوایہ یا مقدار تبدیل مٕہ کریو۔",appointment:"ڈاکٹر سٕتۍ مشورہ بک کریو",noteText:"یہ ابتدائی جانچ چھ، آخری تشخیص نہ۔"});
+  Object.assign(BRIEF_NATIVE.brh,{speech:"brh-PK",medicine:"دوا نا احتیاط",medicineText:"ڈاکٹر یا دوا ساز نا مشورہ بغیر نسخہ نا دوا، جراثیم کُش دوا یا مقدار بدل مکننگ۔",appointment:"ڈاکٹر نا مشورہ بک کننگ",noteText:"اے ابتدائی جائزہ، آخری تشخیص نہ۔"});
+
+  window.AISymptomLanguagePack=function(raw){
+    return BRIEF_NATIVE[raw] || BRIEF_NATIVE[normalizeLang(raw)] || BRIEF_NATIVE.en;
+  };
+
+    function renderNativeBrief(raw){
+    const cfg = BRIEF_NATIVE[raw] || BRIEF_NATIVE[normalizeLang(raw)] || BRIEF_NATIVE.en;
+    if(!cfg) return false;
+    const symptoms = val("symptoms");
+    const a = analyzeContext(symptoms);
+    const primary = a.matches[0];
+    const issueTitle = (cfg.conditions&&cfg.conditions[primary.key]) || (cfg.conditions&&cfg.conditions.general) || "";
+    const riskText = a.risk==="High" ? cfg.high : a.risk==="Moderate" ? cfg.moderate : cfg.low;
+    const actionText = a.risk==="High" ? cfg.highAction : a.risk==="Moderate" ? cfg.moderateAction : cfg.lowAction;
+    const doctorAdvice = a.risk==="High" ? cfg.highAction : a.risk==="Moderate" ? cfg.doctorText : cfg.lowAction;
+    const color = a.risk==="High" ? "#ff4444" : a.risk==="Moderate" ? "#ffcc00" : "#00ff88";
+    const appointmentButton = a.risk !== "Low"
+      ? `<div class="simple-result-block"><a class="btn btn-primary" href="appointment.html?lang=${encodeURIComponent(raw)}">${safe(cfg.appointment||cfg.doctor)}</a></div>` : "";
+    const lines=[
+      `${cfg.issue}: ${issueTitle}`,
+      `${cfg.risk}: ${riskText}`,
+      `${cfg.symptoms}: ${symptoms}`,
+      `${cfg.action}: ${actionText}`,
+      `${cfg.medicine}: ${cfg.medicineText}`,
+      `${cfg.doctor}: ${doctorAdvice}`,
+      `${cfg.emergency}: ${cfg.emergencyText}`,
+      `${cfg.note}: ${cfg.noteText}`
+    ];
+    $("dashboard").innerHTML=`
+      <div class="simple-symptom-result contextual-result" dir="${cfg.dir}">
+        <div class="simple-result-header"><div><small>${safe(cfg.analysis)}</small><h3>${safe(lines[0])}</h3></div>
+        <span style="background:${color};">${safe(lines[1])}</span></div>
+        <div class="simple-result-block"><b>${safe(cfg.symptoms)}</b><p>${safe(symptoms)}</p></div>
+        <div class="simple-result-block"><b>${safe(cfg.action)}</b><p>${safe(actionText)}</p></div>
+        <div class="simple-result-block"><b>${safe(cfg.medicine)}</b><p>${safe(cfg.medicineText)}</p></div>
+        <div class="simple-result-block"><b>${safe(cfg.doctor)}</b><p>${safe(doctorAdvice)}</p></div>
+        <div class="simple-result-block emergency"><b>${safe(cfg.emergency)}</b><p>${safe(cfg.emergencyText)}</p></div>
+        ${appointmentButton}
+        <div class="simple-result-note"><b>${safe(cfg.note)}:</b> ${safe(cfg.noteText)}</div>
+      </div>`;
+    const exactSpeech=lines.join(". ");
+    window.__checkerLastSpeechText=exactSpeech;
+    speak(exactSpeech,{speech:cfg.speech});
+    return true;
+  }
+
+  const CONTEXT_UI = {
+    en:{title:"Context-aware symptom analysis",possibilities:"Most relevant possibilities",why:"Why these matched",context:"Your entered context",reading:"Measured reading",doctor:"Recommended clinician",actions:"What to do now",avoid:"What to avoid",urgent:"Seek urgent help if",questions:"Useful follow-up questions",confidence:"Match strength",high:"High",moderate:"Moderate",low:"Low",book:"Book Doctor Consultation",age:"Age",severity:"Severity",duration:"Duration",mode:"Mode",matched:"Matched details",noClear:"No clear condition pattern was found from the text.",notDiagnosis:"This screening result is not a diagnosis."},
+    ur:{title:"علامات کا تفصیلی ابتدائی تجزیہ",possibilities:"زیادہ متعلقہ ممکنہ مسائل",why:"یہ امکان کیوں سامنے آیا",context:"آپ کی دی گئی معلومات",reading:"ریڈنگ کا تجزیہ",doctor:"موزوں ڈاکٹر",actions:"ابھی کیا کریں",avoid:"کیا نہ کریں",urgent:"فوری مدد کب لیں",questions:"ڈاکٹر کے لیے اہم سوالات",confidence:"مماثلت کی سطح",high:"زیادہ",moderate:"درمیانہ",low:"کم",book:"ڈاکٹر کنسلٹیشن بک کریں",age:"عمر",severity:"شدت",duration:"مدت",mode:"موڈ",matched:"ملنے والی علامات",noClear:"لکھی گئی علامات سے کوئی واضح pattern نہیں ملا۔",notDiagnosis:"یہ ابتدائی screening ہے، حتمی تشخیص نہیں۔"},
+    hi:{title:"लक्षणों का संदर्भ आधारित प्रारंभिक विश्लेषण",possibilities:"सबसे संबंधित संभावनाएँ",why:"ये संभावनाएँ क्यों मिलीं",context:"आपकी दी गई जानकारी",reading:"रीडिंग का विश्लेषण",doctor:"सुझाया गया डॉक्टर",actions:"अभी क्या करें",avoid:"क्या न करें",urgent:"तुरंत सहायता कब लें",questions:"डॉक्टर के लिए उपयोगी प्रश्न",confidence:"मिलान की शक्ति",high:"ज़्यादा",moderate:"मध्यम",low:"कम",book:"Doctor consultation book करें",age:"उम्र",severity:"गंभीरता",duration:"अवधि",mode:"मोड",matched:"मिली हुई जानकारी",noClear:"लिखे गए लक्षणों से कोई स्पष्ट pattern नहीं मिला।",notDiagnosis:"यह screening result final diagnosis नहीं है।"},
+    es:{title:"Análisis contextual inicial de síntomas",possibilities:"Posibilidades más relevantes",why:"Por qué coincidieron",context:"Contexto introducido",reading:"Análisis de lectura",doctor:"Profesional recomendado",actions:"Qué hacer ahora",avoid:"Qué evitar",urgent:"Busque ayuda urgente si",questions:"Preguntas útiles para el médico",confidence:"Fuerza de coincidencia",high:"Alta",moderate:"Moderada",low:"Baja",book:"Reservar consulta médica",age:"Edad",severity:"Gravedad",duration:"Duración",mode:"Modo",matched:"Detalles coincidentes",noClear:"No se encontró un patrón claro con el texto dado.",notDiagnosis:"Este resultado de orientación no es un diagnóstico."},
+    fr:{title:"Analyse contextuelle initiale des symptômes",possibilities:"Possibilités les plus pertinentes",why:"Pourquoi elles correspondent",context:"Contexte saisi",reading:"Analyse de la mesure",doctor:"Professionnel recommandé",actions:"Que faire maintenant",avoid:"À éviter",urgent:"Demandez une aide urgente si",questions:"Questions utiles pour le médecin",confidence:"Force de correspondance",high:"Élevée",moderate:"Modérée",low:"Faible",book:"Réserver une consultation",age:"Âge",severity:"Gravité",duration:"Durée",mode:"Mode",matched:"Éléments correspondants",noClear:"Aucun schéma clair n’a été trouvé dans le texte.",notDiagnosis:"Ce résultat d’orientation n’est pas un diagnostic."},
+    de:{title:"Kontextbezogene Ersteinschätzung der Symptome",possibilities:"Relevanteste Möglichkeiten",why:"Warum diese passen",context:"Eingegebener Kontext",reading:"Messwertanalyse",doctor:"Empfohlene Fachperson",actions:"Was jetzt tun",avoid:"Was vermeiden",urgent:"Sofort Hilfe suchen bei",questions:"Nützliche Fragen für den Arzt",confidence:"Übereinstimmungsstärke",high:"Hoch",moderate:"Mittel",low:"Niedrig",book:"Arzttermin buchen",age:"Alter",severity:"Stärke",duration:"Dauer",mode:"Modus",matched:"Passende Angaben",noClear:"Aus dem Text wurde kein klares Muster erkannt.",notDiagnosis:"Dieses Screening ist keine Diagnose."},
+    pt:{title:"Análise contextual inicial dos sintomas",possibilities:"Possibilidades mais relevantes",why:"Por que correspondem",context:"Contexto informado",reading:"Análise da leitura",doctor:"Profissional recomendado",actions:"O que fazer agora",avoid:"O que evitar",urgent:"Procure ajuda urgente se",questions:"Perguntas úteis para o médico",confidence:"Força da correspondência",high:"Alta",moderate:"Moderada",low:"Baixa",book:"Marcar consulta médica",age:"Idade",severity:"Gravidade",duration:"Duração",mode:"Modo",matched:"Detalhes correspondentes",noClear:"Nenhum padrão claro foi encontrado no texto.",notDiagnosis:"Este resultado de triagem não é diagnóstico."},
+    ru:{title:"Контекстная первичная оценка симптомов",possibilities:"Наиболее подходящие варианты",why:"Почему они совпали",context:"Введенный контекст",reading:"Анализ показателя",doctor:"Рекомендуемый специалист",actions:"Что делать сейчас",avoid:"Чего избегать",urgent:"Срочно обратитесь за помощью, если",questions:"Полезные вопросы врачу",confidence:"Сила совпадения",high:"Высокая",moderate:"Средняя",low:"Низкая",book:"Записаться к врачу",age:"Возраст",severity:"Тяжесть",duration:"Длительность",mode:"Режим",matched:"Совпавшие данные",noClear:"По введенному тексту не найден четкий шаблон.",notDiagnosis:"Этот результат скрининга не является диагнозом."},
+    zh:{title:"基于上下文的初步症状分析",possibilities:"最相关的可能性",why:"为什么匹配",context:"您输入的情况",reading:"读数分析",doctor:"建议就诊科室",actions:"现在应该做什么",avoid:"应避免什么",urgent:"出现以下情况请立即就医",questions:"就诊时可回答的问题",confidence:"匹配强度",high:"高",moderate:"中等",low:"低",book:"预约医生咨询",age:"年龄",severity:"严重程度",duration:"持续时间",mode:"模式",matched:"匹配信息",noClear:"输入的文字没有形成清晰的症状模式。",notDiagnosis:"此筛查结果不是最终诊断。"},
+    ar:{title:"تحليل أولي للأعراض حسب السياق",possibilities:"الاحتمالات الأكثر ارتباطًا",why:"لماذا ظهرت هذه الاحتمالات",context:"المعلومات المدخلة",reading:"تحليل القراءة",doctor:"الطبيب المقترح",actions:"ماذا تفعل الآن",avoid:"ما يجب تجنبه",urgent:"اطلب مساعدة عاجلة إذا ظهر",questions:"أسئلة مفيدة للطبيب",confidence:"قوة التطابق",high:"مرتفعة",moderate:"متوسطة",low:"منخفضة",book:"حجز استشارة طبية",age:"العمر",severity:"الشدة",duration:"المدة",mode:"الوضع",matched:"التفاصيل المتطابقة",noClear:"لم يظهر نمط واضح من النص المدخل.",notDiagnosis:"هذه نتيجة فرز أولي وليست تشخيصًا."}
+  };
+
+
+  const NATIVE_SYMPTOM_WORDS = {
+    pnb:{fever:["بخار","کھانسی","زکام"],chest:["سینہ","دل دا درد"],breathing:["سانس","دم گھٹ"],stomach:["پیٹ","الٹی","دست"],headache:["سر درد","چکر"],skin:["خارش","دانے"],urine:["پیشاب","جلن"],sugar:["شوگر"],bp:["بلڈ پریشر"],women:["حمل","ماہواری"],child:["بچہ","بچی"],dengue:["ڈینگی"]},
+    sd:{fever:["بخار","کنگهه"],chest:["سينو","دل جو سور"],breathing:["ساهه"],stomach:["پيٽ","الٽي","دست"],headache:["مٿي جو سور","چڪر"],skin:["خارش","داڻا"],urine:["پيشاب","ساڙ"],sugar:["شگر"],bp:["بلڊ پريشر"],women:["حمل","ماهواري"],child:["ٻار"],dengue:["ڊينگي"]},
+    ps:{fever:["تبه","ټوخی"],chest:["سينه درد","د زړه درد"],breathing:["ساه","تنفس"],stomach:["معده","کانګې","نس ناستی"],headache:["سر درد","سر ګرځېدل"],skin:["خارښ","دانې"],urine:["ادرار","سوزش"],sugar:["شکر"],bp:["د وینې فشار"],women:["امیندوارۍ","حیض"],child:["ماشوم"],dengue:["ډینګي"]},
+    bal:{fever:["تب","سرفہ"],chest:["سینہ درد","دل درد"],breathing:["ساہ"],stomach:["معدہ","الٹی","دست"],headache:["سر درد","چکر"],skin:["خارش","دانہ"],urine:["پیشاب","سوزش"],sugar:["شکر"],bp:["فشار خون"],women:["حمل","ماہواری"],child:["بچہ"],dengue:["ڈینگی"]},
+    skr:{fever:["بخار","کھنگھ"],chest:["سینہ","دل دا درد"],breathing:["ساہ"],stomach:["پیٹ","الٹی","دست"],headache:["سر درد","چکر"],skin:["خارش","دانے"],urine:["پیشاب","جلن"],sugar:["شوگر"],bp:["بلڈ پریشر"],women:["حمل","ماہواری"],child:["بچہ"],dengue:["ڈینگی"]},
+    hno:{fever:["بخار","کھانسی"],chest:["سینہ","دل دا درد"],breathing:["سانس"],stomach:["پیٹ","الٹی","دست"],headache:["سر درد","چکر"],skin:["خارش","دانے"],urine:["پیشاب","جلن"],sugar:["شوگر"],bp:["بلڈ پریشر"],women:["حمل","ماہواری"],child:["بچہ"],dengue:["ڈینگی"]},
+    ks:{fever:["بخار","کھانٛس"],chest:["سینہ درد","دل درد"],breathing:["ساس"],stomach:["پیٹ","الٹی"],headache:["سر درد","چکر"],skin:["خارش"],urine:["پیشاب"],sugar:["شگر"],bp:["بلڈ پریشر"],women:["حمل"],child:["بچہ"],dengue:["ڈینگی"]},
+    brh:{fever:["بخار","کھانسی"],chest:["سینہ درد"],breathing:["سانس"],stomach:["پیٹ","الٹی"],headache:["سر درد"],skin:["خارش"],urine:["پیشاب"],sugar:["شوگر"],bp:["بلڈ پریشر"],women:["حمل"],child:["بچہ"],dengue:["ڈینگی"]},
+    ar:{fever:["حمى","سعال"],chest:["ألم الصدر"],breathing:["ضيق التنفس"],stomach:["ألم البطن","قيء","إسهال"],headache:["صداع","دوخة"],skin:["حكة","طفح"],urine:["تبول","حرقان البول"],sugar:["سكر الدم"],bp:["ضغط الدم"],women:["حمل","دورة"],child:["طفل","رضيع"],dengue:["حمى الضنك"]},
+    hi:{fever:["बुखार","खांसी"],chest:["सीने में दर्द"],breathing:["साँस","सांस"],stomach:["पेट दर्द","उल्टी","दस्त"],headache:["सिरदर्द","चक्कर"],skin:["खुजली","चकत्ते"],urine:["पेशाब","जलन"],sugar:["शुगर","रक्त शर्करा"],bp:["रक्तचाप"],women:["गर्भावस्था","माहवारी"],child:["बच्चा","शिशु"],dengue:["डेंगू"]},
+    fa:{fever:["تب","سرفه"],chest:["درد قفسه سینه"],breathing:["تنگی نفس"],stomach:["درد معده","استفراغ","اسهال"],headache:["سردرد","سرگیجه"],skin:["خارش","بثورات"],urine:["ادرار","سوزش"],sugar:["قند خون"],bp:["فشار خون"],women:["بارداری","قاعدگی"],child:["کودک","نوزاد"],dengue:["دنگی"]},
+    tr:{fever:["ateş","öksürük"],chest:["göğüs ağrısı"],breathing:["nefes darlığı"],stomach:["mide ağrısı","kusma","ishal"],headache:["baş ağrısı","baş dönmesi"],skin:["kaşıntı","döküntü"],urine:["idrar","yanma"],sugar:["kan şekeri"],bp:["tansiyon"],women:["hamilelik","adet"],child:["çocuk","bebek"],dengue:["dang"]},
+    "zh-CN":{fever:["发烧","咳嗽"],chest:["胸痛"],breathing:["呼吸困难"],stomach:["腹痛","呕吐","腹泻"],headache:["头痛","头晕"],skin:["瘙痒","皮疹"],urine:["排尿","尿痛"],sugar:["血糖"],bp:["血压"],women:["怀孕","月经"],child:["儿童","婴儿"],dengue:["登革热"]},
+    "zh-TW":{fever:["發燒","咳嗽"],chest:["胸痛"],breathing:["呼吸困難"],stomach:["腹痛","嘔吐","腹瀉"],headache:["頭痛","頭暈"],skin:["搔癢","皮疹"],urine:["排尿","尿痛"],sugar:["血糖"],bp:["血壓"],women:["懷孕","月經"],child:["兒童","嬰兒"],dengue:["登革熱"]},
+    es:{fever:["fiebre","tos"],chest:["dolor de pecho"],breathing:["falta de aire"],stomach:["dolor abdominal","vómito","diarrea"],headache:["dolor de cabeza","mareo"],skin:["picazón","sarpullido"],urine:["orina","ardor"],sugar:["azúcar en sangre"],bp:["presión arterial"],women:["embarazo","menstruación"],child:["niño","bebé"],dengue:["dengue"]},
+    fr:{fever:["fièvre","toux"],chest:["douleur thoracique"],breathing:["essoufflement"],stomach:["douleur abdominale","vomissement","diarrhée"],headache:["mal de tête","vertige"],skin:["démangeaison","éruption"],urine:["urine","brûlure"],sugar:["glycémie"],bp:["tension artérielle"],women:["grossesse","règles"],child:["enfant","nourrisson"],dengue:["dengue"]},
+    de:{fever:["fieber","husten"],chest:["brustschmerz"],breathing:["atemnot"],stomach:["bauchschmerz","erbrechen","durchfall"],headache:["kopfschmerz","schwindel"],skin:["juckreiz","ausschlag"],urine:["urin","brennen"],sugar:["blutzucker"],bp:["blutdruck"],women:["schwangerschaft","periode"],child:["kind","säugling"],dengue:["dengue"]},
+    pt:{fever:["febre","tosse"],chest:["dor no peito"],breathing:["falta de ar"],stomach:["dor abdominal","vômito","diarreia"],headache:["dor de cabeça","tontura"],skin:["coceira","erupção"],urine:["urina","ardor"],sugar:["açúcar no sangue"],bp:["pressão arterial"],women:["gravidez","menstruação"],child:["criança","bebê"],dengue:["dengue"]},
+    ru:{fever:["температура","кашель"],chest:["боль в груди"],breathing:["одышка"],stomach:["боль в животе","рвота","диарея"],headache:["головная боль","головокружение"],skin:["зуд","сыпь"],urine:["мочеиспускание","жжение"],sugar:["сахар крови"],bp:["давление"],women:["беременность","месячные"],child:["ребенок","младенец"],dengue:["денге"]},
+    ja:{fever:["発熱","咳"],chest:["胸痛"],breathing:["息苦しい","呼吸困難"],stomach:["腹痛","嘔吐","下痢"],headache:["頭痛","めまい"],skin:["かゆみ","発疹"],urine:["排尿","痛み"],sugar:["血糖"],bp:["血圧"],women:["妊娠","月経"],child:["子ども","乳児"],dengue:["デング熱"]},
+    ko:{fever:["발열","기침"],chest:["흉통"],breathing:["호흡곤란"],stomach:["복통","구토","설사"],headache:["두통","어지럼"],skin:["가려움","발진"],urine:["배뇨","통증"],sugar:["혈당"],bp:["혈압"],women:["임신","생리"],child:["아이","아기"],dengue:["뎅기열"]},
+    it:{fever:["febbre","tosse"],chest:["dolore al petto"],breathing:["mancanza di respiro"],stomach:["dolore addominale","vomito","diarrea"],headache:["mal di testa","vertigini"],skin:["prurito","eruzione"],urine:["urina","bruciore"],sugar:["glicemia"],bp:["pressione arteriosa"],women:["gravidanza","mestruazioni"],child:["bambino","neonato"],dengue:["dengue"]},
+    bn:{fever:["জ্বর","কাশি"],chest:["বুকে ব্যথা"],breathing:["শ্বাসকষ্ট"],stomach:["পেট ব্যথা","বমি","ডায়রিয়া"],headache:["মাথাব্যথা","মাথা ঘোরা"],skin:["চুলকানি","ফুসকুড়ি"],urine:["প্রস্রাব","জ্বালা"],sugar:["রক্তে শর্করা"],bp:["রক্তচাপ"],women:["গর্ভাবস্থা","মাসিক"],child:["শিশু","বাচ্চা"],dengue:["ডেঙ্গু"]},
+    ta:{fever:["காய்ச்சல்","இருமல்"],chest:["மார்பு வலி"],breathing:["மூச்சுத்திணறல்"],stomach:["வயிற்று வலி","வாந்தி","வயிற்றுப்போக்கு"],headache:["தலைவலி","மயக்கம்"],skin:["அரிப்பு","தடிப்பு"],urine:["சிறுநீர்","எரிச்சல்"],sugar:["இரத்த சர்க்கரை"],bp:["இரத்த அழுத்தம்"],women:["கர்ப்பம்","மாதவிடாய்"],child:["குழந்தை","சிசு"],dengue:["டெங்கு"]},
+    te:{fever:["జ్వరం","దగ్గు"],chest:["ఛాతి నొప్పి"],breathing:["శ్వాస ఇబ్బంది"],stomach:["కడుపు నొప్పి","వాంతి","విరేచనాలు"],headache:["తలనొప్పి","తల తిరుగు"],skin:["దురద","దద్దుర్లు"],urine:["మూత్రం","మంట"],sugar:["రక్త చక్కెర"],bp:["రక్తపోటు"],women:["గర్భం","నెలసరి"],child:["పిల్ల","శిశువు"],dengue:["డెంగ్యూ"]},
+    mr:{fever:["ताप","खोकला"],chest:["छातीत दुखणे"],breathing:["श्वास घेण्यास त्रास"],stomach:["पोटदुखी","उलटी","जुलाब"],headache:["डोकेदुखी","चक्कर"],skin:["खाज","पुरळ"],urine:["लघवी","जळजळ"],sugar:["रक्तातील साखर"],bp:["रक्तदाब"],women:["गर्भधारणा","मासिक पाळी"],child:["मुल","बाळ"],dengue:["डेंग्यू"]},
+    gu:{fever:["તાવ","ઉધરસ"],chest:["છાતીમાં દુખાવો"],breathing:["શ્વાસમાં તકલીફ"],stomach:["પેટમાં દુખાવો","ઊલટી","ઝાડા"],headache:["માથાનો દુખાવો","ચક્કર"],skin:["ખંજવાળ","ચકામા"],urine:["પેશાબ","બળતરા"],sugar:["બ્લડ શુગર"],bp:["બ્લડ પ્રેશર"],women:["ગર્ભાવસ્થા","માસિક"],child:["બાળક","શિશુ"],dengue:["ડેન્ગ્યુ"]},
+    ml:{fever:["പനി","ചുമ"],chest:["നെഞ്ചുവേദന"],breathing:["ശ്വാസതടസം"],stomach:["വയറുവേദന","ഛർദ്ദി","വയറിളക്കം"],headache:["തലവേദന","തലചുറ്റൽ"],skin:["ചൊറിച്ചിൽ","ചുണങ്ങ്"],urine:["മൂത്രം","കത്തൽ"],sugar:["രക്തശർക്കര"],bp:["രക്തസമ്മർദ്ദം"],women:["ഗർഭം","മാസവരി"],child:["കുട്ടി","ശിശു"],dengue:["ഡെങ്കിപ്പനി"]},
+    th:{fever:["ไข้","ไอ"],chest:["เจ็บหน้าอก"],breathing:["หายใจลำบาก"],stomach:["ปวดท้อง","อาเจียน","ท้องเสีย"],headache:["ปวดศีรษะ","เวียนศีรษะ"],skin:["คัน","ผื่น"],urine:["ปัสสาวะ","แสบ"],sugar:["น้ำตาลในเลือด"],bp:["ความดันโลหิต"],women:["ตั้งครรภ์","ประจำเดือน"],child:["เด็ก","ทารก"],dengue:["ไข้เลือดออก"]},
+    id:{fever:["demam","batuk"],chest:["nyeri dada"],breathing:["sesak napas"],stomach:["sakit perut","muntah","diare"],headache:["sakit kepala","pusing"],skin:["gatal","ruam"],urine:["kencing","perih"],sugar:["gula darah"],bp:["tekanan darah"],women:["kehamilan","menstruasi"],child:["anak","bayi"],dengue:["demam berdarah"]},
+    ms:{fever:["demam","batuk"],chest:["sakit dada"],breathing:["sesak nafas"],stomach:["sakit perut","muntah","cirit-birit"],headache:["sakit kepala","pening"],skin:["gatal","ruam"],urine:["kencing","pedih"],sugar:["gula darah"],bp:["tekanan darah"],women:["kehamilan","haid"],child:["kanak-kanak","bayi"],dengue:["denggi"]},
+    vi:{fever:["sốt","ho"],chest:["đau ngực"],breathing:["khó thở"],stomach:["đau bụng","nôn","tiêu chảy"],headache:["đau đầu","chóng mặt"],skin:["ngứa","phát ban"],urine:["tiểu","buốt"],sugar:["đường huyết"],bp:["huyết áp"],women:["mang thai","kinh nguyệt"],child:["trẻ em","trẻ sơ sinh"],dengue:["sốt xuất huyết"]},
+    sw:{fever:["homa","kikohozi"],chest:["maumivu ya kifua"],breathing:["kupumua kwa shida"],stomach:["maumivu ya tumbo","kutapika","kuhara"],headache:["maumivu ya kichwa","kizunguzungu"],skin:["kuwasha","upele"],urine:["mkojo","kuungua"],sugar:["sukari ya damu"],bp:["shinikizo la damu"],women:["ujauzito","hedhi"],child:["mtoto","mchanga"],dengue:["dengue"]}
+  };
+
+
+    const ISSUE_RULES = [
+    {key:"chest", doctor:"cardio", phrases:["chest pain","chest pressure","tight chest","heart pain","left arm pain","jaw pain","sweating with pain","سینے میں درد","سینہ درد","دل کا درد","بازو میں درد","ألم الصدر","dolor de pecho","douleur thoracique","brustschmerz","dor no peito","боль в груди","胸痛"], terms:["chest","heart","left arm","jaw","pressure","سینے","سینہ","دل","ألم الصدر","pecho","poitrine","brust","peito","груди","胸"]},
+    {key:"breathing", doctor:"pulmo", phrases:["shortness of breath","difficulty breathing","cannot breathe","blue lips","low oxygen","سانس نہیں","سانس لینے میں مشکل","ضيق التنفس","falta de aire","difficulté à respirer","atemnot","falta de ar","одышка","呼吸困难"], terms:["breath","breathing","wheezing","oxygen","asthma","saans","سانس","ضيق","respirar","souffle","atmen","respiração","дых","呼吸"]},
+    {key:"dengue", doctor:"gp", phrases:["eye pain with fever","platelet drop","mosquito bite with fever","high fever body pain rash","آنکھوں کے پیچھے درد","پلیٹ لیٹس","ڈینگی","حمى الضنك","dengue","plaquetas","plaquettes","thrombozyten","тромбоцит","登革热"], terms:["dengue","malaria","platelet","mosquito","rash with fever","ڈینگی","ملیریا","پلیٹ","بعوض","plaqueta","paludisme","mücke","malária","маляр","登革"]},
+    {key:"fever", doctor:"gp", phrases:["high fever","fever and cough","fever with chills","بخار اور کھانسی","تیز بخار","حمى وسعال","fiebre y tos","fièvre et toux","fieber und husten","febre e tosse","температура и кашель","发烧和咳嗽"], terms:["fever","temperature","chills","flu","cough","cold","sore throat","body pain","bukhar","khansi","بخار","کھانسی","زکام","حمى","سعال","fiebre","tos","fièvre","toux","fieber","husten","febre","tosse","температур","кашель","发烧","咳嗽"]},
+    {key:"stomach", doctor:"gastro", phrases:["severe abdominal pain","blood in stool","persistent vomiting","پیٹ میں شدید درد","خون والی الٹی","ألم بطن شديد","dolor abdominal intenso","douleur abdominale sévère","starke bauchschmerzen","dor abdominal intensa","сильная боль в животе","严重腹痛"], terms:["stomach","abdomen","abdominal","vomit","nausea","diarrhea","loose motion","acidity","pait","ulti","dast","پیٹ","الٹی","دست","متلی","بطن","قيء","إسهال","estómago","vómito","diarrea","ventre","vomissement","durchfall","bauch","estômago","vômito","живот","рвота","腹痛","呕吐","腹泻"]},
+    {key:"headache", doctor:"neuro", phrases:["sudden worst headache","headache with weakness","headache with vision loss","اچانک شدید سر درد","سر درد کے ساتھ کمزوری","صداع شديد مفاجئ","dolor de cabeza súbito","mal de tête soudain","plötzlicher starker kopfschmerz","dor de cabeça súbita","внезапная сильная головная боль","突然剧烈头痛"], terms:["headache","migraine","dizziness","vertigo","head pain","sar dard","chakkar","سر درد","چکر","صداع","دوخة","cabeza","mareo","tête","vertige","kopfschmerz","schwindel","cabeça","tontura","голов","головокруж","头痛","头晕"]},
+    {key:"urine", doctor:"uro", phrases:["blood in urine","unable to urinate","fever with back pain urine","پیشاب میں خون","پیشاب بند","دم في البول","sangre en orina","sang dans les urines","blut im urin","sangue na urina","кровь в моче","尿血"], terms:["urine","urination","uti","burning urine","frequent urination","peshab","پیشاب","جلن","بول","تبول","orina","uriner","urin","urina","моч","排尿"]},
+    {key:"skin", doctor:"derma", phrases:["face swelling with rash","lip swelling allergy","rash with breathing difficulty","چہرہ سوجن","ہونٹ سوجن","تورم الوجه","hinchazón de cara","gonflement du visage","gesichtsschwellung","inchaço no rosto","отек лица","脸部肿胀"], terms:["itch","itching","rash","skin","scalp","dandruff","allergy","hair product","خارش","جلد","سر کی خشکی","الرجية","حكة","piel","picazón","peau","démangeaison","haut","juck","pele","coceira","кож","зуд","皮肤","瘙痒"]},
+    {key:"sugar", doctor:"endo", phrases:["blood sugar","sugar level","diabetes reading","شوگر لیول","سكر الدم","nivel de azúcar","glycémie","blutzucker","açúcar no sangue","сахар крови","血糖"], terms:["sugar","glucose","diabetes","شوگر","ذیابیطس","سكر","diabetes","glucosa","glycémie","zucker","glicose","сахар","глюкоз","血糖"]},
+    {key:"bp", doctor:"cardio", phrases:["blood pressure","bp reading","high bp","low bp","بلڈ پریشر","ضغط الدم","presión arterial","tension artérielle","blutdruck","pressão arterial","давление","血压"], terms:["bp","blood pressure","hypertension","hypotension","بلڈ پریشر","ضغط","presión","tension","blutdruck","pressão","давление","血压"]},
+    {key:"women", doctor:"gp", phrases:["pregnant and bleeding","pregnancy severe pain","heavy vaginal bleeding","حمل میں خون","شدید ماہواری","نزيف أثناء الحمل","embarazo y sangrado","grossesse et saignement","schwangerschaft blutung","gravidez sangramento","беременность кровотечение","孕期出血"], terms:["period","pregnancy","pregnant","pelvic","vaginal","discharge","menstrual","ماہواری","حمل","رحم","نسوانی","حامل","دورة","embarazo","menstruación","grossesse","règles","schwangerschaft","periode","gravidez","menstruação","берем","месяч","怀孕","月经"]},
+    {key:"child", doctor:"gp", phrases:["baby fever","infant fever","child cannot drink","child breathing fast","بچے کو بخار","نوزائیدہ بخار","حمى الرضيع","fiebre en bebé","fièvre nourrisson","fieber bei säugling","febre em bebê","температура у младенца","婴儿发烧"], terms:["baby","infant","child","toddler","بچہ","بچے","نوزائیدہ","رضيع","طفل","bebé","niño","enfant","nourrisson","kind","säugling","bebê","criança","ребен","младен","婴儿","儿童"]}
+  ];
+
+  function contextualUI(){
+    return CONTEXT_UI[code()] || CONTEXT_UI.en;
+  }
+
+  function phraseHits(text, rule){
+    const s = low(text);
+    let score = 0, hits = [];
+    rule.phrases.forEach(function(x){
+      if(s.includes(low(x))){ score += 4; hits.push(x); }
+    });
+    rule.terms.forEach(function(x){
+      if(s.includes(low(x))){ score += 1; hits.push(x); }
+    });
+    const native=(NATIVE_SYMPTOM_WORDS[rawCode()]||NATIVE_SYMPTOM_WORDS[normalizeLang(rawCode())]||{})[rule.key]||[];
+    native.forEach(function(x){
+      if(s.includes(low(x))){ score += 5; hits.push(x); }
+    });
+    return {score:score, hits:Array.from(new Set(hits)).slice(0,5)};
+  }
+
+  function durationDays(value){
+    const s = low(value);
+    if(s.includes("more than 2") || s.includes("2 week")) return 15;
+    if(s.includes("1 week")) return 7;
+    if(s.includes("2-3")) return 3;
+    if(s.includes("1 day")) return 1;
+    return 0;
+  }
+
+  function parseMeasurements(symptoms){
+    const bpText = val("bp-reading") || symptoms;
+    const sugarField = val("sugar-reading");
+    const bpMatch = bpText.match(/(?:bp|blood pressure|بلڈ پریشر|ضغط الدم|presión arterial|tension|blutdruck|pressão|давление|血压)?\s*(\d{2,3})\s*\/\s*(\d{2,3})/i);
+    const sugarMatch = sugarField
+      ? sugarField.match(/(\d{2,3})/)
+      : symptoms.match(/(?:sugar|glucose|blood sugar|شوگر|سكر|azúcar|glycémie|blutzucker|glicose|сахар|血糖)\s*(?:is|level|reading|ہے|هو|es|est|ist)?\s*(\d{2,3})\s*(?:mg\/dl)?/i);
+    const tempMatch = symptoms.match(/(?:fever|temperature|temp|بخار|حرارة|fiebre|fièvre|fieber|febre|температура|体温)?\s*(\d{2,3}(?:\.\d)?)\s*(?:f|°f|c|°c)/i);
+    return {
+      bp: bpMatch ? {sys:Number(bpMatch[1]), dia:Number(bpMatch[2])} : null,
+      sugar: sugarMatch ? Number(sugarMatch[1]) : null,
+      temperature: tempMatch ? Number(tempMatch[1]) : null
+    };
+  }
+
+  function analyzeContext(symptoms){
+    const mode = low(val("patient-mode"));
+    const age = Number(val("age") || 0);
+    const severity = Math.max(1, Math.min(10, Number(val("severity") || 5)));
+    const duration = val("symptom-duration") || "";
+    const days = durationDays(duration);
+    const readings = parseMeasurements(symptoms);
+    const scored = ISSUE_RULES.map(function(rule){
+      const result = phraseHits(symptoms, rule);
+      let score = result.score;
+      if(rule.key==="women" && mode.includes("women")) score += 5;
+      if(rule.key==="child" && mode.includes("child")) score += 5;
+      if(rule.key==="bp" && readings.bp) score += 8;
+      if(rule.key==="sugar" && readings.sugar !== null) score += 8;
+      return {key:rule.key, doctor:rule.doctor, score:score, hits:result.hits};
+    }).filter(x => x.score > 0).sort((a,b) => b.score-a.score);
+
+    if(!scored.length){
+      const fallback = mode.includes("women") ? "women" : mode.includes("child") ? "child" : readings.bp ? "bp" : readings.sugar!==null ? "sugar" : "general";
+      scored.push({key:fallback, doctor:"gp", score:1, hits:[]});
+    }
+
+    let points = severity >= 8 ? 4 : severity >= 6 ? 2 : 0;
+    const reasons = [];
+    const t = low(symptoms);
+    if(severity >= 8 && scored.some(x => x.key==="chest" || x.key==="breathing")){
+      points += 4;
+      reasons.push("severe chest or breathing symptoms");
+    }
+
+    const criticalPhrases = [
+      "cannot breathe","difficulty breathing","blue lips","faint","unconscious","confusion","seizure","one side weakness","difficulty speaking","vision loss",
+      "crushing chest pain","chest pain with sweating","blood in vomit","blood in stool","heavy bleeding","severe abdominal pain",
+      "سانس نہیں","نیلے ہونٹ","بے ہوش","الجھن","دورہ","ایک طرف کمزوری","بولنے میں مشکل","شدید سینے کا درد","زیادہ خون",
+      "صعوبة التنفس","ازرقاق الشفاه","إغماء","تشنج","ضعف جهة واحدة","صعوبة الكلام","نزيف شديد",
+      "dificultad para respirar","labios azules","desmayo","convulsión","debilidad de un lado","dificultad para hablar",
+      "difficulté à respirer","lèvres bleues","évanouissement","convulsion","faiblesse d'un côté",
+      "atemnot","blaue lippen","ohnmacht","krampfanfall","einseitige schwäche",
+      "falta de ar","lábios azuis","desmaio","convulsão",
+      "одышка","синие губы","обморок","судороги","слабость одной стороны",
+      "呼吸困难","嘴唇发蓝","昏厥","抽搐","单侧无力"
+    ];
+    const foundCritical = criticalPhrases.filter(x => t.includes(low(x)));
+    if(foundCritical.length){ points += 7; reasons.push(foundCritical.slice(0,3).join(", ")); }
+
+    if(readings.bp){
+      const {sys,dia} = readings.bp;
+      if(sys > 180 || dia > 120){ points += foundCritical.length ? 8 : 5; reasons.push(`BP ${sys}/${dia}`); }
+      else if(sys >= 140 || dia >= 90 || sys < 90 || dia < 60){ points += 3; reasons.push(`BP ${sys}/${dia}`); }
+    }
+    if(readings.sugar !== null){
+      const sg = readings.sugar;
+      if(sg < 55 || sg >= 300){ points += 6; reasons.push(`Sugar ${sg} mg/dL`); }
+      else if(sg < 70 || sg >= 200){ points += 3; reasons.push(`Sugar ${sg} mg/dL`); }
+    }
+    if(age && age < 1 && scored.some(x=>x.key==="fever" || x.key==="child")){ points += 6; reasons.push("infant age"); }
+    if(age >= 65 && severity >= 6){ points += 2; reasons.push("older age with significant symptoms"); }
+    if(days >= 7){ points += 2; reasons.push(duration); }
+    if(mode.includes("women") && (t.includes("pregnan") || t.includes("حمل") || t.includes("حامل") || t.includes("grossesse") || t.includes("embarazo") || t.includes("schwangerschaft") || t.includes("gravidez") || t.includes("беремен") || t.includes("怀孕")) && (t.includes("bleed") || t.includes("خون") || t.includes("نزيف") || t.includes("sangr") || t.includes("saign") || t.includes("blutung") || t.includes("кров") || t.includes("出血"))){ points += 7; reasons.push("pregnancy with bleeding"); }
+
+    const risk = points >= 7 ? "High" : points >= 3 ? "Moderate" : "Low";
+    return {age, severity, duration, days, mode:val("patient-mode") || "Adult", readings, matches:scored.slice(0,3), risk, reasons};
+  }
+
+  function doctorForKey(key,p){
+    if(key==="chest" || key==="bp") return p.cardio;
+    if(key==="breathing") return p.pulmo;
+    if(key==="stomach") return p.gastro;
+    if(key==="skin") return p.derma;
+    if(key==="urine") return p.uro;
+    if(key==="sugar") return p.endo;
+    if(key==="headache") return p.neuro;
+    return p.gp;
+  }
+
+  function measurementText(a,p){
+    const parts = [];
+    if(a.readings.bp){
+      const {sys,dia}=a.readings.bp;
+      if(sys > 180 || dia > 120) parts.push(`BP ${sys}/${dia} mmHg — ${p.bp[2]}`);
+      else if(sys >= 140 || dia >= 90) parts.push(`BP ${sys}/${dia} mmHg — ${p.bp[2]}`);
+      else if(sys < 90 || dia < 60) parts.push(`BP ${sys}/${dia} mmHg — low reading; repeat after rest and seek care if dizzy, faint or weak.`);
+      else parts.push(`BP ${sys}/${dia} mmHg — not in the severe range; repeat correctly if symptoms continue.`);
+    }
+    if(a.readings.sugar !== null){
+      const sg=a.readings.sugar;
+      if(sg < 70) parts.push(`Sugar ${sg} mg/dL — ${p.sugar[2]}`);
+      else if(sg >= 300) parts.push(`Sugar ${sg} mg/dL — very high; urgent medical review is appropriate, especially with vomiting, confusion or breathing changes.`);
+      else if(sg >= 200) parts.push(`Sugar ${sg} mg/dL — high; medical confirmation is needed.`);
+      else parts.push(`Sugar ${sg} mg/dL — interpret according to whether it was fasting or after food.`);
+    }
+    if(a.readings.temperature !== null) parts.push(`Temperature ${a.readings.temperature}° — ${p.fever[2]}`);
+    return parts.length ? parts.join(" ") : (p[a.matches[0].key] || p.general)[2];
+  }
+
+  function confidenceLabel(score,ui){
+    return score >= 8 ? ui.high : score >= 4 ? ui.moderate : ui.low;
+  }
+
+  function renderDetailed(){
+    const symptoms = val("symptoms");
+    const selectedBefore = rawCode();
+    const typedDetected = activeAnswerCodeFromVoice(symptoms);
+    if(typedDetected) setCheckerLanguage(typedDetected);
+    const p = P();
+    const ui = contextualUI();
+    const labels = p.labels;
+    const a = analyzeContext(symptoms);
+    const primary = a.matches[0];
+    const primaryBase = p[primary.key] || p.general;
+    const riskLabel = a.risk==="High" ? (ui.high || labels[11]) : a.risk==="Moderate" ? (ui.moderate || labels[10]) : (ui.low || labels[9]);
+    const color = a.risk==="High" ? "#ff4444" : a.risk==="Moderate" ? "#ffcc00" : "#00ff88";
+
+    const possibilities = a.matches.map(function(m){
+      const base = p[m.key] || p.general;
+      return `<li><b>${safe(base[0])}</b> — ${safe(ui.confidence)}: ${safe(confidenceLabel(m.score,ui))}</li>`;
+    }).join("");
+
+    const matched = a.matches.flatMap(m=>m.hits).filter(Boolean).slice(0,8);
+    const whyText = matched.length ? matched.join(", ") : ui.noClear;
+    const contextParts = [
+      a.age ? `${ui.age}: ${a.age}` : "",
+      `${ui.severity}: ${a.severity}/10`,
+      a.duration ? `${ui.duration}: ${a.duration}` : "",
+      `${ui.mode}: ${a.mode}`
+    ].filter(Boolean).join(" • ");
+
+    const doctors = Array.from(new Set(a.matches.map(m=>doctorForKey(m.key,p)))).join(" / ");
+    const actions = Array.from(new Set(a.matches.slice(0,2).map(m=>(p[m.key]||p.general)[4]))).join(" ");
+    const avoid = Array.from(new Set(a.matches.slice(0,2).map(m=>(p[m.key]||p.general)[5]))).join(" ");
+    const urgent = Array.from(new Set(a.matches.slice(0,2).map(m=>(p[m.key]||p.general)[6]))).join(" ");
+    const riskReason = a.reasons.length ? a.reasons.join(" • ") : primaryBase[1];
+
+    const questionText = code()==="ur"
+      ? "علامات اچانک شروع ہوئیں یا آہستہ؟ کیا حالت بگڑ رہی ہے؟ کوئی پرانی بیماری، حمل، allergy یا جاری medicine ہے؟"
+      : code()==="hi"
+      ? "लक्षण अचानक शुरू हुए या धीरे? क्या हालत बिगड़ रही है? कोई पुरानी बीमारी, pregnancy, allergy या चल रही medicine है?"
+      : code()==="es"
+      ? "¿Comenzó de repente o gradualmente? ¿Está empeorando? ¿Hay enfermedades previas, embarazo, alergias o medicamentos?"
+      : code()==="fr"
+      ? "Début soudain ou progressif ? Est-ce que cela s’aggrave ? Maladie connue, grossesse, allergie ou médicament en cours ?"
+      : code()==="de"
+      ? "Begann es plötzlich oder langsam? Wird es schlimmer? Bestehen Vorerkrankungen, Schwangerschaft, Allergien oder Medikamente?"
+      : code()==="pt"
+      ? "Começou de repente ou aos poucos? Está piorando? Há doença prévia, gravidez, alergia ou medicamento em uso?"
+      : code()==="ru"
+      ? "Началось внезапно или постепенно? Становится хуже? Есть хронические болезни, беременность, аллергии или лекарства?"
+      : code()==="zh"
+      ? "症状是突然还是逐渐开始？是否加重？是否有慢性病、怀孕、过敏或正在使用药物？"
+      : code()==="ar"
+      ? "هل بدأت الأعراض فجأة أم تدريجيًا؟ هل تزداد سوءًا؟ هل توجد أمراض مزمنة أو حمل أو حساسية أو أدوية؟"
+      : "Did symptoms start suddenly or gradually? Are they worsening? Any known conditions, pregnancy, allergies or current medicines?";
+
+    const appointmentButton = a.risk !== "Low"
+      ? `<div class="simple-result-block"><a class="btn btn-primary" href="appointment.html">${safe(p.consult || ui.book)}</a></div>`
+      : "";
+
+    $("dashboard").innerHTML = `
+      <div class="simple-symptom-result contextual-result" dir="${p.dir}">
+        <div class="simple-result-header">
+          <div>
+            <small style="display:block;color:var(--text-muted);margin-bottom:5px;">${safe(ui.title)}</small>
+            <h3>${safe(labels[0])}: ${safe(primaryBase[0])}</h3>
+          </div>
+          <span style="background:${color};">${safe(labels[1])}: ${safe(riskLabel)}</span>
+        </div>
+        <div class="simple-result-block"><b>${safe(ui.possibilities)}</b><ul class="context-list">${possibilities}</ul></div>
+        <div class="simple-result-block"><b>${safe(ui.why)}</b><p>${safe(whyText)}</p><small>${safe(riskReason)}</small></div>
+        <div class="simple-result-block"><b>${safe(ui.context)}</b><p>${safe(contextParts)}</p></div>
+        <div class="simple-result-block"><b>${safe(ui.reading)}</b><p>${safe(measurementText(a,p))}</p></div>
+        <div class="simple-result-block"><b>${safe(ui.doctor)}</b><p>${safe(doctors)}</p></div>
+        <div class="simple-result-block"><b>${safe(ui.actions)}</b><p>${safe(actions)}</p></div>
+        <div class="simple-result-block"><b>${safe(ui.avoid)}</b><p>${safe(avoid)}</p></div>
+        <div class="simple-result-block emergency"><b>${safe(ui.urgent)}</b><p>${safe(urgent)}</p></div>
+        <div class="simple-result-block"><b>${safe(ui.questions)}</b><p>${safe(questionText)}</p></div>
+        ${appointmentButton}
+        <div class="simple-result-note"><b>${safe(labels[8])}:</b> ${safe(ui.notDiagnosis)} ${safe(p.note)}</div>
+      </div>`;
+
+    const speechSummary = [
+      labels[0] + ": " + primaryBase[0],
+      labels[1] + ": " + riskLabel,
+      ui.actions + ": " + actions,
+      a.risk==="High" ? (ui.urgent + ": " + urgent) : ""
+    ].filter(Boolean).join(". ");
+    speak(speechSummary,p);
+  }
+
+  function render(){
+    const raw=rawCode();
+    renderNativeBrief(raw);
+  }
+
+  function cleanSpeechText(text){
+    return String(text||"")
+      .replace(/<[^>]*>/g," ")
+      .replace(/[\/\\|]+/g,"، ")
+      .replace(/[•●▪■◆◇→←↔]+/g,"، ")
+      .replace(/[()[\]{}<>*_#~`]+/g," ")
+      .replace(/[:;]+/g,"، ")
+      .replace(/[🎙️🔊⏹️⚠️🚨💊🧪📌📋✓❤℞]/g," ")
+      .replace(/\s*،\s*/g,"، ")
+      .replace(/\s+/g," ")
+      .trim();
+  }
+
+  function nationalVoiceCandidates(langCode){
+    const lc=String(langCode||"").toLowerCase();
+    const base=lc.split("-")[0];
+    const map={
+      "ur":["ur-pk","ur-in","hi-in"],
+      "pa":["pa-in","ur-pk","hi-in"],
+      "pnb":["pa-in","ur-pk","hi-in"],
+      "sd":["sd-in","ur-pk","hi-in"],
+      "ps":["ps-af","fa-ir","ur-pk","hi-in"],
+      "bal":["bal-pk","fa-ir","ur-pk","hi-in"],
+      "skr":["skr-pk","ur-pk","pa-in","hi-in"],
+      "hno":["hno-pk","ur-pk","pa-in","hi-in"],
+      "ks":["ks-in","ur-pk","hi-in"],
+      "brh":["brh-pk","ur-pk","fa-ir","hi-in"]
+    };
+    return map[base]||[lc,base];
+  }
+
+  function chooseNationalVoice(voices,langCode){
+    const normalized=(voices||[]).map(v=>({voice:v,lang:String(v.lang||"").toLowerCase()}));
+    const lc=String(langCode||"").toLowerCase();
+    const base=lc.split("-")[0];
+    let found=normalized.find(x=>x.lang===lc);
+    if(found)return found.voice;
+    found=normalized.find(x=>x.lang.startsWith(base));
+    if(found)return found.voice;
+    const candidates=nationalVoiceCandidates(langCode);
+    for(const code of candidates){
+      found=normalized.find(x=>x.lang===code)||normalized.find(x=>x.lang.startsWith(code.split("-")[0]));
+      if(found)return found.voice;
+    }
+    return normalized.find(x=>x.lang.startsWith("ur"))?.voice
+      || normalized.find(x=>x.lang.startsWith("hi"))?.voice
+      || normalized[0]?.voice
+      || null;
+  }
+
+  function speak(text,p){
+    if(!window.speechSynthesis)return;
+    const cleaned=cleanSpeechText(text);
+    if(!cleaned)return;
+    setTimeout(function(){
+      try{
+        speechSynthesis.cancel();
+        const voices=speechSynthesis.getVoices?speechSynthesis.getVoices():[];
+        const selectedVoice=chooseNationalVoice(voices,p.speech);
+        const sentences=cleaned.match(/[^.!?۔؟،]+[.!?۔؟،]?/g)||[cleaned];
+        const chunks=[];
+        let current="";
+        sentences.forEach(function(part){
+          part=part.trim();
+          if(!part)return;
+          if((current+" "+part).trim().length>380){
+            if(current)chunks.push(current);
+            current=part;
+          }else current=(current+" "+part).trim();
+        });
+        if(current)chunks.push(current);
+        let i=0;
+        function next(){
+          if(i>=chunks.length)return;
+          const u=new SpeechSynthesisUtterance(chunks[i]);
+          u.lang=(selectedVoice&&selectedVoice.lang)||p.speech||"ur-PK";
+          u.rate=0.84;
+          u.pitch=1;
+          u.volume=1;
+          if(selectedVoice)u.voice=selectedVoice;
+          u.onend=function(){i+=1;next();};
+          u.onerror=function(){i+=1;next();};
+          speechSynthesis.speak(u);
+        }
+        next();
+      }catch(e){}
+    },60);
+  }
+  function style(){
+    if(document.getElementById("direct-symptom-style")) return;
+    const st = document.createElement("style");
+    st.id = "direct-symptom-style";
+    st.textContent = `.simple-symptom-result{color:var(--white)}.simple-result-header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:16px}.simple-result-header h3{margin:0;font-size:1.25rem;line-height:1.45}.simple-result-header span{border-radius:999px;color:#071017;font-weight:900;padding:8px 12px}.simple-result-block,.simple-result-note{border:1px solid var(--glass-border);background:rgba(255,255,255,.055);border-radius:16px;padding:14px;margin-bottom:12px}.simple-symptom-result b{display:block;color:var(--accent-cyan);margin-bottom:6px}.simple-symptom-result p{margin:0;color:var(--light-gray);line-height:1.65}.simple-result-block.emergency{border-color:rgba(255,68,68,.5);background:rgba(255,68,68,.09)}.simple-result-note{color:#ffb1b1;line-height:1.55}.context-list{margin:8px 0 0;padding-inline-start:22px;color:var(--light-gray);line-height:1.7}.context-list li+li{margin-top:5px}.contextual-result small{line-height:1.5}.vital-reading-row input{min-height:44px}@media(max-width:680px){.simple-result-header{flex-direction:column}}`;
+    document.head.appendChild(st);
+  }
+
+  function installVoiceInput(){
+    const btn = $("voice-symptom-btn");
+    const status = $("voice-symptom-status");
+    const box = $("symptoms");
+    if(!btn || !box) return;
+
+    function setStatus(msg){ if(status) status.textContent = msg; }
+    function refreshStatus(){ setStatus((P().voiceReady) || "Select language, then speak symptoms."); }
+    refreshStatus();
+
+    const langSelect = $("checker-lang");
+    if(langSelect) langSelect.addEventListener("change", refreshStatus);
+
+    const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if(!Rec){
+      btn.disabled = true;
+      setStatus((P().voiceNoSupport) || "Voice input is not supported in this browser.");
+      return;
+    }
+
+    let recognition = null;
+    btn.addEventListener("click", function(){
+      try{
+        if(recognition){
+          recognition.stop();
+          recognition = null;
+          return;
+        }
+        const preferredRaw = rawCode();
+        const p = P();
+        recognition = new Rec();
+        recognition.lang = speechFor(preferredRaw);
+        recognition.interimResults = true;
+        recognition.continuous = false;
+        recognition.maxAlternatives = 1;
+        let finalText = "";
+        btn.textContent = "⏹️ Stop";
+        setStatus(p.voiceListening || "Listening...");
+        recognition.onresult = function(event){
+          let interim = "";
+          for(let i=event.resultIndex; i<event.results.length; i++){
+            const transcript = event.results[i][0].transcript;
+            if(event.results[i].isFinal) finalText += transcript + " ";
+            else interim += transcript;
+          }
+          const baseText = box.dataset.voiceBase || box.value;
+          const combined = (baseText + " " + finalText + interim).replace(/\s+/g, " ").trim();
+          box.value = combined;
+
+          const detected = activeAnswerCodeFromVoice(combined);
+          if(detected) {
+            setCheckerLanguage(detected);
+            const detectedPack = P();
+            recognition.lang = speechFor(detected);
+            setStatus((detectedPack.voiceListening || "Listening in selected language...") + " [" + detected + "]");
+          }
+        };
+        recognition.onerror = function(){ setStatus("Voice stopped. Try again or type symptoms."); };
+        recognition.onend = function(){
+          const finalDetected = activeAnswerCodeFromVoice(box.value);
+          if(finalDetected) setCheckerLanguage(finalDetected);
+          btn.textContent = "🎙️ Speak Symptoms";
+          box.dataset.voiceBase = box.value;
+          setStatus((P().voiceDone) || "Voice added to symptoms.");
+          recognition = null;
+        };
+        box.dataset.voiceBase = box.value;
+        recognition.start();
+      }catch(err){
+        console.error("Voice input error:", err);
+        btn.textContent = "🎙️ Speak Symptoms";
+        setStatus("Voice input could not start in this browser.");
+        recognition = null;
+      }
+    });
+  }
+
+  function install(){
+    style();
+    installVoiceInput();
+    const form = $("symptom-form");
+    if(!form) return;
+    form.onsubmit = function(e){
+      if(e){ e.preventDefault(); e.stopPropagation(); if(e.stopImmediatePropagation) e.stopImmediatePropagation(); }
+      render();
+      return false;
+    };
+  }
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", install);
+  else install();
+})();
+</script>
+
+
+
+</body>
+</html>

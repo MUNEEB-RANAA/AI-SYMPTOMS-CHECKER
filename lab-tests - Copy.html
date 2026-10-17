@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Tests & Reports | AI Symptoms Checker</title>
+    <meta name="description" content="Book lab tests and diagnostic services using doctor prescription.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="service-page">
+    <header id="header" class="scrolled">
+        <nav class="container premium-nav clean-demo-nav">
+            <a href="index.html#hero" class="logo" aria-label="AI Symptoms Checker Home">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <ul class="nav-links premium-nav-links">
+                <li><a href="index.html#hero" class="active-link">Home</a></li>
+                <li><a href="index.html#checker">AI Checker</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Services <span>▾</span></button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-menu-label">Patient Services</div>
+                        <a href="appointment.html">Book Appointment</a>
+                        <a href="consultation.html">Video &amp; Chat Consultation</a>
+                        <a href="prescription.html">Prescription Flow</a>
+                        <a href="medicine-order.html?mode=direct">Order Medicine</a>
+                        <a href="lab-tests.html?mode=direct">Book Lab Test</a>
+                        <a href="order-tracking.html">Track Request</a>
+                    </div>
+                </li>
+                <li><a href="doctors.html">Doctors</a></li>
+
+<li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Register <span>▾</span></button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu-small">
+                        <div class="nav-menu-label">Professional Registration</div>
+                        <a href="doctor-registration.html">Doctor Registration</a>
+                        <a href="pharmacy-registration.html">Pharmacy Partner Registration</a>
+                        <a href="lab-registration.html">Lab Partner Registration</a>
+                    </div>
+                </li>
+
+<li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right premium-nav-right">
+                <a href="login.html" class="btn-nav nav-login">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container service-hero-grid">
+                <div>
+                    <span class="section-subtitle">Laboratory & Hospital Partners</span>
+                    <h1 id="lab-page-title">Book Lab Tests</h1>
+                    <p id="lab-page-copy">Book tests directly from partner labs, or use doctor recommended tests if you arrived from the prescription page.</p>
+                    <div class="service-badges">
+                        <span>CBC</span>
+                        <span>HbA1c</span>
+                        <span>Thyroid</span>
+                        <span>Home Sampling</span>
+                        <span>20% Commission</span>
+                    </div>
+                </div>
+                <div class="service-side-card glass-card">
+                    <div class="service-icon-large">🧪</div>
+                    <h3>Reports & Tests</h3>
+                    <p>Doctor recommended tests are loaded from prescription and sent to partner labs for booking.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section service-form-section">
+            <div class="container service-form-grid">
+                <form class="booking-form glass-card service-main-form" id="lab-page-form">
+                    <h3>Lab Test Request</h3>
+                    <div id="lab-prescription-summary" class="service-loaded-box" hidden></div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="lab-patient">Patient Name</label>
+                            <input type="text" id="lab-patient" placeholder="Enter patient name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lab-phone">Phone Number</label>
+                            <input type="tel" id="lab-phone" placeholder="03XX XXXXXXX" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="lab-prescription" id="lab-details-label">Test Details</label>
+                        <textarea id="lab-prescription" rows="5" placeholder="Write test names or health package details..." required></textarea>
+                    </div>
+
+                    <div class="input-row quantity-location-row">
+                        <div class="input-group">
+                            <label for="lab-quantity">Quantity / Number of Tests</label>
+                            <input type="number" id="lab-quantity" min="1" value="1" placeholder="e.g., 2" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lab-quantity-type">Quantity Type</label>
+                            <select id="lab-quantity-type">
+                                <option>Test(s)</option>
+                                <option>Patient(s)</option>
+                                <option>Sample(s)</option>
+                                <option>Doctor Recommended Package</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="lab-test-name">Select Test</label>
+                            <select id="lab-test-name">
+                                <option>Complete Blood Count (CBC)</option>
+                                <option>Blood Sugar / HbA1c</option>
+                                <option>Lipid Profile</option>
+                                <option>Thyroid Panel</option>
+                                <option>Urine Test</option>
+                                <option>Doctor Recommended Package</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="lab-partner">Partner Lab / Hospital</label>
+                            <select id="lab-partner">
+                                <option>Partner Laboratory A</option>
+                                <option>Partner Hospital Diagnostic Center</option>
+                                <option>Nearest Collection Center</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="sample-method">Sample Method</label>
+                            <select id="sample-method">
+                                <option>Home Sample Collection</option>
+                                <option>Lab Visit</option>
+                                <option>Hospital Diagnostic Visit</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="preferred-date">Preferred Date</label>
+                            <input type="date" id="preferred-date">
+                        </div>
+                    </div>
+
+                    <div class="location-panel glass-mini-panel">
+                        <h4>Sample Collection / Report Delivery Location</h4>
+                        <p>Enter location separately so lab staff can collect sample or deliver report at correct address.</p>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="lab-city">City</label>
+                                <input type="text" id="lab-city" placeholder="Karachi" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="lab-area">Area / Town</label>
+                                <input type="text" id="lab-area" placeholder="Gulshan, Nazimabad..." required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="lab-address">Full Collection Address</label>
+                            <textarea id="lab-address" rows="3" placeholder="House no, street, block, landmark..." required></textarea>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="lab-location-link">Google Maps Location Link (Optional)</label>
+                                <input type="url" id="lab-location-link" placeholder="Paste Google Maps location link">
+                            </div>
+                            <div class="input-group">
+                                <label for="lab-location-note">Collection Note (Optional)</label>
+                                <input type="text" id="lab-location-note" placeholder="Morning preferred, call before arrival...">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Lab Test Request</button>
+                    <div id="lab-page-success" class="booking-success" hidden></div>
+                </form>
+
+                <div class="glass-card service-info-panel">
+                    <span class="commission-pill">20% Lab Commission</span>
+                    <h3>Lab Booking Flow</h3>
+                    <div class="consult-steps compact-steps">
+                        <div><b>01</b><span>Doctor recommends tests in prescription.</span></div>
+                        <div><b>02</b><span>Patient chooses lab or hospital partner.</span></div>
+                        <div><b>03</b><span>Sample collection or lab visit is booked.</span></div>
+                        <div><b>04</b><span>Platform receives 20% commission after completed test.</span></div>
+                    </div>
+                    <a href="medicine-order.html?source=prescription" class="btn btn-secondary full-btn">Order Medicine Instead</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const query = new URLSearchParams(window.location.search);
+        const fromPrescription = query.get('source') === 'prescription';
+        const summary = document.getElementById('lab-prescription-summary');
+
+        if (fromPrescription) {
+            const rx = JSON.parse(localStorage.getItem('aiSymptomsPrescription') || localStorage.getItem('aiSymptomsLabRequest') || '{}');
+            document.getElementById('lab-page-title').textContent = 'Book Lab Tests Using Doctor Prescription';
+            document.getElementById('lab-page-copy').textContent = 'Doctor recommended tests are loaded from the prescription page and sent to partner labs or hospital diagnostic centers.';
+            document.getElementById('lab-details-label').textContent = 'Doctor Recommended Test Details';
+            document.getElementById('lab-prescription').placeholder = 'Recommended tests will auto-load here from prescription page...';
+
+            if (rx && (rx.patient || rx.doctor || rx.tests)) {
+                document.getElementById('lab-patient').value = rx.patient || '';
+                const testText = [
+                    `Doctor: ${rx.doctor || 'Selected Doctor'}`,
+                    `Date: ${rx.date || ''}`,
+                    'Recommended Tests:',
+                    ...((rx.tests || []).map(item => '- ' + item))
+                ].join('\n');
+                document.getElementById('lab-prescription').value = testText;
+                document.getElementById('lab-quantity').value = Math.max(1, (rx.tests || []).length || 1);
+                document.getElementById('lab-quantity-type').value = 'Doctor Recommended Package';
+                summary.hidden = false;
+                summary.innerHTML = `<strong>Prescription Loaded:</strong> ${rx.doctor || 'Doctor'} | ${rx.patient || 'Patient'}`;
+            }
+        } else {
+            document.getElementById('lab-page-title').textContent = 'Direct Lab Test Booking';
+            document.getElementById('lab-page-copy').textContent = 'This page is for users who want to directly book lab tests or diagnostic services from partner labs.';
+            document.getElementById('lab-details-label').textContent = 'Test Names / Booking Details';
+            summary.hidden = true;
+        }
+
+        document.getElementById('lab-page-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const request = {
+                patient: document.getElementById('lab-patient').value,
+                phone: document.getElementById('lab-phone').value,
+                details: document.getElementById('lab-prescription').value,
+                quantity: document.getElementById('lab-quantity').value,
+                quantityType: document.getElementById('lab-quantity-type').value,
+                tests: document.getElementById('lab-test-name').value,
+                lab: document.getElementById('lab-partner').value,
+                partner: document.getElementById('lab-partner').value,
+                sampleMethod: document.getElementById('sample-method').value,
+                preferredDate: document.getElementById('preferred-date').value,
+                city: document.getElementById('lab-city').value,
+                area: document.getElementById('lab-area').value,
+                address: document.getElementById('lab-address').value,
+                locationLink: document.getElementById('lab-location-link').value,
+                locationNote: document.getElementById('lab-location-note').value,
+                fullLocation: [
+                    document.getElementById('lab-address').value,
+                    document.getElementById('lab-area').value,
+                    document.getElementById('lab-city').value
+                ].filter(Boolean).join(', '),
+                source: fromPrescription ? 'Prescription Based' : 'Direct Booking',
+                submittedAt: new Date().toLocaleString(),
+                trackingId: 'LAB-' + Date.now().toString().slice(-6),
+                status: 'Pending Lab Confirmation'
+            };
+            const requests = JSON.parse(localStorage.getItem('labTestRequests') || '[]');
+            requests.unshift(request);
+            localStorage.setItem('lastOrderTrackingId', request.trackingId);
+            localStorage.setItem('labTestRequests', JSON.stringify(requests));
+            const success = document.getElementById('lab-page-success');
+            success.hidden = false;
+            success.innerHTML = fromPrescription
+                ? `Doctor recommended lab test request submitted. Tracking ID: <strong>${request.trackingId}</strong>. Quantity: <strong>${request.quantity} ${request.quantityType}</strong>. Collection Location: <strong>${request.area}, ${request.city}</strong>. Partner lab/hospital will confirm slot and test details. Platform commission: <strong>20%</strong>. <a href="order-tracking.html?tracking=${request.trackingId}">Track request</a>`
+                : `Direct lab test request submitted. Tracking ID: <strong>${request.trackingId}</strong>. Quantity: <strong>${request.quantity} ${request.quantityType}</strong>. Collection Location: <strong>${request.area}, ${request.city}</strong>. Partner lab/hospital will confirm slot and test details. Platform commission: <strong>20%</strong>. <a href="order-tracking.html?tracking=${request.trackingId}">Track request</a>`;
+        });
+    </script>
+    <script src="demo-activation.js"></script>
+<script src="feature-enhancements.js"></script>
+<script src="partner-system.js"></script>
+<script src="business-features.js"></script>
+<script src="role-routing.js"></script>
+    <script src="language-consistency-data.js"></script>
+<script src="language-consistency-only.js"></script>
+</body>
+</html>

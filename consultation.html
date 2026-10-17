@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video & Chat Consultation | AI Symptoms Checker</title>
+    <meta name="description" content="Start doctor chat and video consultation on a separate page.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="service-page">
+    <header id="header" class="scrolled">
+        <nav class="container premium-nav clean-demo-nav">
+            <a href="index.html#hero" class="logo" aria-label="AI Symptoms Checker Home">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <ul class="nav-links premium-nav-links">
+                <li><a href="index.html#hero" class="active-link">Home</a></li>
+                <li><a href="index.html#checker">AI Checker</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Services <span>▾</span></button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-menu-label">Patient Services</div>
+                        <a href="appointment.html">Book Appointment</a>
+                        <a href="consultation.html">Video &amp; Chat Consultation</a>
+                        <a href="prescription.html">Prescription Flow</a>
+                        <a href="medicine-order.html?mode=direct">Order Medicine</a>
+                        <a href="lab-tests.html?mode=direct">Book Lab Test</a>
+                        <a href="order-tracking.html">Track Request</a>
+                    </div>
+                </li>
+                <li><a href="doctors.html">Doctors</a></li>
+
+<li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Register <span>▾</span></button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu-small">
+                        <div class="nav-menu-label">Professional Registration</div>
+                        <a href="doctor-registration.html">Doctor Registration</a>
+                        <a href="pharmacy-registration.html">Pharmacy Partner Registration</a>
+                        <a href="lab-registration.html">Lab Partner Registration</a>
+                    </div>
+                </li>
+
+<li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right premium-nav-right">
+                <a href="login.html" class="btn-nav nav-login">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container service-hero-grid">
+                <div>
+                    <span class="section-subtitle">Separate Consultation Page</span>
+                    <h1>Doctor Video Call & Chat</h1>
+                    <p>This page keeps chat and video consultation together. Patient can ask questions, choose language, and continue with the selected doctor.</p>
+                    <div class="service-badges">
+                        <span>AI Medical Chat</span>
+                        <span>Video Consultation</span>
+                        <span>Language Support</span>
+                        <span>Doctor Selected</span>
+                    </div>
+                </div>
+                <div class="service-side-card glass-card">
+                    <img src="doctor-main.jpeg" alt="Doctor consultation">
+                    <h3 id="consultation-hero-doctor">Selected Doctor</h3>
+                    <p id="consultation-hero-time">Doctor timing will appear here.</p>
+                    <div class="consultation-action-row">
+                        <a href="appointment.html" id="go-appointment-link" class="btn btn-primary">Book Appointment</a>
+                        <a href="prescription.html" id="go-prescription-link" class="btn btn-secondary">Prescription</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark">
+            <div class="container doctor-consult-suite">
+                <div class="doctor-live-chat glass-card" id="doctor-chat-panel">
+                    <div class="consult-panel-head">
+                        <div>
+                            <span class="section-subtitle">AI Assisted Chat</span>
+                            <h3>Chat With Doctor</h3>
+                            <p>Ask your health question in your selected language. The AI medical agent gives safe guidance and suggests next steps.</p>
+                        </div>
+                        <select id="chat-language" class="consult-mini-select" aria-label="Chat Language">
+                    <optgroup label="Pakistani / National Languages">
+                        <option value="en">🇵🇰 English</option>
+                        <option value="ur">🇵🇰 Urdu / اردو</option>
+                        <option value="pnb">🇵🇰 Punjabi / پنجابی</option>
+                        <option value="sd">🇵🇰 Sindhi / سنڌي</option>
+                        <option value="ps">🇵🇰 Pashto / پښتو</option>
+                        <option value="bal">🇵🇰 Balochi / بلوچی</option>
+                        <option value="skr">🇵🇰 Saraiki / سرائیکی</option>
+                        <option value="hno">🇵🇰 Hindko / ہندکو</option>
+                        <option value="ks">🇵🇰 Kashmiri / كشميري</option>
+                        <option value="brh">🇵🇰 Brahui / براہوی</option>
+                    </optgroup>
+                    <optgroup label="International Languages">
+                        <option value="ar">🇸🇦 Arabic / العربية</option>
+                        <option value="hi">🇮🇳 Hindi / हिन्दी</option>
+                        <option value="fa">🇮🇷 Persian / فارسی</option>
+                        <option value="tr">🇹🇷 Turkish / Türkçe</option>
+                        <option value="zh-CN">🇨🇳 Chinese Simplified / 中文简体</option>
+                        <option value="zh-TW">🇹🇼 Chinese Traditional / 繁體中文</option>
+                        <option value="es">🇪🇸 Spanish / Español</option>
+                        <option value="fr">🇫🇷 French / Français</option>
+                        <option value="de">🇩🇪 German / Deutsch</option>
+                        <option value="pt">🇵🇹 Portuguese / Português</option>
+                        <option value="ru">🇷🇺 Russian / Русский</option>
+                        <option value="ja">🇯🇵 Japanese / 日本語</option>
+                        <option value="ko">🇰🇷 Korean / 한국어</option>
+                        <option value="it">🇮🇹 Italian / Italiano</option>
+                        <option value="bn">🇧🇩 Bengali / বাংলা</option>
+                        <option value="ta">🇮🇳 Tamil / தமிழ்</option>
+                        <option value="te">🇮🇳 Telugu / తెలుగు</option>
+                        <option value="mr">🇮🇳 Marathi / मराठी</option>
+                        <option value="gu">🇮🇳 Gujarati / ગુજરાતી</option>
+                        <option value="ml">🇮🇳 Malayalam / മലയാളം</option>
+                        <option value="th">🇹🇭 Thai / ไทย</option>
+                        <option value="id">🇮🇩 Indonesian / Bahasa Indonesia</option>
+                        <option value="ms">🇲🇾 Malay / Bahasa Melayu</option>
+                        <option value="vi">🇻🇳 Vietnamese / Tiếng Việt</option>
+                        <option value="sw">🌍 Swahili / Kiswahili</option>
+                    </optgroup>
+                </select>
+                    </div>
+                    <div class="selected-consult-doctor">
+                        <span>Doctor:</span>
+                        <strong id="chat-selected-doctor">Selected Doctor</strong>
+                    </div>
+                    <div id="consultation-report-summary" class="service-loaded-box" hidden></div>
+                    <div class="doctor-chat-window" id="doctor-chat-window">
+                        <div class="doctor-chat-message system">Type your health question. This is AI guidance, not final diagnosis.</div>
+                    </div>
+                    <div class="doctor-chat-actions">
+                        <input type="text" id="doctor-chat-input" placeholder="Type your symptoms or question...">
+                        <button class="btn btn-primary" id="doctor-chat-send" type="button">Send</button>
+                    </div>
+                </div>
+
+                <div class="doctor-video-card glass-card" id="doctor-video-panel">
+                    <div class="consult-panel-head">
+                        <div>
+                            <span class="section-subtitle">Video Consultation</span>
+                            <h3>Video Call Preview</h3>
+                            <p>Start the video consultation flow with the selected doctor, preferred language, and appointment slot.</p>
+                        </div>
+                    </div>
+                    <div class="doctor-video-preview">
+                        <div class="doctor-video-main">
+                            <span>Doctor Video Preview</span>
+                            <small id="video-selected-doctor">No doctor selected</small>
+                        </div>
+                        <div class="doctor-video-self">You</div>
+                        <div class="doctor-video-live">● READY</div>
+                    </div>
+                    <div class="video-consult-controls">
+                        <button type="button">🎤</button>
+                        <button type="button">📷</button>
+                        <button type="button">💬</button>
+                        <button type="button">🌍</button>
+                    </div>
+                    <div class="video-booking-row">
+                        <div>
+                            <label for="video-language">Video Language</label>
+                            <select id="video-language" class="consult-mini-select">
+                    <optgroup label="Pakistani / National Languages">
+                        <option value="en">🇵🇰 English</option>
+                        <option value="ur">🇵🇰 Urdu / اردو</option>
+                        <option value="pnb">🇵🇰 Punjabi / پنجابی</option>
+                        <option value="sd">🇵🇰 Sindhi / سنڌي</option>
+                        <option value="ps">🇵🇰 Pashto / پښتو</option>
+                        <option value="bal">🇵🇰 Balochi / بلوچی</option>
+                        <option value="skr">🇵🇰 Saraiki / سرائیکی</option>
+                        <option value="hno">🇵🇰 Hindko / ہندکو</option>
+                        <option value="ks">🇵🇰 Kashmiri / كشميري</option>
+                        <option value="brh">🇵🇰 Brahui / براہوی</option>
+                    </optgroup>
+                    <optgroup label="International Languages">
+                        <option value="ar">🇸🇦 Arabic / العربية</option>
+                        <option value="hi">🇮🇳 Hindi / हिन्दी</option>
+                        <option value="fa">🇮🇷 Persian / فارسی</option>
+                        <option value="tr">🇹🇷 Turkish / Türkçe</option>
+                        <option value="zh-CN">🇨🇳 Chinese Simplified / 中文简体</option>
+                        <option value="zh-TW">🇹🇼 Chinese Traditional / 繁體中文</option>
+                        <option value="es">🇪🇸 Spanish / Español</option>
+                        <option value="fr">🇫🇷 French / Français</option>
+                        <option value="de">🇩🇪 German / Deutsch</option>
+                        <option value="pt">🇵🇹 Portuguese / Português</option>
+                        <option value="ru">🇷🇺 Russian / Русский</option>
+                        <option value="ja">🇯🇵 Japanese / 日本語</option>
+                        <option value="ko">🇰🇷 Korean / 한국어</option>
+                        <option value="it">🇮🇹 Italian / Italiano</option>
+                        <option value="bn">🇧🇩 Bengali / বাংলা</option>
+                        <option value="ta">🇮🇳 Tamil / தமிழ்</option>
+                        <option value="te">🇮🇳 Telugu / తెలుగు</option>
+                        <option value="mr">🇮🇳 Marathi / मराठी</option>
+                        <option value="gu">🇮🇳 Gujarati / ગુજરાતી</option>
+                        <option value="ml">🇮🇳 Malayalam / മലയാളം</option>
+                        <option value="th">🇹🇭 Thai / ไทย</option>
+                        <option value="id">🇮🇩 Indonesian / Bahasa Indonesia</option>
+                        <option value="ms">🇲🇾 Malay / Bahasa Melayu</option>
+                        <option value="vi">🇻🇳 Vietnamese / Tiếng Việt</option>
+                        <option value="sw">🌍 Swahili / Kiswahili</option>
+                    </optgroup>
+                </select>
+                        </div>
+                        <div>
+                            <label>Available Slot</label>
+                            <strong id="video-selected-time">Select doctor timing</strong>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="confirm-video-consult" type="button">Confirm Video Consultation</button>
+                    <div id="video-booking-success" class="booking-success" hidden></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="ai-agent.js"></script>
+<script src="voice-assistant.js"></script>
+    <script>
+        function getParam(name) {
+            return new URLSearchParams(window.location.search).get(name) || '';
+        }
+        function esc(text) {
+            return String(text || '').replace(/[&<>"]/g, function(ch) {
+                return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch];
+            });
+        }
+        const stored = JSON.parse(localStorage.getItem('selectedDoctorForAppointment') || '{}');
+        const doctor = decodeURIComponent(getParam('doctor') || stored.doctor || 'Selected Doctor');
+        const time = decodeURIComponent(getParam('time') || stored.time || 'Select doctor timing');
+        const fee = decodeURIComponent(getParam('fee') || stored.fee || 'PKR 1,500');
+        localStorage.setItem('selectedDoctorForAppointment', JSON.stringify({ doctor, time, fee }));
+
+        document.getElementById('chat-selected-doctor').textContent = doctor;
+        document.getElementById('video-selected-doctor').textContent = doctor;
+        document.getElementById('video-selected-time').textContent = time;
+        document.getElementById('consultation-hero-doctor').textContent = doctor;
+        document.getElementById('consultation-hero-time').textContent = time;
+        const q = `doctor=${encodeURIComponent(doctor)}&time=${encodeURIComponent(time)}&fee=${encodeURIComponent(fee)}`;
+        const reportNames = JSON.parse(localStorage.getItem('doctorConsultationReports') || '[]');
+        const reportSummary = document.getElementById('consultation-report-summary');
+        if (reportSummary && reportNames.length) {
+            reportSummary.hidden = false;
+            reportSummary.innerHTML = `<strong>Reports for doctor review:</strong> ${reportNames.join(', ')}`;
+        }
+        document.getElementById('go-appointment-link').href = 'appointment.html?' + q;
+        document.getElementById('go-prescription-link').href = 'prescription.html?' + q;
+
+        async function sendDoctorChatMessage() {
+            const input = document.getElementById('doctor-chat-input');
+            const chatWindow = document.getElementById('doctor-chat-window');
+            const language = document.getElementById('chat-language').value;
+            const message = input.value.trim();
+            if (!message) return;
+
+            chatWindow.insertAdjacentHTML('beforeend', `<div class="doctor-chat-message user"><strong>You (${esc(language)}):</strong> ${esc(message)}</div>`);
+            input.value = '';
+            chatWindow.insertAdjacentHTML('beforeend', `<div class="doctor-chat-message system ai-thinking">AI medical agent is checking your question...</div>`);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            const data = await window.AISymptomsAgent.ask({
+                mode: 'doctor-chat',
+                doctor: doctor,
+                language: language,
+                message: message
+            });
+
+            const thinking = chatWindow.querySelector('.ai-thinking');
+            if (thinking) thinking.remove();
+            const answer = data.answer || 'Please consult the doctor for proper medical advice.';
+            chatWindow.insertAdjacentHTML('beforeend', `<div class="doctor-chat-message doctor"><strong>${esc(doctor)} AI Assistant:</strong> ${esc(answer)}</div>`);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+            if (window.HealthVoice) window.HealthVoice.speakText(answer, language);
+        }
+
+        document.getElementById('doctor-chat-send').addEventListener('click', sendDoctorChatMessage);
+        document.getElementById('doctor-chat-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') sendDoctorChatMessage();
+        });
+
+        document.getElementById('confirm-video-consult').addEventListener('click', function () {
+            const language = document.getElementById('video-language').value;
+            const successBox = document.getElementById('video-booking-success');
+            successBox.hidden = false;
+            successBox.innerHTML = `Video consultation selected with <strong>${esc(doctor)}</strong>. Language: <strong>${esc(language)}</strong>. Slot: <strong>${esc(time)}</strong>.`;
+        });
+    </script>
+    <script src="demo-activation.js"></script>
+<script src="feature-enhancements.js"></script>
+<script src="partner-system.js"></script>
+<script src="business-features.js"></script>
+<script src="role-routing.js"></script>
+    <script src="language-consistency-data.js"></script>
+<script src="language-consistency-only.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Prescription | AI Symptoms Checker</title>
+    <meta name="description" content="Generate prescription after doctor consultation and use it for medicine orders or lab tests.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="service-page">
+    <header id="header" class="scrolled">
+        <nav class="container premium-nav clean-demo-nav">
+            <a href="index.html#hero" class="logo" aria-label="AI Symptoms Checker Home">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <ul class="nav-links premium-nav-links">
+                <li><a href="index.html#hero" class="active-link">Home</a></li>
+                <li><a href="index.html#checker">AI Checker</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Services <span>▾</span></button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-menu-label">Patient Services</div>
+                        <a href="appointment.html">Book Appointment</a>
+                        <a href="consultation.html">Video &amp; Chat Consultation</a>
+                        <a href="prescription.html">Prescription Flow</a>
+                        <a href="medicine-order.html?mode=direct">Order Medicine</a>
+                        <a href="lab-tests.html?mode=direct">Book Lab Test</a>
+                        <a href="order-tracking.html">Track Request</a>
+                    </div>
+                </li>
+                <li><a href="doctors.html">Doctors</a></li>
+
+<li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Register <span>▾</span></button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu-small">
+                        <div class="nav-menu-label">Professional Registration</div>
+                        <a href="doctor-registration.html">Doctor Registration</a>
+                        <a href="pharmacy-registration.html">Pharmacy Partner Registration</a>
+                        <a href="lab-registration.html">Lab Partner Registration</a>
+                    </div>
+                </li>
+
+<li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right premium-nav-right">
+                <a href="login.html" class="btn-nav nav-login">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container service-hero-grid">
+                <div>
+                    <span class="section-subtitle">Separate Prescription Page</span>
+                    <h1>Generate Digital Prescription</h1>
+                    <p>After doctor consultation, patient can generate a prescription here. Then the same prescription can be used to order medicines or book laboratory tests.</p>
+                    <div class="service-badges">
+                        <span>Generated After Consultation</span>
+                        <span>Medicine Order</span>
+                        <span>Lab Test Booking</span>
+                        <span>Doctor Record</span>
+                    </div>
+                </div>
+                <div class="service-side-card glass-card">
+                    <div class="service-icon-large">℞</div>
+                    <h3>Prescription Flow</h3>
+                    <p>Select doctor details, generate prescription, then continue to medicine or lab page.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark">
+            <div class="container doctor-consult-suite">
+                <div class="glass-card prescription-control-panel">
+                    <div class="consult-panel-head">
+                        <div>
+                            <span class="section-subtitle">Prescription Details</span>
+                            <h3>Generate Prescription</h3>
+                            <p>Fill patient details or use saved appointment data. This creates a demo digital prescription for the website flow.</p>
+                        </div>
+                    </div>
+                    <form id="prescription-form" class="booking-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="rx-patient-name">Patient Name</label>
+                                <input type="text" id="rx-patient-name" placeholder="Enter patient name" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="rx-doctor-name">Doctor Name</label>
+                                <input type="text" id="rx-doctor-name" placeholder="Selected doctor" required>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="rx-method">Consultation Method</label>
+                                <select id="rx-method">
+                                    <option value="Video Call">Video Call</option>
+                                    <option value="AI Chat + Doctor Review">AI Chat + Doctor Review</option>
+                                    <option value="Clinic Visit">Clinic Visit</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="rx-time">Doctor Timing</label>
+                                <input type="text" id="rx-time" placeholder="Doctor timing">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="rx-reason">Symptoms / Reason</label>
+                            <textarea id="rx-reason" rows="4" placeholder="Write symptoms or consultation reason..."></textarea>
+                        </div>
+                        <div id="rx-report-summary" class="service-loaded-box" hidden></div>
+                        <button class="btn btn-primary" type="submit">Generate Prescription</button>
+                    </form>
+                    <p class="prescription-empty-note">Prescription will appear on the right after generation.</p>
+                </div>
+
+                <div class="doctor-prescription-card glass-card" id="prescription-output-card">
+                    <div class="consult-panel-head">
+                        <div>
+                            <span class="section-subtitle">Digital Prescription</span>
+                            <h3>Prescription Preview</h3>
+                        </div>
+                        <span class="rx-status-pill">Ready to Generate</span>
+                    </div>
+                    <div class="prescription-preview" id="prescription-preview">
+                        <div class="rx-watermark">RX</div>
+                        <div class="rx-header">
+                            <div>
+                                <h4>AI Symptoms Checker Clinic</h4>
+                                <p>Digital prescription generated after doctor consultation.</p>
+                            </div>
+                            <p id="rx-date">Date</p>
+                        </div>
+                        <div class="rx-details-grid">
+                            <p><strong>Patient:</strong> <span id="rx-view-patient">Not generated</span></p>
+                            <p><strong>Doctor:</strong> <span id="rx-view-doctor">Not generated</span></p>
+                            <p><strong>Method:</strong> <span id="rx-view-method">Not generated</span></p>
+                            <p><strong>Timing:</strong> <span id="rx-view-time">Not generated</span></p>
+                        </div>
+                        <div class="rx-medicine-box">
+                            <h4>Suggested Medicines</h4>
+                            <ul id="rx-medicine-list">
+                                <li>Prescription will generate medicine instructions here.</li>
+                            </ul>
+                        </div>
+                        <div class="rx-test-box">
+                            <h4>Recommended Lab Tests</h4>
+                            <ul id="rx-test-list">
+                                <li>Prescription will generate recommended tests here.</li>
+                            </ul>
+                        </div>
+                        <p class="rx-note">This demo prescription is for website workflow. Real medicines and tests must be confirmed by a licensed doctor.</p>
+                        <div class="prescription-page-actions">
+                            <button type="button" id="download-rx-pdf" class="btn btn-primary">Download Prescription PDF</button>
+                            <button type="button" id="download-lab-pdf" class="btn btn-secondary">Download Medicine + Lab PDF</button>
+                            <a href="medicine-order.html?source=prescription" id="rx-order-medicine" class="btn btn-primary">Order Medicine Using Prescription</a>
+                            <a href="lab-tests.html?source=prescription" id="rx-book-lab" class="btn btn-secondary">Book Lab Test Using Prescription</a>
+                            <a href="consultation.html" id="rx-back-consult" class="btn btn-secondary">Back to Video & Chat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function getParam(name) {
+            return new URLSearchParams(window.location.search).get(name) || '';
+        }
+        const appointment = JSON.parse(localStorage.getItem('aiSymptomsAppointment') || '{}');
+        const selectedDoctor = JSON.parse(localStorage.getItem('selectedDoctorForAppointment') || '{}');
+        const doctor = decodeURIComponent(getParam('doctor') || appointment.doctor || selectedDoctor.doctor || 'Selected Doctor');
+        const time = decodeURIComponent(getParam('time') || appointment.time || selectedDoctor.time || '');
+        const selectedFee = decodeURIComponent(getParam('fee') || appointment.fee || selectedDoctor.fee || 'PKR 1,500');
+        const today = new Date().toLocaleDateString();
+        let currentPrescription = null;
+
+        document.getElementById('rx-patient-name').value = appointment.patient || '';
+        document.getElementById('rx-doctor-name').value = doctor;
+        document.getElementById('rx-time').value = time;
+        document.getElementById('rx-reason').value = appointment.reason || '';
+        if (appointment.method) document.getElementById('rx-method').value = appointment.method;
+        document.getElementById('rx-date').textContent = today;
+
+        const reportNames = JSON.parse(localStorage.getItem('doctorConsultationReports') || '[]');
+        const reportSummary = document.getElementById('rx-report-summary');
+        if (reportSummary && reportNames.length) {
+            reportSummary.hidden = false;
+            reportSummary.innerHTML = `<strong>Uploaded reports for doctor review:</strong> ${reportNames.join(', ')}`;
+        }
+
+        function createPrescription() {
+            const reason = document.getElementById('rx-reason').value.toLowerCase();
+            let medicines = [
+                'Hydration and rest as advised by doctor',
+                'Use medicines only according to doctor advice',
+                'Follow up if symptoms continue or become worse'
+            ];
+            let tests = ['CBC if symptoms continue', 'Basic vitals check'];
+            let advice = 'Routine follow-up is recommended if symptoms continue.';
+
+            if (reason.includes('fever') || reason.includes('temperature') || reason.includes('cough') || reason.includes('flu') || reason.includes('sore throat') || reason.includes('body pain')) {
+                medicines = ['Fever medicine as prescribed by doctor', 'Warm fluids / steam inhalation if suitable', 'Avoid antibiotics unless prescribed'];
+                tests = ['CBC', 'CRP if doctor recommends', 'Flu/COVID test if exposure or severe symptoms exist'];
+                advice = 'Monitor fever and consult again if fever lasts more than 3 days or breathing problem starts.';
+            } else if (reason.includes('chest') || reason.includes('heart') || reason.includes('blood pressure') || reason.includes('palpitation')) {
+                medicines = ['Do not self-medicate for chest pain', 'Medicine only after cardiology review'];
+                tests = ['ECG', 'Blood Pressure Check', 'Cardiac Enzymes if urgent symptoms exist'];
+                advice = 'Chest pain with sweating, shortness of breath, or left arm pain needs urgent care.';
+            } else if (reason.includes('skin') || reason.includes('rash') || reason.includes('allergy') || reason.includes('itching')) {
+                medicines = ['Avoid self-use of steroid creams', 'Allergy medicine only if prescribed', 'Keep affected area clean and dry'];
+                tests = ['Skin photo review', 'Allergy test if repeated', 'CBC if fever with rash exists'];
+                advice = 'Face swelling or breathing issue with allergy needs urgent help.';
+            } else if (reason.includes('stomach') || reason.includes('vomit') || reason.includes('diarrhea') || reason.includes('loose motion') || reason.includes('abdominal')) {
+                medicines = ['ORS / hydration support', 'Avoid antibiotics without prescription', 'Eat light food'];
+                tests = ['Stool test if diarrhea continues', 'Electrolytes if dehydration exists', 'CBC if fever exists'];
+                advice = 'Blood in stool, severe dehydration, or repeated vomiting needs urgent review.';
+            } else if (reason.includes('headache') || reason.includes('migraine') || reason.includes('dizziness')) {
+                medicines = ['Pain medicine only as prescribed', 'Avoid repeated painkillers without doctor advice'];
+                tests = ['Blood pressure check', 'Eye checkup if blurred vision exists', 'Further tests only if doctor recommends'];
+                advice = 'Sudden worst headache, weakness on one side, or confusion needs emergency care.';
+            }
+
+            return { medicines, tests, advice };
+        }
+
+        function generatePdfBlob(title, lines) {
+            function pdfEscape(s) { return String(s || '').replace(/[\\()]/g, '\\$&').replace(/[^\x20-\x7E]/g, ' '); }
+            const contentLines = [];
+            let y = 780;
+            contentLines.push('BT /F1 18 Tf 50 ' + y + ' Td (' + pdfEscape(title) + ') Tj ET');
+            y -= 32;
+            lines.forEach(line => {
+                const chunks = String(line || '').match(/.{1,88}/g) || [''];
+                chunks.forEach(chunk => {
+                    if (y < 60) return;
+                    contentLines.push('BT /F1 10 Tf 50 ' + y + ' Td (' + pdfEscape(chunk) + ') Tj ET');
+                    y -= 16;
+                });
+                y -= 4;
+            });
+            const stream = contentLines.join('\n');
+            const objects = [];
+            objects[1] = '1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj';
+            objects[2] = '2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj';
+            objects[3] = '3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj';
+            objects[4] = '4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj';
+            objects[5] = '5 0 obj << /Length ' + stream.length + ' >> stream\n' + stream + '\nendstream endobj';
+            let pdf = '%PDF-1.4\n';
+            const offsets = [0];
+            for (let i=1; i<=5; i++) { offsets[i] = pdf.length; pdf += objects[i] + '\n'; }
+            const xref = pdf.length;
+            pdf += 'xref\n0 6\n0000000000 65535 f \n';
+            for (let i=1; i<=5; i++) pdf += String(offsets[i]).padStart(10,'0') + ' 00000 n \n';
+            pdf += 'trailer << /Size 6 /Root 1 0 R >>\nstartxref\n' + xref + '\n%%EOF';
+            return new Blob([pdf], {type:'application/pdf'});
+        }
+
+        function downloadBlob(blob, filename) {
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+        }
+
+        function prescriptionLines() {
+            const rx = currentPrescription || JSON.parse(localStorage.getItem('aiSymptomsPrescription') || '{}');
+            return [
+                'AI Symptoms Checker Clinic',
+                'Date: ' + (rx.date || today),
+                'Patient: ' + (rx.patient || ''),
+                'Doctor: ' + (rx.doctor || ''),
+                'Consultation Method: ' + (rx.method || ''),
+                'Timing: ' + (rx.time || ''),
+                'Fee: ' + (rx.fee || selectedFee),
+                'Symptoms / Reason: ' + (rx.reason || ''),
+                'Uploaded Reports: ' + ((rx.reports || []).join(', ') || 'No reports uploaded'),
+                '',
+                'Suggested Medicines:',
+                ...((rx.medicines || []).map(x => '- ' + x)),
+                '',
+                'Recommended Lab Tests:',
+                ...((rx.tests || []).map(x => '- ' + x)),
+                '',
+                'Doctor Advice: ' + (rx.advice || ''),
+                'Note: This is a demo digital prescription workflow. Real medicines and tests must be confirmed by a licensed doctor.'
+            ];
+        }
+
+        document.getElementById('prescription-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const generated = createPrescription();
+            const patient = document.getElementById('rx-patient-name').value || 'Patient';
+            const doctorName = document.getElementById('rx-doctor-name').value || doctor;
+            const method = document.getElementById('rx-method').value;
+            const rxTime = document.getElementById('rx-time').value || time;
+
+            document.getElementById('rx-view-patient').textContent = patient;
+            document.getElementById('rx-view-doctor').textContent = doctorName;
+            document.getElementById('rx-view-method').textContent = method;
+            document.getElementById('rx-view-time').textContent = rxTime;
+            document.getElementById('rx-medicine-list').innerHTML = generated.medicines.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('rx-test-list').innerHTML = generated.tests.map(item => `<li>${item}</li>`).join('');
+
+            const rx = {
+                patient,
+                doctor: doctorName,
+                method,
+                time: rxTime,
+                fee: selectedFee,
+                reason: document.getElementById('rx-reason').value,
+                reports: reportNames,
+                date: today,
+                medicines: generated.medicines,
+                tests: generated.tests,
+                advice: generated.advice
+            };
+            currentPrescription = rx;
+            localStorage.setItem('aiSymptomsPrescription', JSON.stringify(rx));
+            localStorage.setItem('aiSymptomsLabRequest', JSON.stringify(rx));
+            localStorage.setItem('selectedDoctorForAppointment', JSON.stringify({ doctor: doctorName, time: rxTime, fee: selectedFee }));
+
+            document.querySelector('.rx-status-pill').textContent = 'Generated';
+        });
+
+        document.getElementById('download-rx-pdf').addEventListener('click', function () {
+            if (!currentPrescription && !localStorage.getItem('aiSymptomsPrescription')) document.getElementById('prescription-form').requestSubmit();
+            downloadBlob(generatePdfBlob('Digital Prescription', prescriptionLines()), 'digital-prescription.pdf');
+        });
+        document.getElementById('download-lab-pdf').addEventListener('click', function () {
+            if (!currentPrescription && !localStorage.getItem('aiSymptomsPrescription')) document.getElementById('prescription-form').requestSubmit();
+            downloadBlob(generatePdfBlob('Medicine and Lab Test Report', prescriptionLines()), 'medicine-lab-test-report.pdf');
+        });
+    </script>
+    <script src="demo-activation.js"></script>
+<script src="feature-enhancements.js"></script>
+<script src="partner-system.js"></script>
+<script src="business-features.js"></script>
+<script src="role-routing.js"></script>
+    <script src="language-consistency-data.js"></script>
+<script src="language-consistency-only.js"></script>
+</body>
+</html>

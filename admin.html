@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel | AI Symptoms Checker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Separate admin control panel for AI Symptoms Checker demo project.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root{
+            --admin-bg:#08111f;
+            --admin-panel:#101c2f;
+            --admin-panel-2:#13243a;
+            --admin-border:rgba(255,255,255,.10);
+            --admin-text:#eef5ff;
+            --admin-muted:#9fb0c7;
+            --admin-accent:#42d392;
+            --admin-danger:#ff5c7a;
+            --admin-warning:#ffcf5a;
+            --admin-blue:#63a4ff;
+        }
+        body.admin-standalone{
+            margin:0;
+            min-height:100vh;
+            background:
+                radial-gradient(circle at top left, rgba(66,211,146,.14), transparent 32%),
+                radial-gradient(circle at bottom right, rgba(99,164,255,.12), transparent 30%),
+                var(--admin-bg);
+            color:var(--admin-text);
+            font-family: Inter, Poppins, Segoe UI, Arial, sans-serif;
+        }
+        .admin-shell{min-height:100vh; display:none;}
+        .admin-shell.is-visible{display:grid; grid-template-columns:280px 1fr;}
+        .admin-sidebar{
+            position:sticky; top:0; height:100vh;
+            background:rgba(7,16,30,.92);
+            border-right:1px solid var(--admin-border);
+            padding:24px 18px;
+            display:flex; flex-direction:column; gap:20px;
+        }
+        .admin-brand{display:flex; align-items:center; gap:12px; padding:8px 8px 18px; border-bottom:1px solid var(--admin-border);}
+        .admin-brand img{width:42px; height:42px; object-fit:contain; border-radius:12px; background:#fff;}
+        .admin-brand h1{font-size:1rem; margin:0; line-height:1.2;}
+        .admin-brand span{font-size:.75rem; color:var(--admin-muted);}
+        .admin-nav{display:flex; flex-direction:column; gap:8px;}
+        .admin-nav button,.admin-side-link{
+            border:0; width:100%; text-align:left;
+            background:transparent; color:var(--admin-muted);
+            padding:12px 14px; border-radius:14px;
+            font-weight:700; cursor:pointer; text-decoration:none;
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .admin-nav button.active,.admin-nav button:hover,.admin-side-link:hover{
+            background:linear-gradient(135deg, rgba(66,211,146,.18), rgba(99,164,255,.10));
+            color:var(--admin-text);
+        }
+        .admin-sidebar-bottom{margin-top:auto; display:grid; gap:10px;}
+        .admin-main{padding:26px; min-width:0;}
+        .admin-topbar{
+            display:flex; justify-content:space-between; align-items:center; gap:16px;
+            background:rgba(16,28,47,.72); border:1px solid var(--admin-border);
+            border-radius:22px; padding:18px 20px; margin-bottom:22px;
+            backdrop-filter: blur(16px);
+        }
+        .admin-topbar h2{margin:0 0 4px; font-size:1.35rem;}
+        .admin-topbar p{margin:0; color:var(--admin-muted);}
+        .admin-actions{display:flex; gap:10px; flex-wrap:wrap;}
+        .admin-btn{
+            border:1px solid var(--admin-border); border-radius:12px;
+            padding:10px 14px; color:var(--admin-text);
+            background:rgba(255,255,255,.06); cursor:pointer; font-weight:800;
+        }
+        .admin-btn.primary{background:linear-gradient(135deg, #28c786, #63a4ff); border:0; color:#06111f;}
+        .admin-btn.danger{background:rgba(255,92,122,.14); border-color:rgba(255,92,122,.32); color:#ffc8d2;}
+        .admin-btn.warning{background:rgba(255,207,90,.14); border-color:rgba(255,207,90,.32); color:#ffe6a1;}
+        .admin-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-bottom:22px;}
+        .admin-stat{
+            background:linear-gradient(180deg, rgba(19,36,58,.95), rgba(14,25,42,.95));
+            border:1px solid var(--admin-border); border-radius:18px; padding:18px;
+        }
+        .admin-stat span{color:var(--admin-muted); font-size:.82rem; font-weight:700;}
+        .admin-stat strong{display:block; font-size:2rem; margin:8px 0 2px;}
+        .admin-stat small{color:var(--admin-muted);}
+        .admin-section{display:none;}
+        .admin-section.active{display:block;}
+        .admin-card{
+            background:rgba(16,28,47,.82);
+            border:1px solid var(--admin-border);
+            border-radius:20px; padding:18px; margin-bottom:16px;
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+        .admin-section-head{display:flex; justify-content:space-between; gap:16px; align-items:center; margin-bottom:14px;}
+        .admin-section-head h3{margin:0 0 4px; font-size:1.15rem;}
+        .admin-section-head p{margin:0; color:var(--admin-muted);}
+        .admin-tools{display:flex; gap:10px; flex-wrap:wrap;}
+        .admin-tools input,.admin-tools select,.admin-input{
+            background:#0a1425; border:1px solid var(--admin-border); color:var(--admin-text);
+            border-radius:12px; padding:11px 12px; outline:none;
+        }
+        .admin-list{display:grid; gap:14px;}
+        .admin-record{
+            background:rgba(255,255,255,.045); border:1px solid var(--admin-border);
+            border-radius:18px; padding:16px;
+        }
+        .admin-record-top{display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:12px;}
+        .admin-record h4{margin:0 0 6px; font-size:1.05rem;}
+        .admin-record p{margin:4px 0; color:var(--admin-muted);}
+        .admin-detail-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px 14px; margin:12px 0;}
+        .admin-detail-grid p{font-size:.9rem; overflow-wrap:anywhere;}
+        .admin-status{
+            border-radius:999px; padding:6px 10px; font-size:.78rem; font-weight:900; white-space:nowrap;
+            background:rgba(255,207,90,.15); color:#ffe6a1; border:1px solid rgba(255,207,90,.25);
+        }
+        .admin-status.selected{background:rgba(66,211,146,.15); color:#a7ffd4; border-color:rgba(66,211,146,.25);}
+        .admin-status.rejected{background:rgba(255,92,122,.15); color:#ffc8d2; border-color:rgba(255,92,122,.25);}
+        .admin-card-actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+        .admin-empty{padding:26px; text-align:center; color:var(--admin-muted); border:1px dashed var(--admin-border); border-radius:18px;}
+        .admin-edit-hint{font-size:.82rem; color:var(--admin-muted); margin-top:8px;}
+        .admin-record textarea{width:100%; min-height:72px; background:#0a1425; border:1px solid var(--admin-border); color:var(--admin-text); border-radius:12px; padding:10px; box-sizing:border-box;}
+        .admin-login-screen{
+            min-height:100vh; display:grid; place-items:center; padding:24px;
+        }
+        .admin-login-card{
+            width:min(460px,100%); background:rgba(16,28,47,.90);
+            border:1px solid var(--admin-border); border-radius:26px; padding:28px;
+            box-shadow:0 28px 80px rgba(0,0,0,.35);
+        }
+        .admin-login-card .logo-line{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+        .admin-login-card img{width:46px; height:46px; object-fit:contain; border-radius:12px; background:#fff;}
+        .admin-login-card h1{margin:0; font-size:1.5rem;}
+        .admin-login-card p{color:var(--admin-muted);}
+        .admin-login-card label{display:block; margin:14px 0 8px; font-weight:800;}
+        .admin-login-card input{
+            width:100%; box-sizing:border-box; background:#0a1425; border:1px solid var(--admin-border);
+            border-radius:14px; padding:13px 14px; color:var(--admin-text);
+        }
+        .admin-login-card button{width:100%; margin-top:18px;}
+        .admin-alert{border-radius:14px; padding:12px 14px; margin-top:14px; background:rgba(255,92,122,.12); color:#ffc8d2; display:none;}
+        .admin-alert.success{background:rgba(66,211,146,.12); color:#a7ffd4;}
+        .admin-note{font-size:.82rem; color:var(--admin-muted); border-top:1px solid var(--admin-border); margin-top:16px; padding-top:14px;}
+        @media(max-width:1050px){
+            .admin-shell.is-visible{grid-template-columns:1fr;}
+            .admin-sidebar{position:relative; height:auto;}
+            .admin-nav{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));}
+            .admin-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+            .admin-detail-grid{grid-template-columns:1fr;}
+        }
+        @media(max-width:640px){
+            .admin-main{padding:16px;}
+            .admin-topbar,.admin-section-head,.admin-record-top{flex-direction:column; align-items:flex-start;}
+            .admin-grid,.admin-nav{grid-template-columns:1fr;}
+        }
+    </style>
+</head>
+<body class="admin-standalone">
+    <div class="admin-login-screen" id="admin-login-screen">
+        <form class="admin-login-card" id="admin-login-form" autocomplete="off">
+            <div class="logo-line">
+                <img src="logo.png" alt="AI Symptoms Checker logo">
+                <div>
+                    <h1>Admin Panel</h1>
+                    <p>Separate secure demo control center</p>
+                </div>
+            </div>
+            <label for="admin-email">Admin Email</label>
+            <input id="admin-email" type="email" placeholder="admin@aisymptoms.com" required>
+            <label for="admin-password">Password</label>
+            <input id="admin-password" type="password" placeholder="admin123" required>
+            <button class="admin-btn primary" type="submit">Login to Admin Panel</button>
+            <div class="admin-alert" id="admin-login-message"></div>
+            <div class="admin-note">
+                Demo credentials: <b>admin@aisymptoms.com</b> / <b>admin123</b><br>
+                This is a frontend demo using browser localStorage, not a production backend.
+            </div>
+        </form>
+    </div>
+
+    <div class="admin-shell" id="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <img src="logo.png" alt="Logo">
+                <div>
+                    <h1>AI Symptoms Admin</h1>
+                    <span>Private control panel</span>
+                </div>
+            </div>
+            <nav class="admin-nav">
+                <button class="admin-menu active" data-section="overview">Overview <span>⌁</span></button>
+                <button class="admin-menu" data-section="doctors">Doctor Applications <span id="badge-pending">0</span></button>
+                <button class="admin-menu" data-section="approved">Approved Doctors <span id="badge-approved">0</span></button>
+                <button class="admin-menu" data-section="partners">Partner Applications <span id="badge-partner-pending">0</span></button>
+                <button class="admin-menu" data-section="approved-partners">Approved Partners <span id="badge-approved-partners">0</span></button>
+                <button class="admin-menu" data-section="patients">Patients <span id="badge-patients">0</span></button>
+                <button class="admin-menu" data-section="appointments">Appointments <span id="badge-appointments">0</span></button>
+                <button class="admin-menu" data-section="orders">Orders & Labs <span id="badge-orders">0</span></button>
+            </nav>
+            <div class="admin-sidebar-bottom">
+                <a class="admin-side-link" href="index.html" target="_blank" rel="noopener">Open Public Website <span>↗</span></a>
+                <button class="admin-btn danger" id="admin-logout" type="button">Logout</button>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <div class="admin-topbar">
+                <div>
+                    <h2 id="admin-page-title">Overview</h2>
+                    <p>Manage website demo records, doctor onboarding, users, appointments, and service requests.</p>
+                </div>
+                <div class="admin-actions">
+                    <button class="admin-btn" id="refresh-admin" type="button">Refresh</button>
+                    <button class="admin-btn warning" id="seed-demo-data" type="button">Add Demo Doctor</button>
+                    <button class="admin-btn primary" id="export-admin-data" type="button">Export Data</button>
+                </div>
+            </div>
+
+            <section class="admin-section active" id="section-overview">
+                <div class="admin-grid">
+                    <div class="admin-stat"><span>Doctor Applications</span><strong id="stat-doctors">0</strong><small>Doctor registrations</small></div>
+                    <div class="admin-stat"><span>Doctor Pending</span><strong id="stat-pending">0</strong><small>Need decision</small></div>
+                    <div class="admin-stat"><span>Approved Doctors</span><strong id="stat-selected">0</strong><small>Selected / published</small></div>
+                    <div class="admin-stat"><span>Partner Applications</span><strong id="stat-partners">0</strong><small>Pharmacy + lab</small></div>
+                    <div class="admin-stat"><span>Partner Pending</span><strong id="stat-partner-pending">0</strong><small>Need approval</small></div>
+                    <div class="admin-stat"><span>Approved Partners</span><strong id="stat-approved-partners">0</strong><small>Can login</small></div>
+                    <div class="admin-stat"><span>Patients</span><strong id="stat-patients">0</strong><small>Registered users</small></div>
+                    <div class="admin-stat"><span>Appointments</span><strong id="stat-appointments">0</strong><small>Booking requests</small></div>
+                    <div class="admin-stat"><span>Orders & Labs</span><strong id="stat-orders">0</strong><small>Service requests</small></div>
+                    <div class="admin-stat"><span>Dashboard Users</span><strong id="stat-dashboard-users">0</strong><small>Portal activity</small></div>
+                </div>
+                <div class="admin-card">
+                    <div class="admin-section-head">
+                        <div>
+                            <h3>Admin Notes</h3>
+                            <p>This admin panel is intentionally separate from the public website navbar.</p>
+                        </div>
+                    </div>
+                    <p style="color:var(--admin-muted); margin:0;">Public visitors will not see the Admin Portal link. Admin access is available only by opening <b>admin.html</b> directly.</p>
+                </div>
+            </section>
+
+            <section class="admin-section" id="section-doctors">
+                <div class="admin-card">
+                    <div class="admin-section-head">
+                        <div><h3>Doctor Applications</h3><p>Approve, reject, publish, or delete doctor registrations.</p></div>
+                        <div class="admin-tools">
+                            <input id="doctor-search-admin" type="search" placeholder="Search doctor, specialty, city...">
+                            <select id="doctor-status-filter">
+                                <option value="all">All Status</option>
+                                <option value="Pending Review">Pending Review</option>
+                                <option value="Selected">Selected</option>
+                                <option value="Not Selected">Not Selected</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="admin-tools" style="margin-bottom:14px;">
+                        <input id="admin-app-id" class="admin-input" type="text" placeholder="Application ID">
+                        <select id="admin-status" class="admin-input">
+                            <option>Pending Review</option>
+                            <option>Selected</option>
+                            <option>Not Selected</option>
+                        </select>
+                        <button class="admin-btn primary" id="manual-status-update" type="button">Update Status</button>
+                        <button class="admin-btn" id="manual-doctor-edit" type="button">Edit Doctor</button>
+                    </div>
+                    <div id="doctor-applications-list" class="admin-list"></div>
+                </div>
+            </section>
+
+            <section class="admin-section" id="section-approved">
+                <div class="admin-card">
+                    <div class="admin-section-head"><div><h3>Approved Doctors</h3><p>Published doctors available for the public doctors page demo.</p></div></div>
+                    <div id="approved-doctors-list" class="admin-list"></div>
+                </div>
+            </section>
+
+            <section class="admin-section" id="section-partners">
+                <div class="admin-card">
+                    <div class="admin-section-head">
+                        <div><h3>Partner Applications</h3><p>View, edit, approve, reject, publish, or delete pharmacy/lab partners.</p></div>
+                        <div class="admin-tools">
+                            <input id="partner-search-admin" type="search" placeholder="Search business, owner, city, type...">
+                            <select id="partner-status-filter">
+                                <option value="all">All Status</option>
+                                <option value="Pending Review">Pending Review</option>
+                                <option value="Selected">Selected</option>
+                                <option value="Not Selected">Not Selected</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="admin-tools" style="margin-bottom:14px;">
+                        <input id="admin-partner-id" class="admin-input" type="text" placeholder="Partner Application ID">
+                        <select id="admin-partner-status" class="admin-input">
+                            <option>Pending Review</option>
+                            <option>Selected</option>
+                            <option>Not Selected</option>
+                        </select>
+                        <button class="admin-btn primary" id="manual-partner-status-update" type="button">Update Partner Status</button>
+                        <button class="admin-btn" id="manual-partner-edit" type="button">Edit Partner</button>
+                    </div>
+                    <div id="partner-applications-list" class="admin-list"></div>
+                </div>
+            </section>
+
+            <section class="admin-section" id="section-approved-partners">
+                <div class="admin-card">
+                    <div class="admin-section-head"><div><h3>Approved Partners</h3><p>Published pharmacy/lab partners who can login to their own dashboards.</p></div></div>
+                    <div id="approved-partners-list" class="admin-list"></div>
+                </div>
+            </section>
+
+            <section class="admin-section" id="section-patients">
+                <div class="admin-card">
+                    <div class="admin-section-head"><div><h3>Patients</h3><p>Patient accounts saved in browser localStorage.</p></div></div>
+                    <div id="patient-users-list" class="admin-list"></div>
+                </div>
+            </section>
+
+            <section class="admin-section" id="section-appointments">
+                <div class="admin-card">
+                    <div class="admin-section-head"><div><h3>Appointments</h3><p>Appointment requests submitted by patients.</p></div></div>
+                    <div id="appointment-list" class="admin-list"></div>
+                </div>
+            </section>
+
+            <section class="admin-section" id="section-orders">
+                <div class="admin-card">
+                    <div class="admin-section-head"><div><h3>Medicine & Lab Requests</h3><p>Medicine orders and lab test bookings.</p></div></div>
+                    <div id="orders-list" class="admin-list"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+        <script src="demo-activation.js"></script>
+<script>
+        const ADMIN_EMAIL = 'admin@aisymptoms.com';
+        const ADMIN_PASSWORD = 'admin123';
+
+        function readJSON(key, fallback) {
+            try {
+                const raw = localStorage.getItem(key);
+                return raw ? JSON.parse(raw) : fallback;
+            } catch (error) {
+                console.warn('Invalid localStorage data for', key, error);
+                return fallback;
+            }
+        }
+        function writeJSON(key, value) {
+            localStorage.setItem(key, JSON.stringify(value));
+        }
+        function esc(text) {
+            return String(text ?? '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+        }
+        function showMessage(text, type = 'error') {
+            const msg = document.getElementById('admin-login-message');
+            msg.textContent = text;
+            msg.className = 'admin-alert' + (type === 'success' ? ' success' : '');
+            msg.style.display = 'block';
+        }
+        function isLoggedIn() {
+            return sessionStorage.getItem('aiSymptomsAdminLoggedIn') === 'true';
+        }
+        function setLoggedIn(value) {
+            if (value) sessionStorage.setItem('aiSymptomsAdminLoggedIn', 'true');
+            else sessionStorage.removeItem('aiSymptomsAdminLoggedIn');
+        }
+        function showDashboard() {
+            document.getElementById('admin-login-screen').style.display = 'none';
+            document.getElementById('admin-shell').classList.add('is-visible');
+            renderAll();
+        }
+        function showLogin() {
+            document.getElementById('admin-login-screen').style.display = 'grid';
+            document.getElementById('admin-shell').classList.remove('is-visible');
+        }
+        function getApplications() {
+            return readJSON('doctorApplications', []);
+        }
+        function getApprovedDoctors() {
+            return readJSON('approvedDoctors', []);
+        }
+        function getPartnerApplications() {
+            return readJSON('partnerApplications', []);
+        }
+        function getApprovedPartners() {
+            const approved = readJSON('approvedPartners', []);
+            const selectedApps = getPartnerApplications().filter(p => p.status === 'Selected' || p.published === true);
+            const merged = [...approved, ...selectedApps];
+            const seen = new Set();
+            return merged.filter(p => {
+                const key = (p.type || '') + '|' + (p.id || p.email || p.businessName || '');
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        }
+        function getPatients() {
+            return readJSON('patientUsers', []);
+        }
+        function getAppointments() {
+            const list = readJSON('appointmentRequests', []);
+            const single = readJSON('aiSymptomsAppointment', null);
+            if (single && typeof single === 'object') {
+                const exists = list.some(item => item.createdAt === single.createdAt && item.patient === single.patient);
+                if (!exists) list.unshift(single);
+            }
+            return list;
+        }
+        function getOrders() {
+            return [
+                ...readJSON('medicineOrders', []).map(item => ({...item, _recordType: 'Medicine Order'})),
+                ...readJSON('labTestRequests', []).map(item => ({...item, _recordType: 'Lab Test Request'}))
+            ];
+        }
+        function statusClass(status) {
+            if (status === 'Selected') return 'selected';
+            if (status === 'Not Selected') return 'rejected';
+            return 'pending';
+        }
+        function renderStats() {
+            const apps = getApplications();
+            const approved = getApprovedDoctors();
+            const partners = getPartnerApplications();
+            const approvedPartners = getApprovedPartners();
+            const patients = getPatients();
+            const appointments = getAppointments();
+            const orders = getOrders();
+            const pending = apps.filter(app => (app.status || 'Pending Review') === 'Pending Review').length;
+            const selected = apps.filter(app => app.status === 'Selected').length || approved.length;
+            const partnerPending = partners.filter(p => (p.status || 'Pending Review') === 'Pending Review').length;
+            const dashboardUsers = patients.filter(p => Number(p.dashboardVisits || 0) > 0 || p.lastDashboardVisit).length;
+
+            const map = {
+                'stat-doctors': apps.length,
+                'stat-pending': pending,
+                'stat-selected': selected,
+                'stat-partners': partners.length,
+                'stat-partner-pending': partnerPending,
+                'stat-approved-partners': approvedPartners.length,
+                'stat-patients': patients.length,
+                'stat-appointments': appointments.length,
+                'stat-orders': orders.length,
+                'stat-dashboard-users': dashboardUsers,
+                'badge-pending': pending,
+                'badge-approved': approved.length || selected,
+                'badge-partner-pending': partnerPending,
+                'badge-approved-partners': approvedPartners.length,
+                'badge-patients': patients.length,
+                'badge-appointments': appointments.length,
+                'badge-orders': orders.length
+            };
+            Object.entries(map).forEach(([id, value]) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = value;
+            });
+        }
+
+        function recordCard(title, subtitle, fields, actions = '', status = '') {
+            return `<article class="admin-record">
+                <div class="admin-record-top">
+                    <div><h4>${esc(title)}</h4><p>${esc(subtitle)}</p></div>
+                    ${status ? `<span class="admin-status ${statusClass(status)}">${esc(status)}</span>` : ''}
+                </div>
+                <div class="admin-detail-grid">
+                    ${fields.map(([label, value]) => `<p><strong>${esc(label)}:</strong> ${esc(value || '-')}</p>`).join('')}
+                </div>
+                ${actions ? `<div class="admin-card-actions">${actions}</div>` : ''}
+            </article>`;
+        }
+        function renderDoctorApplications() {
+            const list = getApplications();
+            const q = (document.getElementById('doctor-search-admin')?.value || '').toLowerCase();
+            const filter = document.getElementById('doctor-status-filter')?.value || 'all';
+            const filtered = list.filter(app => {
+                const status = app.status || 'Pending Review';
+                const statusOk = filter === 'all' || status === filter;
+                const text = Object.values(app || {}).join(' ').toLowerCase();
+                return statusOk && (!q || text.includes(q));
+            });
+            const box = document.getElementById('doctor-applications-list');
+            if (!filtered.length) {
+                box.innerHTML = '<div class="admin-empty">No doctor applications found.</div>';
+                return;
+            }
+            box.innerHTML = filtered.map(app => recordCard(
+                app.name || 'Unnamed Doctor',
+                `${app.specialization || 'Specialist'} • ${app.city || 'City not added'}`,
+                [
+                    ['Application ID', app.id],
+                    ['Email', app.email],
+                    ['Phone', app.phone],
+                    ['License', app.license],
+                    ['Degree', app.degree],
+                    ['Experience', app.experience],
+                    ['Hospital', app.hospital],
+                    ['Clinic', app.clinic || app.clinicAddress],
+                    ['Fee', app.fee],
+                    ['Availability', app.availability],
+                    ['Submitted', app.submittedAt || app.createdAt]
+                ],
+                `<button class="admin-btn primary" onclick="setDoctorStatus('${esc(app.id)}','Selected')">Approve</button>
+                 <button class="admin-btn warning" onclick="setDoctorStatus('${esc(app.id)}','Pending Review')">Pending</button>
+                 <button class="admin-btn danger" onclick="setDoctorStatus('${esc(app.id)}','Not Selected')">Reject</button>
+                 <button class="admin-btn" onclick="editDoctorApplication('${esc(app.id)}')">Edit</button>
+                 <button class="admin-btn primary" onclick="publishDoctor('${esc(app.id)}')">Publish</button>
+                 <button class="admin-btn danger" onclick="deleteDoctorApplication('${esc(app.id)}')">Delete</button>`,
+                app.status || 'Pending Review'
+            )).join('');
+        }
+        function renderApprovedDoctors() {
+            const list = getApprovedDoctors();
+            const box = document.getElementById('approved-doctors-list');
+            if (!list.length) {
+                box.innerHTML = '<div class="admin-empty">No approved doctors published yet.</div>';
+                return;
+            }
+            box.innerHTML = list.map(doc => recordCard(
+                doc.name || 'Approved Doctor',
+                `${doc.specialization || doc.spec || 'Specialist'} • ${doc.city || 'City not added'}`,
+                [
+                    ['ID', doc.id],
+                    ['Email', doc.email],
+                    ['Phone', doc.phone],
+                    ['Experience', doc.experience],
+                    ['Fee', doc.fee],
+                    ['Availability', doc.availability],
+                    ['Published', doc.publishedAt]
+                ],
+                `<button class="admin-btn" onclick="editApprovedDoctor('${esc(doc.id)}')">Edit</button>
+                 <button class="admin-btn danger" onclick="removeApprovedDoctor('${esc(doc.id)}')">Remove</button>`,
+                'Selected'
+            )).join('');
+        }
+        function renderPartnerApplications() {
+            const list = getPartnerApplications();
+            const q = (document.getElementById('partner-search-admin')?.value || '').toLowerCase();
+            const filter = document.getElementById('partner-status-filter')?.value || 'all';
+            const filtered = list.filter(partner => {
+                const status = partner.status || 'Pending Review';
+                const statusOk = filter === 'all' || status === filter;
+                const text = Object.values(partner || {}).join(' ').toLowerCase();
+                return statusOk && (!q || text.includes(q));
+            });
+            const box = document.getElementById('partner-applications-list');
+            if (!box) return;
+            if (!filtered.length) {
+                box.innerHTML = '<div class="admin-empty">No partner applications found.</div>';
+                return;
+            }
+            box.innerHTML = filtered.map(partner => recordCard(
+                partner.businessName || 'Unnamed Partner',
+                `${partner.type === 'lab' ? 'Lab Partner' : 'Pharmacy Partner'} • ${partner.city || 'City not added'} • ${partner.area || 'Area not added'}`,
+                [
+                    ['Application ID', partner.id],
+                    ['Type', partner.type],
+                    ['Owner', partner.ownerName],
+                    ['Email', partner.email],
+                    ['Phone', partner.phone],
+                    ['License', partner.license],
+                    ['City', partner.city],
+                    ['Area', partner.area],
+                    ['Address', partner.address],
+                    ['Delivery / Pickup', `${partner.delivery || '-'} / ${partner.pickup || '-'}`],
+                    ['Home Sampling', partner.homeSampling],
+                    ['Tests', partner.tests],
+                    ['Commission', partner.commission || '20%'],
+                    ['Submitted', partner.submittedAt]
+                ],
+                `<button class="admin-btn primary" onclick="setPartnerStatus('${esc(partner.id)}','Selected')">Approve</button>
+                 <button class="admin-btn warning" onclick="setPartnerStatus('${esc(partner.id)}','Pending Review')">Pending</button>
+                 <button class="admin-btn danger" onclick="setPartnerStatus('${esc(partner.id)}','Not Selected')">Reject</button>
+                 <button class="admin-btn" onclick="editPartnerApplication('${esc(partner.id)}')">Edit</button>
+                 <button class="admin-btn primary" onclick="publishPartner('${esc(partner.id)}')">Publish</button>
+                 <button class="admin-btn danger" onclick="deletePartnerApplication('${esc(partner.id)}')">Delete</button>`,
+                partner.status || 'Pending Review'
+            )).join('');
+        }
+
+        function renderApprovedPartners() {
+            const list = getApprovedPartners();
+            const box = document.getElementById('approved-partners-list');
+            if (!box) return;
+            if (!list.length) {
+                box.innerHTML = '<div class="admin-empty">No approved partners published yet.</div>';
+                return;
+            }
+            box.innerHTML = list.map(partner => recordCard(
+                partner.businessName || 'Approved Partner',
+                `${partner.type === 'lab' ? 'Lab Partner' : 'Pharmacy Partner'} • ${partner.city || 'City not added'}`,
+                [
+                    ['ID', partner.id],
+                    ['Owner', partner.ownerName],
+                    ['Email', partner.email],
+                    ['Phone', partner.phone],
+                    ['License', partner.license],
+                    ['Area', partner.area],
+                    ['Commission', partner.commission || '20%'],
+                    ['Published', partner.publishedAt || partner.submittedAt]
+                ],
+                `<button class="admin-btn" onclick="editApprovedPartner('${esc(partner.id)}')">Edit</button>
+                 <button class="admin-btn danger" onclick="removeApprovedPartner('${esc(partner.id)}')">Remove</button>`,
+                'Selected'
+            )).join('');
+        }
+
+        function renderPatients() {
+            const list = getPatients();
+            const box = document.getElementById('patient-users-list');
+            if (!list.length) {
+                box.innerHTML = '<div class="admin-empty">No patient accounts found.</div>';
+                return;
+            }
+            box.innerHTML = list.map(patient => recordCard(
+                patient.name || patient.fullName || 'Patient',
+                patient.email || patient.phone || 'No contact',
+                [
+                    ['User ID', patient.id],
+                    ['Email', patient.email],
+                    ['Phone', patient.phone],
+                    ['Age', patient.age],
+                    ['Gender', patient.gender],
+                    ['Created', patient.createdAt],
+                    ['Dashboard Visits', patient.dashboardVisits],
+                    ['Last Visit', patient.lastDashboardVisit]
+                ]
+            )).join('');
+        }
+        function renderAppointments() {
+            const list = getAppointments();
+            const box = document.getElementById('appointment-list');
+            if (!list.length) {
+                box.innerHTML = '<div class="admin-empty">No appointment requests found.</div>';
+                return;
+            }
+            box.innerHTML = list.map(item => recordCard(
+                item.patient || item.name || 'Appointment Request',
+                `${item.doctor || item.specialist || 'Doctor not selected'} • ${item.date || item.createdAt || ''}`,
+                [
+                    ['Phone', item.phone],
+                    ['Email', item.email],
+                    ['Symptoms', item.symptoms || item.reason],
+                    ['Time', item.time],
+                    ['Mode', item.mode],
+                    ['Status', item.status || 'Pending']
+                ],
+                `<button class="admin-btn primary" onclick="markAppointment('${esc(item.id || item.createdAt)}','Confirmed')">Confirm</button>
+                 <button class="admin-btn warning" onclick="markAppointment('${esc(item.id || item.createdAt)}','Pending')">Pending</button>`
+            )).join('');
+        }
+        function renderOrders() {
+            const list = getOrders();
+            const box = document.getElementById('orders-list');
+            if (!list.length) {
+                box.innerHTML = '<div class="admin-empty">No medicine or lab requests found.</div>';
+                return;
+            }
+            box.innerHTML = list.map(item => recordCard(
+                item.patient || item.customerName || item.name || item._recordType,
+                item._recordType,
+                [
+                    ['Order ID', item.id],
+                    ['Phone', item.phone],
+                    ['Email', item.email],
+                    ['Address', item.address],
+                    ['Items', item.items || item.medicine || item.tests || item.testName],
+                    ['Total', item.total || item.amount],
+                    ['Status', item.status || 'Pending'],
+                    ['Created', item.createdAt]
+                ]
+            )).join('');
+        }
+        function renderAll() {
+            renderStats();
+            renderDoctorApplications();
+            renderApprovedDoctors();
+            renderPartnerApplications();
+            renderApprovedPartners();
+            renderPatients();
+            renderAppointments();
+            renderOrders();
+        }
+        function setDoctorStatus(id, status) {
+            const apps = getApplications().map(app => app.id === id ? {...app, status, reviewedAt: new Date().toLocaleString()} : app);
+            writeJSON('doctorApplications', apps);
+            renderAll();
+        }
+        function publishDoctor(id) {
+            const apps = getApplications();
+            const app = apps.find(item => item.id === id);
+            if (!app) return;
+            const approved = getApprovedDoctors();
+            const exists = approved.some(item => item.id === id);
+            if (!exists) {
+                approved.unshift({...app, status: 'Selected', publishedAt: new Date().toLocaleString()});
+                writeJSON('approvedDoctors', approved);
+            }
+            setDoctorStatus(id, 'Selected');
+        }
+        function deleteDoctorApplication(id) {
+            if (!confirm('Delete this doctor application?')) return;
+            writeJSON('doctorApplications', getApplications().filter(app => app.id !== id));
+            renderAll();
+        }
+        function removeApprovedDoctor(id) {
+            if (!confirm('Remove this approved doctor?')) return;
+            writeJSON('approvedDoctors', getApprovedDoctors().filter(doc => doc.id !== id));
+            renderAll();
+        }
+
+        function promptUpdate(record, fields, title) {
+            const updated = {...record};
+            fields.forEach(field => {
+                const oldValue = updated[field] || '';
+                const label = field.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase());
+                const next = prompt(`${title}: ${label}`, oldValue);
+                if (next !== null) updated[field] = next.trim();
+            });
+            updated.editedAt = new Date().toLocaleString();
+            return updated;
+        }
+
+        function editDoctorApplication(id) {
+            const fields = ['name','email','phone','specialization','city','degree','experience','hospital','clinic','clinicAddress','fee','availability','password'];
+            const apps = getApplications();
+            const index = apps.findIndex(app => app.id === id);
+            if (index < 0) return alert('Doctor application not found.');
+            apps[index] = promptUpdate(apps[index], fields, 'Edit Doctor Application');
+            writeJSON('doctorApplications', apps);
+            const approved = getApprovedDoctors();
+            const approvedIndex = approved.findIndex(doc => doc.id === id);
+            if (approvedIndex >= 0) {
+                approved[approvedIndex] = {...approved[approvedIndex], ...apps[index], status:'Selected'};
+                writeJSON('approvedDoctors', approved);
+            }
+            renderAll();
+        }
+
+        function editApprovedDoctor(id) {
+            const apps = getApplications();
+            const appIndex = apps.findIndex(app => app.id === id);
+            if (appIndex >= 0) return editDoctorApplication(id);
+            const approved = getApprovedDoctors();
+            const index = approved.findIndex(doc => doc.id === id);
+            if (index < 0) return alert('Approved doctor not found.');
+            const fields = ['name','email','phone','specialization','city','degree','experience','hospital','clinic','clinicAddress','fee','availability','password'];
+            approved[index] = promptUpdate(approved[index], fields, 'Edit Approved Doctor');
+            writeJSON('approvedDoctors', approved);
+            renderAll();
+        }
+
+        function setPartnerStatus(id, status) {
+            const apps = getPartnerApplications().map(partner => partner.id === id ? {...partner, status, published: status === 'Selected' ? true : partner.published, reviewedAt: new Date().toLocaleString()} : partner);
+            writeJSON('partnerApplications', apps);
+            if (status === 'Selected') publishPartner(id);
+            else renderAll();
+        }
+
+        function publishPartner(id) {
+            const apps = getPartnerApplications();
+            const partner = apps.find(item => item.id === id);
+            if (!partner) return alert('Partner application not found.');
+            const approved = readJSON('approvedPartners', []);
+            const clean = {...partner, status:'Selected', published:true, publishedAt:new Date().toLocaleString()};
+            const index = approved.findIndex(item => item.id === id);
+            if (index >= 0) approved[index] = clean;
+            else approved.unshift(clean);
+            writeJSON('approvedPartners', approved);
+            const updatedApps = apps.map(item => item.id === id ? {...item, status:'Selected', published:true, reviewedAt:new Date().toLocaleString()} : item);
+            writeJSON('partnerApplications', updatedApps);
+            renderAll();
+        }
+
+        function editPartnerApplication(id) {
+            const fields = ['businessName','ownerName','email','phone','city','area','license','password','delivery','pickup','available24','tests','homeSampling','reportUpload','reportTime','address','commission'];
+            const apps = getPartnerApplications();
+            const index = apps.findIndex(partner => partner.id === id);
+            if (index < 0) return alert('Partner application not found.');
+            apps[index] = promptUpdate(apps[index], fields, 'Edit Partner Application');
+            writeJSON('partnerApplications', apps);
+            const approved = readJSON('approvedPartners', []);
+            const approvedIndex = approved.findIndex(partner => partner.id === id);
+            if (approvedIndex >= 0) {
+                approved[approvedIndex] = {...approved[approvedIndex], ...apps[index], status:'Selected', published:true};
+                writeJSON('approvedPartners', approved);
+            }
+            renderAll();
+        }
+
+        function editApprovedPartner(id) {
+            const apps = getPartnerApplications();
+            const appIndex = apps.findIndex(partner => partner.id === id);
+            if (appIndex >= 0) return editPartnerApplication(id);
+            const approved = readJSON('approvedPartners', []);
+            const index = approved.findIndex(partner => partner.id === id);
+            if (index < 0) return alert('Approved partner not found.');
+            const fields = ['businessName','ownerName','email','phone','city','area','license','password','delivery','pickup','available24','tests','homeSampling','reportUpload','reportTime','address','commission'];
+            approved[index] = promptUpdate(approved[index], fields, 'Edit Approved Partner');
+            writeJSON('approvedPartners', approved);
+            renderAll();
+        }
+
+        function deletePartnerApplication(id) {
+            if (!confirm('Delete this partner application?')) return;
+            writeJSON('partnerApplications', getPartnerApplications().filter(partner => partner.id !== id));
+            writeJSON('approvedPartners', readJSON('approvedPartners', []).filter(partner => partner.id !== id));
+            renderAll();
+        }
+
+        function removeApprovedPartner(id) {
+            if (!confirm('Remove this approved partner?')) return;
+            writeJSON('approvedPartners', readJSON('approvedPartners', []).filter(partner => partner.id !== id));
+            const apps = getPartnerApplications().map(partner => partner.id === id ? {...partner, published:false, status:'Pending Review'} : partner);
+            writeJSON('partnerApplications', apps);
+            renderAll();
+        }
+        function markAppointment(id, status) {
+            const list = getAppointments().map(item => (item.id === id || item.createdAt === id) ? {...item, status} : item);
+            writeJSON('appointmentRequests', list);
+            renderAll();
+        }
+        function seedDemoDoctor() {
+            const apps = getApplications();
+            const id = 'DOC-' + Date.now().toString().slice(-6);
+            apps.unshift({
+                id,
+                name: 'Dr. Demo Ahmed',
+                specialization: 'General Physician',
+                city: 'Karachi',
+                email: 'demo.doctor@example.com',
+                phone: '+92 300 0000000',
+                license: 'PMDC-DEMO',
+                degree: 'MBBS',
+                experience: '8 Years',
+                hospital: 'Demo Medical Center',
+                clinic: 'Demo Clinic',
+                clinicAddress: 'Karachi',
+                fee: '2500',
+                availability: '10:00 AM - 4:00 PM',
+                status: 'Pending Review',
+                submittedAt: new Date().toLocaleString()
+            });
+            writeJSON('doctorApplications', apps);
+            renderAll();
+        }
+        function exportData() {
+            const data = {
+                exportedAt: new Date().toISOString(),
+                doctorApplications: getApplications(),
+                approvedDoctors: getApprovedDoctors(),
+                partnerApplications: getPartnerApplications(),
+                approvedPartners: getApprovedPartners(),
+                patients: getPatients(),
+                appointments: getAppointments(),
+                orders: getOrders()
+            };
+            const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'ai-symptoms-admin-export.json';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+
+        document.getElementById('admin-login-form').addEventListener('submit', event => {
+            event.preventDefault();
+            const email = document.getElementById('admin-email').value.trim();
+            const password = document.getElementById('admin-password').value.trim();
+            if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+                setLoggedIn(true);
+                showMessage('Login successful. Opening admin dashboard...', 'success');
+                setTimeout(showDashboard, 350);
+            } else {
+                showMessage('Invalid admin email or password.');
+            }
+        });
+        document.getElementById('admin-logout').addEventListener('click', () => {
+            setLoggedIn(false);
+            showLogin();
+        });
+        document.getElementById('refresh-admin').addEventListener('click', renderAll);
+        document.getElementById('seed-demo-data').addEventListener('click', seedDemoDoctor);
+        document.getElementById('export-admin-data').addEventListener('click', exportData);
+        document.getElementById('manual-status-update').addEventListener('click', () => {
+            const id = document.getElementById('admin-app-id').value.trim();
+            const status = document.getElementById('admin-status').value;
+            if (!id) return alert('Enter application ID first.');
+            setDoctorStatus(id, status);
+            document.getElementById('admin-app-id').value = '';
+        });
+        document.getElementById('manual-doctor-edit').addEventListener('click', () => {
+            const id = document.getElementById('admin-app-id').value.trim();
+            if (!id) return alert('Enter doctor application ID first.');
+            editDoctorApplication(id);
+        });
+        document.getElementById('doctor-search-admin').addEventListener('input', renderDoctorApplications);
+        document.getElementById('doctor-status-filter').addEventListener('change', renderDoctorApplications);
+        document.getElementById('manual-partner-status-update').addEventListener('click', () => {
+            const id = document.getElementById('admin-partner-id').value.trim();
+            const status = document.getElementById('admin-partner-status').value;
+            if (!id) return alert('Enter partner application ID first.');
+            setPartnerStatus(id, status);
+            document.getElementById('admin-partner-id').value = '';
+        });
+        document.getElementById('manual-partner-edit').addEventListener('click', () => {
+            const id = document.getElementById('admin-partner-id').value.trim();
+            if (!id) return alert('Enter partner application ID first.');
+            editPartnerApplication(id);
+        });
+        document.getElementById('partner-search-admin').addEventListener('input', renderPartnerApplications);
+        document.getElementById('partner-status-filter').addEventListener('change', renderPartnerApplications);
+        document.querySelectorAll('.admin-menu').forEach(button => {
+            button.addEventListener('click', () => {
+                const section = button.dataset.section;
+                document.querySelectorAll('.admin-menu').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                document.querySelectorAll('.admin-section').forEach(panel => panel.classList.remove('active'));
+                document.getElementById('section-' + section).classList.add('active');
+                document.getElementById('admin-page-title').textContent = button.firstChild.textContent.trim();
+                renderAll();
+            });
+        });
+
+        if (isLoggedIn()) showDashboard();
+        else showLogin();
+    </script>
+</body>
+</html>

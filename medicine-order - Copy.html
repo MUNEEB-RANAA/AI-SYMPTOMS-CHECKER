@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Order | AI Symptoms Checker</title>
+    <meta name="description" content="Order medicines using doctor prescription.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="service-page">
+    <header id="header" class="scrolled">
+        <nav class="container premium-nav clean-demo-nav">
+            <a href="index.html#hero" class="logo" aria-label="AI Symptoms Checker Home">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <ul class="nav-links premium-nav-links">
+                <li><a href="index.html#hero" class="active-link">Home</a></li>
+                <li><a href="index.html#checker">AI Checker</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Services <span>▾</span></button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-menu-label">Patient Services</div>
+                        <a href="appointment.html">Book Appointment</a>
+                        <a href="consultation.html">Video &amp; Chat Consultation</a>
+                        <a href="prescription.html">Prescription Flow</a>
+                        <a href="medicine-order.html?mode=direct">Order Medicine</a>
+                        <a href="lab-tests.html?mode=direct">Book Lab Test</a>
+                        <a href="order-tracking.html">Track Request</a>
+                    </div>
+                </li>
+                <li><a href="doctors.html">Doctors</a></li>
+
+<li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Register <span>▾</span></button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu-small">
+                        <div class="nav-menu-label">Professional Registration</div>
+                        <a href="doctor-registration.html">Doctor Registration</a>
+                        <a href="pharmacy-registration.html">Pharmacy Partner Registration</a>
+                        <a href="lab-registration.html">Lab Partner Registration</a>
+                    </div>
+                </li>
+
+<li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right premium-nav-right">
+                <a href="login.html" class="btn-nav nav-login">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container service-hero-grid">
+                <div>
+                    <span class="section-subtitle">Partner Pharmacy Network</span>
+                    <h1 id="medicine-page-title">Order Medicine</h1>
+                    <p id="medicine-page-copy">Order medicines directly from partner pharmacies, or use doctor prescription details if you arrived from the prescription page.</p>
+                    <div class="service-badges">
+                        <span>Prescription Based</span>
+                        <span>Partner Pharmacy</span>
+                        <span>Delivery / Pickup</span>
+                        <span>20% Commission</span>
+                    </div>
+                </div>
+                <div class="service-side-card glass-card">
+                    <div class="service-icon-large">💊</div>
+                    <h3>Medicine Order Flow</h3>
+                    <p>Prescription is checked, stock is confirmed, and order is processed through pharmacy partners.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section service-form-section">
+            <div class="container service-form-grid">
+                <form class="booking-form glass-card service-main-form" id="medicine-page-form">
+                    <h3>Medicine Order Request</h3>
+                    <div id="prescription-summary" class="service-loaded-box" hidden></div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="medicine-patient">Patient Name</label>
+                            <input type="text" id="medicine-patient" placeholder="Enter patient name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="medicine-phone">Phone Number</label>
+                            <input type="tel" id="medicine-phone" placeholder="03XX XXXXXXX" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="medicine-prescription" id="medicine-details-label">Medicine Details</label>
+                        <textarea id="medicine-prescription" rows="5" placeholder="Write medicine names, brand preference, or prescription details..." required></textarea>
+                    </div>
+
+                    <div class="input-row quantity-location-row">
+                        <div class="input-group">
+                            <label for="medicine-quantity">Quantity / Packs</label>
+                            <input type="number" id="medicine-quantity" min="1" value="1" placeholder="e.g., 2" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="medicine-unit">Quantity Type</label>
+                            <select id="medicine-unit">
+                                <option>Strip(s)</option>
+                                <option>Bottle(s)</option>
+                                <option>Box(es)</option>
+                                <option>Tube(s)</option>
+                                <option>Sachet(s)</option>
+                                <option>Doctor Prescription Quantity</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="pharmacy-partner">Pharmacy Partner</label>
+                            <select id="pharmacy-partner">
+                                <option>Partner Pharmacy A</option>
+                                <option>Hospital Pharmacy Counter</option>
+                                <option>Nearest Medical Store Partner</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="delivery-method">Delivery Method</label>
+                            <select id="delivery-method">
+                                <option>Home Delivery</option>
+                                <option>Pharmacy Pickup</option>
+                                <option>Hospital Pickup</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="location-panel glass-mini-panel">
+                        <h4>Delivery Location</h4>
+                        <p>Enter separate location details so the pharmacy can deliver at the correct address.</p>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="medicine-city">City</label>
+                                <input type="text" id="medicine-city" placeholder="Karachi" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="medicine-area">Area / Town</label>
+                                <input type="text" id="medicine-area" placeholder="North Nazimabad, Gulshan..." required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="medicine-address">Full Delivery Address</label>
+                            <textarea id="medicine-address" rows="3" placeholder="House no, street, block, landmark..." required></textarea>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="medicine-location-link">Google Maps Location Link (Optional)</label>
+                                <input type="url" id="medicine-location-link" placeholder="Paste Google Maps location link">
+                            </div>
+                            <div class="input-group">
+                                <label for="medicine-delivery-note">Delivery Note (Optional)</label>
+                                <input type="text" id="medicine-delivery-note" placeholder="Call before delivery, gate number, timing...">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Medicine Order</button>
+                    <div id="medicine-page-success" class="booking-success" hidden></div>
+                </form>
+
+                <div class="glass-card service-info-panel">
+                    <span class="commission-pill">20% Medicine Commission</span>
+                    <h3>How It Works</h3>
+                    <div class="consult-steps compact-steps">
+                        <div><b>01</b><span>Patient uses doctor prescription.</span></div>
+                        <div><b>02</b><span>Partner pharmacy checks medicine availability.</span></div>
+                        <div><b>03</b><span>Patient confirms order.</span></div>
+                        <div><b>04</b><span>Platform receives 20% commission after successful order.</span></div>
+                    </div>
+                    <a href="lab-tests.html?source=prescription" class="btn btn-secondary full-btn">Need Lab Test Instead?</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const query = new URLSearchParams(window.location.search);
+        const fromPrescription = query.get('source') === 'prescription';
+        const summary = document.getElementById('prescription-summary');
+
+        if (fromPrescription) {
+            const rx = JSON.parse(localStorage.getItem('aiSymptomsPrescription') || '{}');
+            document.getElementById('medicine-page-title').textContent = 'Order Medicine Using Doctor Prescription';
+            document.getElementById('medicine-page-copy').textContent = 'Prescription details are loaded from the doctor prescription page. Partner pharmacy will verify medicine availability before confirming the order.';
+            document.getElementById('medicine-details-label').textContent = 'Doctor Prescription / Medicine Details';
+            document.getElementById('medicine-prescription').placeholder = 'Prescription details will auto-load here from prescription page...';
+
+            if (rx && (rx.patient || rx.doctor || rx.medicines)) {
+                document.getElementById('medicine-patient').value = rx.patient || '';
+                const medText = [
+                    `Doctor: ${rx.doctor || 'Selected Doctor'}`,
+                    `Date: ${rx.date || ''}`,
+                    'Medicines:',
+                    ...((rx.medicines || []).map(item => '- ' + item))
+                ].join('\n');
+                document.getElementById('medicine-prescription').value = medText;
+                document.getElementById('medicine-quantity').value = Math.max(1, (rx.medicines || []).length || 1);
+                document.getElementById('medicine-unit').value = 'Doctor Prescription Quantity';
+                summary.hidden = false;
+                summary.innerHTML = `<strong>Prescription Loaded:</strong> ${rx.doctor || 'Doctor'} | ${rx.patient || 'Patient'}`;
+            }
+        } else {
+            document.getElementById('medicine-page-title').textContent = 'Direct Medicine Order';
+            document.getElementById('medicine-page-copy').textContent = 'This page is for users who want to directly order medicines from partner pharmacies without using the doctor consultation flow.';
+            document.getElementById('medicine-details-label').textContent = 'Medicine Names / Order Details';
+            summary.hidden = true;
+        }
+
+        document.getElementById('medicine-page-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const order = {
+                patient: document.getElementById('medicine-patient').value,
+                phone: document.getElementById('medicine-phone').value,
+                details: document.getElementById('medicine-prescription').value,
+                quantity: document.getElementById('medicine-quantity').value,
+                quantityType: document.getElementById('medicine-unit').value,
+                pharmacy: document.getElementById('pharmacy-partner').value,
+                partner: document.getElementById('pharmacy-partner').value,
+                delivery: document.getElementById('delivery-method').value,
+                city: document.getElementById('medicine-city').value,
+                area: document.getElementById('medicine-area').value,
+                address: document.getElementById('medicine-address').value,
+                locationLink: document.getElementById('medicine-location-link').value,
+                deliveryNote: document.getElementById('medicine-delivery-note').value,
+                fullLocation: [
+                    document.getElementById('medicine-address').value,
+                    document.getElementById('medicine-area').value,
+                    document.getElementById('medicine-city').value
+                ].filter(Boolean).join(', '),
+                source: fromPrescription ? 'Prescription Based' : 'Direct Order',
+                submittedAt: new Date().toLocaleString(),
+                trackingId: 'MED-' + Date.now().toString().slice(-6),
+                status: 'Pending Pharmacy Review'
+            };
+            const orders = JSON.parse(localStorage.getItem('medicineOrders') || '[]');
+            orders.unshift(order);
+            localStorage.setItem('lastOrderTrackingId', order.trackingId);
+            localStorage.setItem('medicineOrders', JSON.stringify(orders));
+            const success = document.getElementById('medicine-page-success');
+            success.hidden = false;
+            success.innerHTML = fromPrescription
+                ? `Prescription medicine order submitted. Tracking ID: <strong>${order.trackingId}</strong>. Quantity: <strong>${order.quantity} ${order.quantityType}</strong>. Delivery Location: <strong>${order.area}, ${order.city}</strong>. Partner pharmacy will verify prescription and confirm stock. Platform commission: <strong>20%</strong>. <a href="order-tracking.html?tracking=${order.trackingId}">Track order</a>`
+                : `Direct medicine order request submitted. Tracking ID: <strong>${order.trackingId}</strong>. Quantity: <strong>${order.quantity} ${order.quantityType}</strong>. Delivery Location: <strong>${order.area}, ${order.city}</strong>. Partner pharmacy will check stock and confirm delivery/pickup. Platform commission: <strong>20%</strong>. <a href="order-tracking.html?tracking=${order.trackingId}">Track order</a>`;
+        });
+    </script>
+    <script src="demo-activation.js"></script>
+<script src="feature-enhancements.js"></script>
+<script src="partner-system.js"></script>
+<script src="business-features.js"></script>
+<script src="role-routing.js"></script>
+    <script src="language-consistency-data.js"></script>
+<script src="language-consistency-only.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Role Based Login | Admin Access | AI Symptoms Checker</title><link rel="stylesheet" href="style.css"></head>
+<body class="service-page">
+    <header id="header" class="scrolled">
+        <nav class="container premium-nav clean-demo-nav">
+            <a href="index.html#hero" class="logo" aria-label="AI Symptoms Checker Home">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </a>
+
+            <ul class="nav-links premium-nav-links">
+                <li><a href="index.html#hero" class="active-link">Home</a></li>
+                <li><a href="index.html#checker">AI Checker</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Services <span>▾</span></button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-menu-label">Patient Services</div>
+                        <a href="appointment.html">Book Appointment</a>
+                        <a href="consultation.html">Video &amp; Chat Consultation</a>
+                        <a href="prescription.html">Prescription Flow</a>
+                        <a href="medicine-order.html?mode=direct">Order Medicine</a>
+                        <a href="lab-tests.html?mode=direct">Book Lab Test</a>
+                        <a href="order-tracking.html">Track Request</a>
+                    </div>
+                </li>
+                <li><a href="doctors.html">Doctors</a></li>
+
+<li class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-toggle">Register <span>▾</span></button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu-small">
+                        <div class="nav-menu-label">Professional Registration</div>
+                        <a href="doctor-registration.html">Doctor Registration</a>
+                        <a href="pharmacy-registration.html">Pharmacy Partner Registration</a>
+                        <a href="lab-registration.html">Lab Partner Registration</a>
+                    </div>
+                </li>
+
+<li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right premium-nav-right">
+                <a href="login.html" class="btn-nav nav-login">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <main>
+        <section class="service-hero"><div class="container service-hero-grid"><div><span class="section-subtitle">Role Based Portal</span><h1>Login to Your Own Dashboard</h1><p>Patients, approved doctors, pharmacy partners, lab partners, and admin login here. Dashboards are shown only after authentication.</p><div class="service-badges"><span>Patient Dashboard</span><span>Doctor Dashboard</span><span>Pharmacy Dashboard</span><span>Lab Dashboard</span><span>Admin Panel</span></div></div><div class="service-side-card glass-card"><div class="service-icon-large">👤</div><h3>Secure Access</h3><p>Create the required account first, then login with your selected role. Each role opens only its own dashboard.</p></div></div></section>
+        <section class="section service-form-section"><div class="container service-form-grid"><form class="booking-form glass-card service-main-form" id="patient-register-form"><h3>Create Patient Account</h3><div class="input-row"><div class="input-group"><label for="reg-name">Full Name</label><input id="reg-name" type="text" required></div><div class="input-group"><label for="reg-email">Email</label><input id="reg-email" type="email" required></div></div><div class="input-row"><div class="input-group"><label for="reg-phone">Mobile Number</label><input id="reg-phone" type="tel" required></div><div class="input-group"><label for="reg-password">Password</label><input id="reg-password" type="password" required></div></div><button class="btn btn-primary" type="submit">Create Account</button><div id="register-success" class="booking-success" hidden></div></form><form class="booking-form glass-card service-main-form" id="patient-login-form"><h3>Role Based Login</h3><p class="admin-muted">Select your role. After login, your own dashboard will open automatically.</p><div class="input-group"><label for="login-role">Login As</label><select id="login-role"><option value="patient">Patient</option><option value="doctor">Doctor</option><option value="pharmacy">Pharmacy Partner</option><option value="lab">Lab Partner</option><option value="admin">Admin</option></select></div><div class="input-group"><label for="login-email">Email</label><input id="login-email" type="email" required></div><div class="input-group"><label for="login-password">Password</label><input id="login-password" type="password" required></div><button class="btn btn-secondary" type="submit">Login</button><div id="login-success" class="booking-success" hidden></div><p class="admin-muted" style="margin-top:10px;">Patient demo login: <b>demo.patient@example.com</b> / <b>demo123</b><br>Admin login: <b>admin@aisymptoms.com</b> / <b>admin123</b></p><p class="admin-muted" style="margin-top:12px;">Pharmacy/Lab new partner? <a href="partner-registration.html">Open Partner Registration</a></p></form></div></section>
+    </main>
+    <script>
+        function readJSON(key, fallback) {
+            try {
+                const raw = localStorage.getItem(key);
+                return raw ? JSON.parse(raw) : fallback;
+            } catch (e) {
+                return fallback;
+            }
+        }
+        function writeJSON(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+        function esc(text) { return String(text || '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+        function normalizeEmail(email) { return String(email || '').trim().toLowerCase(); }
+
+        const defaultPartnerAccounts = [
+            {id:'PHR-DEMO-001', type:'pharmacy', role:'pharmacy', status:'Selected', published:true, businessName:'Green Care Pharmacy', ownerName:'Demo Pharmacy Owner', email:'pharmacy@partner.com', phone:'0300 1112223', city:'Karachi', area:'North Nazimabad', license:'PHR-DEMO-001', delivery:'Yes', pickup:'Yes', available24:'No', commission:'20%', address:'Main Market, Karachi', password:'partner123', submittedAt:'Demo Data'},
+            {id:'LAB-DEMO-001', type:'lab', role:'lab', status:'Selected', published:true, businessName:'City Diagnostic Lab', ownerName:'Demo Lab Manager', email:'lab@partner.com', phone:'0300 5556667', city:'Karachi', area:'Gulshan', tests:'CBC, Sugar, HbA1c, Lipid Profile, Thyroid, Urine Test', homeSampling:'Yes', reportUpload:'Yes', reportTime:'24 Hours', license:'LAB-DEMO-001', commission:'20%', address:'Diagnostic Road, Karachi', password:'partner123', submittedAt:'Demo Data'}
+        ];
+
+        function clearRoleSessions() {
+            localStorage.removeItem('loggedInPatient');
+            localStorage.removeItem('loggedInDoctor');
+            localStorage.removeItem('loggedInPharmacy');
+            localStorage.removeItem('loggedInLab');
+            localStorage.removeItem('currentUserRole');
+        }
+
+        function redirectToDashboard(url, message) {
+            const box = document.getElementById('login-success');
+            box.hidden = false;
+            box.innerHTML = message + ' Redirecting...';
+            setTimeout(() => { window.location.href = url; }, 450);
+        }
+
+        function getApprovedPartnerAccounts(type) {
+            const applications = readJSON('partnerApplications', []);
+            const approved = readJSON('approvedPartners', []);
+            const all = [...defaultPartnerAccounts, ...approved, ...applications];
+            const seen = new Set();
+            return all.filter(partner => {
+                const key = String(partner.type || '') + '|' + normalizeEmail(partner.email || partner.businessName || partner.id);
+                if (seen.has(key)) return false;
+                seen.add(key);
+                const selected = partner.status === 'Selected' || partner.published === true;
+                return partner.type === type && selected;
+            });
+        }
+
+        function patientRegisterHandler(e) {
+            e.preventDefault();
+            const user = {
+                id:'PAT-' + Date.now().toString().slice(-6),
+                role:'patient',
+                name:document.getElementById('reg-name').value,
+                email:normalizeEmail(document.getElementById('reg-email').value),
+                phone:document.getElementById('reg-phone').value,
+                password:document.getElementById('reg-password').value,
+                createdAt:new Date().toLocaleString(),
+                dashboardVisits:0
+            };
+            const users = readJSON('patientUsers', []);
+            const existing = users.find(u => normalizeEmail(u.email) === user.email);
+            const box = document.getElementById('register-success');
+            box.hidden = false;
+            if (existing) {
+                box.innerHTML = 'This email is already registered. Please login instead.';
+                return;
+            }
+            users.push(user);
+            writeJSON('patientUsers', users);
+            clearRoleSessions();
+            localStorage.setItem('loggedInPatient', JSON.stringify(user));
+            localStorage.setItem('currentUserRole', 'patient');
+            box.innerHTML = `Patient account created successfully. Welcome <strong>${esc(user.name)}</strong>. Redirecting to your dashboard...`;
+            setTimeout(() => { window.location.href = 'patient-dashboard.html'; }, 650);
+        }
+
+        function roleLoginHandler(e) {
+            e.preventDefault();
+            const role = document.getElementById('login-role').value;
+            const email = normalizeEmail(document.getElementById('login-email').value);
+            const password = document.getElementById('login-password').value;
+            const box = document.getElementById('login-success');
+            box.hidden = false;
+
+
+            if (role === 'admin') {
+                if (email === 'admin@aisymptoms.com' && password === 'admin123') {
+                    clearRoleSessions();
+                    sessionStorage.setItem('aiSymptomsAdminLoggedIn', 'true');
+                    localStorage.setItem('currentUserRole', 'admin');
+                    redirectToDashboard('admin.html', 'Admin login successful.');
+                } else {
+                    box.innerHTML = 'Invalid admin email or password.';
+                }
+                return;
+            }
+
+            if (role === 'patient') {
+                const users = readJSON('patientUsers', []);
+                const user = users.find(u => normalizeEmail(u.email) === email && u.password === password);
+                if (!user) {
+                    box.innerHTML = 'Patient account not found or password is incorrect. Please create patient account first.';
+                    return;
+                }
+                clearRoleSessions();
+                localStorage.setItem('loggedInPatient', JSON.stringify({...user, role:'patient'}));
+                localStorage.setItem('currentUserRole', 'patient');
+                redirectToDashboard('patient-dashboard.html', `Patient login successful. Welcome <strong>${esc(user.name)}</strong>.`);
+                return;
+            }
+
+            if (role === 'doctor') {
+                const applications = readJSON('doctorApplications', []);
+                const approvedDoctors = readJSON('approvedDoctors', []);
+                const allDoctors = [...approvedDoctors, ...applications];
+                const doctor = allDoctors.find(d => normalizeEmail(d.email) === email && (d.password === password || d.license === password || d.id === password));
+                if (!doctor) {
+                    box.innerHTML = 'Doctor account not found. Please register first or use correct password/license/application ID.';
+                    return;
+                }
+                if (doctor.status !== 'Selected' && doctor.published !== true) {
+                    box.innerHTML = `Your doctor application status is <strong>${esc(doctor.status || 'Pending Review')}</strong>. Doctor dashboard opens after admin approval.`;
+                    return;
+                }
+                clearRoleSessions();
+                localStorage.setItem('loggedInDoctor', JSON.stringify({...doctor, role:'doctor'}));
+                localStorage.setItem('currentUserRole', 'doctor');
+                redirectToDashboard('doctor-dashboard.html', `Doctor login successful. Welcome <strong>${esc(doctor.name || doctor.fullName || 'Doctor')}</strong>.`);
+                return;
+            }
+
+            if (role === 'pharmacy' || role === 'lab') {
+                const partners = getApprovedPartnerAccounts(role);
+                const partner = partners.find(p => normalizeEmail(p.email) === email && (p.password === password || p.license === password || p.id === password));
+                if (!partner) {
+                    box.innerHTML = `${role === 'pharmacy' ? 'Pharmacy' : 'Lab'} partner account not found or not approved yet. Please complete Partner Registration first and wait for approval.`;
+                    return;
+                }
+                clearRoleSessions();
+                const storageKey = role === 'pharmacy' ? 'loggedInPharmacy' : 'loggedInLab';
+                const dashboard = role === 'pharmacy' ? 'pharmacy-dashboard.html' : 'lab-dashboard.html';
+                localStorage.setItem(storageKey, JSON.stringify({...partner, role}));
+                localStorage.setItem('currentUserRole', role);
+                redirectToDashboard(dashboard, `${role === 'pharmacy' ? 'Pharmacy' : 'Lab'} login successful. Welcome <strong>${esc(partner.businessName || partner.ownerName || partner.email)}</strong>.`);
+                return;
+            }
+        }
+
+        document.getElementById('patient-register-form').addEventListener('submit', patientRegisterHandler);
+        document.getElementById('patient-login-form').addEventListener('submit', roleLoginHandler);
+
+        const currentRole = localStorage.getItem('currentUserRole');
+        const loggedInRoutes = {
+            patient: ['loggedInPatient', 'patient-dashboard.html'],
+            doctor: ['loggedInDoctor', 'doctor-dashboard.html'],
+            pharmacy: ['loggedInPharmacy', 'pharmacy-dashboard.html'],
+            lab: ['loggedInLab', 'lab-dashboard.html'],
+            admin: ['aiSymptomsAdminLoggedIn', 'admin.html']
+        };
+        if (currentRole && loggedInRoutes[currentRole]) {
+            const storageKey = loggedInRoutes[currentRole][0];
+            const isActive = currentRole === 'admin'
+                ? sessionStorage.getItem(storageKey) === 'true'
+                : Boolean(localStorage.getItem(storageKey));
+            if (isActive) {
+                const box = document.getElementById('login-success');
+                if (box) {
+                    box.hidden = false;
+                    box.innerHTML = `You are already logged in as <strong>${esc(currentRole)}</strong>. <a href="${loggedInRoutes[currentRole][1]}">Open your dashboard</a>`;
+                }
+            }
+        }
+    </script>
+    <script src="demo-activation.js"></script>
+<script src="feature-enhancements.js"></script>
+<script src="portal-system.js"></script>
+<script src="partner-system.js"></script>
+<script src="business-features.js"></script>
+<script src="role-routing.js"></script>
+    <script src="language-consistency-data.js"></script>
+<script src="language-consistency-only.js"></script>
+</body></html>
